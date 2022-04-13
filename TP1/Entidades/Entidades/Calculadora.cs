@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public static class Calculadora
+    public class Calculadora
     {
+        /// <summary>
+        /// Verifica que operador sea una de las opciones validad en caso erroneo asigna la suma como valor predeterminado
+        /// </summary>
+        /// <param name="operador"></param>
+        /// <returns></returns>
         private static char ValidarOperador(char operador)
         {
-            if(operador=='+'|| operador == '-' || operador == '/' || operador == '*')
+            if (operador == '+' || operador == '-' || operador == '/' || operador == '*')
             {
                 return operador;
             }
@@ -19,6 +24,13 @@ namespace Entidades
                 return '+';
             }
         }
+        /// <summary>
+        /// Realiza la operacion basica correspondiente deacuerdo al operador asignado mediante un swicht
+        /// </summary>
+        /// <param name="num1"></param>
+        /// <param name="num2"></param>
+        /// <param name="operador"></param>
+        /// <returns></returns>
         public static double Operar(Operando num1, Operando num2, char operador)
         {
             double respuesta = 0;

@@ -23,10 +23,6 @@ C:\Users\Usuario\source\repos\Sosa.Eduardo\FormCalculadora\bin\Debug\net5.0-wind
 C:\Users\Usuario\source\repos\Sosa.Eduardo\FormCalculadora\bin\Debug\net5.0-windows\Entidades.dll
 C:\Users\Usuario\source\repos\Sosa.Eduardo\FormCalculadora\bin\Debug\net5.0-windows\Entidades.pdb
 C:\Users\Usuario\source\repos\Sosa.Eduardo\FormCalculadora\obj\Debug\net5.0-windows\MiCalculadora.csproj.CopyComplete
-C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP1\Entidades\FormCalculadora\bin\Debug\net5.0-windows\Entidades.deps.json
-C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP1\Entidades\FormCalculadora\bin\Debug\net5.0-windows\Entidades.runtimeconfig.json
-C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP1\Entidades\FormCalculadora\bin\Debug\net5.0-windows\Entidades.runtimeconfig.dev.json
-C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP1\Entidades\FormCalculadora\bin\Debug\net5.0-windows\Entidades.exe
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP1\Entidades\FormCalculadora\bin\Debug\net5.0-windows\MiCalculadora.exe
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP1\Entidades\FormCalculadora\bin\Debug\net5.0-windows\MiCalculadora.deps.json
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP1\Entidades\FormCalculadora\bin\Debug\net5.0-windows\MiCalculadora.runtimeconfig.json

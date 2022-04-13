@@ -1,10 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase Operando encargada para la validacion de ingresos y realizacion de operaciones matematicas 
+    /// </summary>
     public class Operando
     {
-        #region Campos
+        #region Campos    
         private double numero;
         #endregion Campos
 
@@ -29,6 +36,10 @@ namespace Entidades
         }
         public Operando(string strNumero)
         {
+            if(string.IsNullOrEmpty(strNumero))
+            {
+                strNumero = "0";
+            }
             this.Numero = strNumero;
         }
         #endregion Constructor
@@ -37,6 +48,11 @@ namespace Entidades
 
         #region Metodos
 
+        /// <summary>
+        /// Recibe un double, realizando el valor absoluto tomando solo la parte entera positiva y devolviendo el binario que lo represente si existe
+        /// </summary>
+        /// <param name="numero"></param>
+        /// <returns>si el ingreso es valido un string con numero Binario Representativo. Si no es valido mensaje de error "Valor invalido"</returns>
         public static string DecimalABinario(double numero)
         {
             string numeroBinarioInverso = string.Empty;
@@ -44,10 +60,10 @@ namespace Entidades
             string respuesta = string.Empty;
 
             int residuo = (int)(MathF.Abs((float)numero));
-            
-            if(residuo>=0)
+
+            if (residuo >= 0)
             {
-                if(residuo==0)
+                if (residuo == 0)
                 {
                     numeroBinario = "0";
                 }
@@ -68,17 +84,40 @@ namespace Entidades
             }
             return respuesta;
         }
-
-        public static string BinarioADecimal(double numero)
+        /// <summary>
+        /// Recibe un string, determina si es un numero de ser asi llama a DecimalABinario que convierte el numero a binario de ser posible sino devuelve un mensaje de error
+        /// </summary>
+        /// <param name="numeroString"></param>
+        /// <returns>si es posible devuelve un string con el numero binario sino un mensaje de error</returns>
+        public static string DecimalABinario(string numeroString)
+        {
+            double numero = 0;
+            if (double.TryParse(numeroString,out numero))
+            {
+                return DecimalABinario(numero);
+            }
+            else
+            {
+                return "Valor inválido";
+            }
+        }
+        /// <summary>
+        ///  Recibe un string, invoca a esBinario que determina si el numero es   de ser asi llama a DecimalABinario que convierte el numero a binario de ser posible sino devuelve un mensaje de error
+        /// </summary>
+        /// <param name="numeroString"></param>
+        /// <returns></returns>
+        public static string BinarioADecimal(string numeroString)
         {
             string arrayBinario = string.Empty;
             string arrayBinarioInverso = string.Empty;
             string respuesta = string.Empty;
             int numeroEnteroObtenido = 0;
-            int enteroAux = (int)MathF.Floor(MathF.Abs((float)numero));
-            arrayBinario = enteroAux.ToString();
-            if (EsBinario(arrayBinario))
+            if (EsBinario(numeroString))
             {
+                float numero = float.Parse(numeroString);
+                int enteroAux = (int)MathF.Floor(MathF.Abs(numero));
+                arrayBinario = enteroAux.ToString();
+
                 for (int i = arrayBinario.Length - 1; i >= 0; i--)
                 {
                     arrayBinarioInverso += arrayBinario[i];
@@ -99,50 +138,66 @@ namespace Entidades
             return respuesta;
         }
 
-
+        /// <summary>
+        /// Determina si el string es un numero binario
+        /// </summary>
+        /// <param name="binario"></param>
+        /// <returns> true si es binario || false en caso contrario</returns>
         private static bool EsBinario(string binario)
         {
-
-            for (int i = binario.Length - 1; i >= 0; i--)
+            bool esBinario = true;
+            foreach (var item in binario)
             {
-                if (binario[i] != '1' && binario[i] != '0')
+                if (item != '1' && item != '0')
                 {
-                    return false;
+                    esBinario = false;
                 }
             }
-            return true;
+            return esBinario;
         }
-
+        /// <summary>
+        /// Verifica que el string sea un operando valido es decir un numero double 
+        /// </summary>
+        /// <param name="strNumero"></param>
+        /// <returns></returns>
         private double ValidarOperando(string strNumero)
         {
+            double numero = 0;
+            double.TryParse(strNumero, out numero);
 
-            if (double.TryParse(strNumero, out numero))
-            {
-                numero = double.Parse(strNumero);
-            }
-            else
-            {
-                numero = 0;
-            }
             return numero;
         }
 
 
-        public double GetNumero()
-        {
-            return this.numero;
-        }
         #endregion Metodos
 
         #region SobrecargaOperadores
+        /// <summary>
+        /// Toma los atributos  numeros double de los operando y los resta
+        /// </summary>
+        /// <param name="n1"></param>
+        /// <param name="n2"></param>
+        /// <returns>devuelce un double con el resultado de la resta de los operando </returns>
         public static double operator -(Operando n1, Operando n2)
         {
             return n1.numero - n2.numero;
         }
+        /// <summary>
+        /// Toma los atributos  numeros double de los operando y los suma
+        /// </summary>
+        /// <param name="n1"></param>
+        /// <param name="n2"></param>
+        /// <returns>double con el valor de la suma de los atributos de los operando</returns>
         public static double operator +(Operando n1, Operando n2)
         {
             return n1.numero + n2.numero;
         }
+        /// <summary>
+        /// Toma los atributos  numeros double de los operando y los divide
+        /// </summary>
+        /// <param name="n1"></param>
+        /// <param name="n2"></param>
+        /// <returns> si el divisor es != 0 devuelve double con el resultado de la division. Si no devuelve el double MinValue </returns>
         public static double operator /(Operando n1, Operando n2)
         {
             if (n2.numero != 0)
@@ -154,6 +209,12 @@ namespace Entidades
                 return double.MinValue;
             }
         }
+        /// <summary>
+        /// Toma los atributos  numeros double de los operando y los divide
+        /// </summary>
+        /// <param name="n1"></param>
+        /// <param name="n2"></param>
+        /// <returns> double con el resultado de la multiplicacion</returns>
         public static double operator *(Operando n1, Operando n2)
         {
             double respuesta = n1.numero * n2.numero;

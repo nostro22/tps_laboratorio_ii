@@ -105,7 +105,7 @@ namespace FormCalculadora
             this.txtNumero1.Name = "txtNumero1";
             this.txtNumero1.Size = new System.Drawing.Size(217, 50);
             this.txtNumero1.TabIndex = 0;
-            this.txtNumero1.TextChanged += new System.EventHandler(this.txtNumero1_TextChanged);
+           
             // 
             // txtNumero2
             // 
@@ -116,21 +116,19 @@ namespace FormCalculadora
             this.txtNumero2.Name = "txtNumero2";
             this.txtNumero2.Size = new System.Drawing.Size(217, 50);
             this.txtNumero2.TabIndex = 2;
-            this.txtNumero2.TextChanged += new System.EventHandler(this.txtNumero2_TextChanged);
+            
             // 
             // lbLResultado
             // 
-            this.lbLResultado.AutoSize = true;
             this.lbLResultado.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbLResultado.Location = new System.Drawing.Point(588, 13);
+            this.lbLResultado.Location = new System.Drawing.Point(22, 11);
             this.lbLResultado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLResultado.MinimumSize = new System.Drawing.Size(129, 42);
             this.lbLResultado.Name = "lbLResultado";
-            this.lbLResultado.Size = new System.Drawing.Size(129, 54);
+            this.lbLResultado.Size = new System.Drawing.Size(689, 54);
             this.lbLResultado.TabIndex = 7;
             this.lbLResultado.Text = "0";
             this.lbLResultado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbLResultado.Click += new System.EventHandler(this.lbLResultado_Click);
             // 
             // lbtOperaciones
             // 
@@ -141,7 +139,6 @@ namespace FormCalculadora
             this.lbtOperaciones.Name = "lbtOperaciones";
             this.lbtOperaciones.Size = new System.Drawing.Size(288, 466);
             this.lbtOperaciones.TabIndex = 8;
-            this.lbtOperaciones.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // cmbOperador
             // 
@@ -159,7 +156,6 @@ namespace FormCalculadora
             this.cmbOperador.Name = "cmbOperador";
             this.cmbOperador.Size = new System.Drawing.Size(212, 50);
             this.cmbOperador.TabIndex = 1;
-            this.cmbOperador.SelectedIndexChanged += new System.EventHandler(this.cmbOperador_SelectedIndexChanged);
             // 
             // FormCalculadora
             // 
