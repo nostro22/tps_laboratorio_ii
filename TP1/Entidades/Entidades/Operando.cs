@@ -163,7 +163,9 @@ namespace Entidades
         private double ValidarOperando(string strNumero)
         {
             double numero = 0;
-            double.TryParse(strNumero, out numero);
+            StringBuilder strNumeroDecimal = new StringBuilder(strNumero);
+            strNumeroDecimal.Replace('.', ',');
+            double.TryParse(strNumeroDecimal.ToString(), out numero);
 
             return numero;
         }

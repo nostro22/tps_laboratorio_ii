@@ -37,7 +37,7 @@ namespace FormCalculadora
             this.txtNumero1 = new System.Windows.Forms.TextBox();
             this.txtNumero2 = new System.Windows.Forms.TextBox();
             this.lbLResultado = new System.Windows.Forms.Label();
-            this.lbtOperaciones = new System.Windows.Forms.ListBox();
+            this.lstOperaciones = new System.Windows.Forms.ListBox();
             this.cmbOperador = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -105,7 +105,6 @@ namespace FormCalculadora
             this.txtNumero1.Name = "txtNumero1";
             this.txtNumero1.Size = new System.Drawing.Size(217, 50);
             this.txtNumero1.TabIndex = 0;
-           
             // 
             // txtNumero2
             // 
@@ -116,7 +115,6 @@ namespace FormCalculadora
             this.txtNumero2.Name = "txtNumero2";
             this.txtNumero2.Size = new System.Drawing.Size(217, 50);
             this.txtNumero2.TabIndex = 2;
-            
             // 
             // lbLResultado
             // 
@@ -130,15 +128,15 @@ namespace FormCalculadora
             this.lbLResultado.Text = "0";
             this.lbLResultado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbtOperaciones
+            // lstOperaciones
             // 
-            this.lbtOperaciones.FormattingEnabled = true;
-            this.lbtOperaciones.ItemHeight = 21;
-            this.lbtOperaciones.Location = new System.Drawing.Point(724, 11);
-            this.lbtOperaciones.Margin = new System.Windows.Forms.Padding(4);
-            this.lbtOperaciones.Name = "lbtOperaciones";
-            this.lbtOperaciones.Size = new System.Drawing.Size(288, 466);
-            this.lbtOperaciones.TabIndex = 8;
+            this.lstOperaciones.FormattingEnabled = true;
+            this.lstOperaciones.ItemHeight = 21;
+            this.lstOperaciones.Location = new System.Drawing.Point(724, 11);
+            this.lstOperaciones.Margin = new System.Windows.Forms.Padding(4);
+            this.lstOperaciones.Name = "lstOperaciones";
+            this.lstOperaciones.Size = new System.Drawing.Size(288, 466);
+            this.lstOperaciones.TabIndex = 8;
             // 
             // cmbOperador
             // 
@@ -163,7 +161,7 @@ namespace FormCalculadora
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 486);
             this.Controls.Add(this.cmbOperador);
-            this.Controls.Add(this.lbtOperaciones);
+            this.Controls.Add(this.lstOperaciones);
             this.Controls.Add(this.lbLResultado);
             this.Controls.Add(this.txtNumero2);
             this.Controls.Add(this.txtNumero1);
@@ -197,7 +195,7 @@ namespace FormCalculadora
         private System.Windows.Forms.TextBox txtNumero1;
         private System.Windows.Forms.TextBox txtNumero2;
         private System.Windows.Forms.Label lbLResultado;
-        private System.Windows.Forms.ListBox lbtOperaciones;
+        private System.Windows.Forms.ListBox lstOperaciones;
         private System.Windows.Forms.ComboBox cmbOperador;
     }
 }

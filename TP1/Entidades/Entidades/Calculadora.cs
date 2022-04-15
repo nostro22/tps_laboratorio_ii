@@ -34,6 +34,7 @@ namespace Entidades
         public static double Operar(Operando num1, Operando num2, char operador)
         {
             double respuesta = 0;
+            operador = ValidarOperador(operador);
             switch (operador)
             {
                 case '+':

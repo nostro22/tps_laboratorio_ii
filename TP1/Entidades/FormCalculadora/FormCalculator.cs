@@ -44,8 +44,10 @@ namespace FormCalculadora
         /// <param name="e"></param>
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            if(cmbOperador.Text!="")
+            if (cmbOperador.Text == "")
             {
+                cmbOperador.Text = "+";
+            }
                 char operador = ' ';
                 if (string.IsNullOrEmpty(txtNumero1.Text))
                 {
@@ -55,11 +57,18 @@ namespace FormCalculadora
                 {
                     txtNumero2.Text = "0";
                 }
-                operador = Convert.ToChar(cmbOperador.Text);                
+                operador = Convert.ToChar(cmbOperador.Text);         
+                
                 string respuesta = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
-                lbtOperaciones.Items.Add(txtNumero1.Text + operador + txtNumero2.Text + " = "+ respuesta);
+
+                double num1Parsed = 0;
+                double.TryParse(txtNumero1.Text.Replace('.',','), out num1Parsed);
+                double num2Parsed = 0;
+                double.TryParse(txtNumero2.Text.Replace('.',','), out num2Parsed);
+
+                lstOperaciones.Items.Add(num1Parsed.ToString() + operador + num2Parsed.ToString() + " = "+ respuesta);
                 lbLResultado.Text = respuesta;
-            }    
+               
         }
         /// <summary>
         /// Metodo de conversion de inputs del usuario a Class Operador y char
@@ -69,7 +78,8 @@ namespace FormCalculadora
         /// <param name="operador">  operador que define la operacion a realizar </param>
         /// <returns></returns>
         private static double Operar(string num1, string num2, string operador)
-        {
+        {           
+
             Operando operando1 = new Operando(num1);
             Operando operando2 = new Operando(num2);
             
@@ -81,8 +91,7 @@ namespace FormCalculadora
         private void Limpiar()
         {
             txtNumero1.Text = string.Empty;
-            txtNumero2.Text = string.Empty;
-            lbtOperaciones.Items.Clear();
+            txtNumero2.Text = string.Empty;            
             lbLResultado.Text=string.Empty;
             cmbOperador.SelectedIndex =0;
         }
@@ -93,23 +102,24 @@ namespace FormCalculadora
         /// <param name="e"></param>
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
-            if (cmbOperador.Text != "")
+            if (cmbOperador.Text == "")
             {
+                cmbOperador.Text = "+";
+            }
                 
                 if(string.IsNullOrEmpty(txtNumero1.Text))
                 {
                     txtNumero1.Text = "0";
-                }
-                
+                }                
                 if (string.IsNullOrEmpty(txtNumero2.Text))
                 {
                     txtNumero2.Text = "0";
-                }
+                }           
                 string respuesta = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
                  respuesta = Operando.DecimalABinario(respuesta);                
-                lbtOperaciones.Items.Add(respuesta);
+                lstOperaciones.Items.Add(respuesta);
                 lbLResultado.Text = respuesta;
-            }
+            
         }
         /// <summary>
         /// Presionar el boton Convertir a decimal el resultado de Operar y convierte a decimal la respuesta si es posible sino da un error de mensaje 
@@ -118,9 +128,11 @@ namespace FormCalculadora
         /// <param name="e"></param>
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
-            if (cmbOperador.Text != "")
+            if (cmbOperador.Text == "")
             {
-                if (string.IsNullOrEmpty(txtNumero1.Text))
+                cmbOperador.Text = "+";
+            }
+            if (string.IsNullOrEmpty(txtNumero1.Text))
                 {
                     txtNumero1.Text = "0";
                 }
@@ -130,10 +142,10 @@ namespace FormCalculadora
                 }
                 string respuesta = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
                 respuesta= Operando.BinarioADecimal(respuesta);
-                lbtOperaciones.Items.Add(respuesta);
+                lstOperaciones.Items.Add(respuesta);
                 lbLResultado.Text = respuesta;
-            }
-        }            
+            
+        }           
         /// <summary>
         /// Llama al meto close que inicia una verificacion antes de cerrar la app
         /// </summary>
