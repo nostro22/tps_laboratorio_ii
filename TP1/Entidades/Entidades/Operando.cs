@@ -139,19 +139,24 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Determina si el string es un numero binario
+        /// Determina si el string es un numero binario, tomando solo el valor absoluto de su parte entera y positiva
         /// </summary>
         /// <param name="binario"></param>
         /// <returns> true si es binario || false en caso contrario</returns>
         private static bool EsBinario(string binario)
         {
             bool esBinario = true;
-           
+            
             foreach (var item in binario)
             {
                 //Ignora la primera iteracion si el signo es -
                 if(binario[0]=='-' && item==binario[0])
                 {
+                }
+                //Ignora la parte decimal
+                else if(item =='.'||item ==',')
+                {
+                    break;
                 }
                 else if (item != '1' && item != '0')
                 {
