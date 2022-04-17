@@ -146,9 +146,14 @@ namespace Entidades
         private static bool EsBinario(string binario)
         {
             bool esBinario = true;
+           
             foreach (var item in binario)
             {
-                if (item != '1' && item != '0')
+                //Ignora la primera iteracion si el signo es -
+                if(binario[0]=='-' && item==binario[0])
+                {
+                }
+                else if (item != '1' && item != '0')
                 {
                     esBinario = false;
                 }
