@@ -39,7 +39,10 @@ namespace Entidades
                 return ETamanio.Mediano;
             }
         }
-
+        /// <summary>
+        /// Muestra los sedan usando el mostrar de la clase base y agregando la definicion de tipo
+        /// </summary>
+        /// <returns></returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();

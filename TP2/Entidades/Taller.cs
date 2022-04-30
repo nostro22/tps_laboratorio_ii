@@ -36,7 +36,7 @@ namespace Entidades
         /// <returns></returns>
         public override string ToString()
         {
-            return Listar(this, ETipo.Todos);
+            return Taller.Listar(this, ETipo.Todos);
         }
         #endregion
 
@@ -83,7 +83,7 @@ namespace Entidades
 
         #region "Operadores"
         /// <summary>
-        /// Agregará un elemento a la lista
+        /// Agregará un elemento a la lista verificando primero si no esta contenido en la lista y si hay espacio 
         /// </summary>
         /// <param name="taller">Objeto donde se agregará el elemento</param>
         /// <param name="vehiculo">Objeto a agregar</param>
@@ -106,7 +106,7 @@ namespace Entidades
             return taller;
         }
         /// <summary>
-        /// Quitará un elemento de la lista
+        /// Quitará un elemento de la lista verificando que coincida en la lista usando la sobrescritura del igual
         /// </summary>
         /// <param name="taller">Objeto donde se quitará el elemento</param>
         /// <param name="vehiculo">Objeto a quitar</param>
@@ -122,8 +122,7 @@ namespace Entidades
                     break;
                 }
                 indice++;
-            }
-           // taller.vehiculos.Remove(vehiculo);
+            }           
             return taller;
         }
         #endregion

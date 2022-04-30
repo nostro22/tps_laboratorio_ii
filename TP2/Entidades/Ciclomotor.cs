@@ -22,7 +22,10 @@ namespace Entidades
                 return ETamanio.Chico;
             }
         }
-
+        /// <summary>
+        /// Muestra los ciclomotor usando el mostrar de la clase base y colocando el ----------
+        /// </summary>
+        /// <returns></returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
