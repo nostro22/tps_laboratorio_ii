@@ -11,8 +11,8 @@ namespace Entidades
     /// </summary>
     public sealed class Taller
     {
-       private List<Vehiculo> vehiculos;
-       private int espacioDisponible;
+        private List<Vehiculo> vehiculos;
+        private int espacioDisponible;
         public enum ETipo
         {
             Ciclomotor, Sedan, SUV, Todos
@@ -23,13 +23,13 @@ namespace Entidades
         {
             this.vehiculos = new List<Vehiculo>();
         }
-        public Taller(int espacioDisponible):this()
+        public Taller(int espacioDisponible) : this()
         {
             this.espacioDisponible = espacioDisponible;
         }
         #endregion
 
-        #region "Sobrecargas"
+        #region "SobreEscritura"
         /// <summary>
         /// Muestro el estacionamiento y TODOS los vehículos
         /// </summary>
@@ -53,15 +53,15 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles \n", taller.vehiculos.Count, taller.espacioDisponible);           
-           
+            sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles \n", taller.vehiculos.Count, taller.espacioDisponible);
+
             foreach (Vehiculo v in taller.vehiculos)
             {
                 switch (tipo)
                 {
                     case ETipo.Ciclomotor:
-                        if(v is Ciclomotor)
-                        sb.AppendLine(v.Mostrar());
+                        if (v is Ciclomotor)
+                            sb.AppendLine(v.Mostrar());
                         break;
                     case ETipo.Sedan:
                         if (v is Sedan)
@@ -81,7 +81,7 @@ namespace Entidades
         }
         #endregion
 
-        #region "Operadores"
+        #region "SobreCargaOperadores"
         /// <summary>
         /// Agregará un elemento a la lista verificando primero si no esta contenido en la lista y si hay espacio 
         /// </summary>
@@ -91,18 +91,22 @@ namespace Entidades
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
             bool sinCoincidencia = true;
+            if (taller.espacioDisponible > taller.vehiculos.Count)
+            {
                 foreach (Vehiculo v in taller.vehiculos)
                 {
                     if (v == vehiculo)
                     {
-                    sinCoincidencia = false;
+                        sinCoincidencia = false;
                     }
                 }
-                if(sinCoincidencia && taller.espacioDisponible>taller.vehiculos.Count)
+
+                if (sinCoincidencia)
                 {
-                    taller.vehiculos.Add(vehiculo);                   
+                    taller.vehiculos.Add(vehiculo);
                 }
-                    
+            }            
+
             return taller;
         }
         /// <summary>
@@ -114,15 +118,19 @@ namespace Entidades
         public static Taller operator -(Taller taller, Vehiculo vehiculo)
         {
             int indice = 0;
-            foreach (Vehiculo unVehiculo in taller.vehiculos)
+            if(taller.vehiculos.Count>0)
             {
-                if(unVehiculo==vehiculo)
+                foreach (Vehiculo unVehiculo in taller.vehiculos)
                 {
-                    taller.vehiculos.RemoveAt(indice);
-                    break;
+                    if (unVehiculo == vehiculo)
+                    {
+                        taller.vehiculos.RemoveAt(indice);
+                        break;
+                    }
+                    indice++;
                 }
-                indice++;
-            }           
+            }
+           
             return taller;
         }
         #endregion

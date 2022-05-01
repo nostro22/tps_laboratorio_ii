@@ -22,9 +22,9 @@ namespace Entidades
 
         #region Campos y propiedades
 
-       protected EMarca marca;
-       protected string chasis;
-       protected ConsoleColor color;
+       private EMarca marca;
+       private string chasis;
+       private ConsoleColor color;
 
         /// <summary>
         /// ReadOnly: Retornará el tamaño
@@ -39,7 +39,7 @@ namespace Entidades
         }
         
 
-        #endregion Campos y propiedades
+        #endregion 
 
         /// <summary>
         /// Publica todos los datos del Vehiculo.
@@ -49,7 +49,10 @@ namespace Entidades
         {
             return (string)this;
         }      
-
+        /// <summary>
+        /// SobreCarga de string vehiculos usando el getType.name obtengo el tipo de clase de vehiculo 
+        /// </summary>
+        /// <param name="p"></param>
         public static  explicit  operator string(Vehiculo p)
         {
             StringBuilder sb = new StringBuilder();
@@ -63,7 +66,7 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Dos vehiculos son iguales si comparten el mismo chasis
+        /// SobreCarga de == Dos vehiculos son iguales si comparten el mismo chasis
         /// </summary>
         /// <param name="v1"></param>
         /// <param name="v2"></param>
