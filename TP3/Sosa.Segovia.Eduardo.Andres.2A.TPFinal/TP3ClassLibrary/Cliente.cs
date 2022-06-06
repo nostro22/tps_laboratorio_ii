@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace TP3ClassLibrary
 {
+    /// <summary>
+    /// Un cliente que hereda de persona para ser facturado, facturacion toma en consideracion el tipo y le calcula un precio distinto
+    /// </summary>
     public class Cliente : Persona
     { 
         private eTipo tipo;
@@ -25,6 +25,14 @@ namespace TP3ClassLibrary
         public Cliente():base()
         {
         }
+        public Cliente(int dni, string nombre, DateTime fechaNacimiento,eTipo tipo) : base(dni, nombre, fechaNacimiento)
+        {
+            this.tipo = tipo;
+            if (tipo == eTipo.afiliado)
+            {
+                this.tipo = eTipo.particular;
+            }
+        }
 
         public override string ToString()
         {
@@ -34,14 +42,6 @@ namespace TP3ClassLibrary
 
 
             return sb.ToString();
-        }
-        public Cliente(int dni, string nombre, DateTime fechaNacimiento,eTipo tipo) : base(dni, nombre, fechaNacimiento)
-        {
-            this.tipo = tipo;
-            if (tipo == eTipo.afiliado)
-            {
-                this.tipo = eTipo.particular;
-            }
         }
 
      

@@ -97,3 +97,6 @@ C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\So
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TestProject1\obj\Debug\net5.0\ref\TestProject1.dll
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TestProject1\obj\Debug\net5.0\TestProject1.pdb
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TestProject1\obj\Debug\net5.0\TestProject1.genruntimeconfig.cache
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TestProject1\bin\Debug\net5.0\CoverletSourceRootsMapping
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TestProject1\bin\Debug\net5.0\TP3ClassLibrary.dll
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TestProject1\bin\Debug\net5.0\TP3ClassLibrary.pdb

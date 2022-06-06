@@ -4,7 +4,7 @@
     <Dni>95768458</Dni>
     <Nombre>Eduardo</Nombre>
     <FechaNacimiento>1990-06-22T00:00:00</FechaNacimiento>
-    <Activo>false</Activo>
+    <Activo>true</Activo>
     <FechaContratacion>2022-06-04T23:59:29.5022113-03:00</FechaContratacion>
   </Persona>
   <Persona xsi:type="Cliente">
@@ -46,7 +46,7 @@
     <Dni>458756</Dni>
     <Nombre>Lucas Ducan</Nombre>
     <FechaNacimiento>1986-06-04T00:00:00</FechaNacimiento>
-    <Activo>true</Activo>
+    <Activo>false</Activo>
     <Tipo>particular</Tipo>
   </Persona>
 </ArrayOfPersona>

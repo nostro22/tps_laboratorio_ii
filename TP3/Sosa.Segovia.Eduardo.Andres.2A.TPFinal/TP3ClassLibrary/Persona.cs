@@ -5,10 +5,15 @@ using System.Xml.Serialization;
 
 namespace TP3ClassLibrary
 {
-
+    /// <summary>
+    /// Clase abstracta. No era lo mas optimo crear un cliente y un afiliado pero queria probar el manejo de listas genericas y modificacion entre clases distintas.
+    /// Al tener herencia en la app solo se permite la suba de base de datos Personas .xml
+    /// </summary>
 
     [XmlInclude(typeof(Afiliado))]
     [XmlInclude(typeof(Cliente))]
+
+
     public abstract class  Persona
     {
       
@@ -109,6 +114,12 @@ namespace TP3ClassLibrary
             return listaFiltrada;
         }
 
+
+        /// <summary>
+        /// Verificacion que el nombre no contenga numeros ni sea nulo
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <returns></returns>
         public static bool NombreIsValid(string nombre)
         {
             bool retorno = true;
@@ -126,6 +137,11 @@ namespace TP3ClassLibrary
             return retorno;
         }
 
+        /// <summary>
+        /// Verificacion que el DNI tenga 6-9 digitos, solo numeros y que no se usen ceros a la izquierda
+        /// </summary>
+        /// <param name="dni"></param>
+        /// <returns></returns>
         public static bool DniIsValid(string dni)
         {
             bool retorno = false;
@@ -133,7 +149,7 @@ namespace TP3ClassLibrary
             {
                 retorno = true;
                 dni =dni.TrimStart(new Char[] {'0'});
-                if (dni.Length >=9 || dni.Length<6)
+                if (dni.Length >9 || dni.Length<6)
                 {
                     retorno = false;
                    
@@ -155,6 +171,11 @@ namespace TP3ClassLibrary
             return retorno;
         }
 
+        /// <summary>
+        /// Verifica la mayoria de edad del usuario
+        /// </summary>
+        /// <param name="fechaDeNacimiento"></param>
+        /// <returns></returns>
         public static bool EsMayorEdad(DateTime fechaDeNacimiento)
         {
             DateTime today = DateTime.Today;
@@ -176,6 +197,12 @@ namespace TP3ClassLibrary
             return retorno;
         }
 
+        /// <summary>
+        /// Usando el dni recorre la lista y verifica si esta en ella
+        /// </summary>
+        /// <param name="dni"></param>
+        /// <param name="lista"></param>
+        /// <returns></returns>
         public static bool EstaEnLista(string dni, List<Persona> lista)
         {
             dni = dni.TrimStart(new Char[] { '0' });
@@ -195,7 +222,11 @@ namespace TP3ClassLibrary
         }
 
         
-
+        /// <summary>
+        /// Funcion que retorna un string con el dni y nombre del usuario para servirle de guia en la interface al selecionar cliente a facturar
+        /// </summary>
+        /// <param name="lista"></param>
+        /// <returns></returns>
         public static List<string> GetNamesDni(List<Persona> lista)
         {
             List<string> listaActivos = new List<string>();
@@ -208,6 +239,13 @@ namespace TP3ClassLibrary
             return listaActivos;
         }
 
+        /// <summary>
+        /// Retorna a la persona usando el dni obtenido del resumen de ayuda de la funcion GetNamesDni
+        /// tambien devolvera a la persona si se ingresa un dni
+        /// </summary>
+        /// <param name="lista"></param>
+        /// <param name="resumenPersona"></param>
+        /// <returns></returns>
         public static Persona GetPersonaWtihResumen(List<Persona> lista, string resumenPersona)
         {
             resumenPersona = resumenPersona.Trim(' ');

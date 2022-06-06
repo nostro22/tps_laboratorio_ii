@@ -1,14 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace TP3ClassLibrary
 {
+
+    /// <summary>
+    /// Es un clase que hereda de persona igual que Cliente, Queria probar modificacion con herencia y manejo de ambas en una sola listas genericas persona y como  solucionar modificacion si habian cambios de Clase
+    /// </summary>
+
     public class Afiliado : Persona
     {
-        //private eTipoAfiliado tipoAfiliado;
+     
         private DateTime fechaContratacion;
         
         public Afiliado() : base()
@@ -20,7 +22,9 @@ namespace TP3ClassLibrary
         {
             this.FechaContratacion = fechaContratacion;
         }
-
+        /// <summary>
+        /// El tipo de afiliado se determina de forma automatica con la antiguedad dato no alterable que es setea al dar el alta, Esto da beneficios de descuentos en base a su valor
+        /// </summary>
         public eTipoAfiliado TipoAfiliado
         {
             get
@@ -68,6 +72,10 @@ namespace TP3ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Devuelve la antiguedad tomando como cuenta el momento donde se dio el alta
+        /// </summary>
+        /// <returns></returns>
         private int CalcularAntiguedad()
         {
             DateTime today = DateTime.Today;

@@ -319,4 +319,34 @@
     </ListaProductos>
     <Total>80.64</Total>
   </Factura>
+  <Factura>
+    <TipoPago>credito</TipoPago>
+    <NumeroFactura>11</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>44.8</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>3</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>147.84</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>12</NumeroFactura>
+    <CompradorId>9578546</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>43.83</Price>
+        <IdProducto>5</IdProducto>
+        <Nombre>Centrocercus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>433.917</Total>
+  </Factura>
 </ArrayOfFactura>

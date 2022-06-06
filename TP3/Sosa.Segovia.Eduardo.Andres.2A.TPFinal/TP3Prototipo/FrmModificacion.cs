@@ -1,17 +1,15 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualBasic.CompilerServices;
 using TP3ClassLibrary;
 
 namespace TP3Prototipo
 {
+    /// <summary>
+    /// Se encarga de la modificacion de usuarios. Si hay cambio de clases se realiza una baja y resubida con la nueva clase
+    /// </summary>
     public partial class FrmModificacion : Form
     {
         private Persona personaAModificar;
@@ -26,6 +24,15 @@ namespace TP3Prototipo
            
         }
 
+        private void FrmModificacion_Load(object sender, EventArgs e)
+        {
+            LoadCliente();
+        }
+
+        /// <summary>
+        /// Detecta si al modificar hubo cambios en los datos
+        /// </summary>
+        /// <returns></returns>
         private bool HuboCambios()
         {
             if (dtgvCliente.Rows[0].Cells[1].Value != TxtNombre || (DateTime)dtgvCliente.Rows[0].Cells[2].Value != dateTimeNacimiento.Value || tipoPersonaModificar != (eTipo)cmbTipo.SelectedItem || (bool)cmbEstado.SelectedItem != personaAModificar.Activo)
@@ -39,7 +46,10 @@ namespace TP3Prototipo
         }
 
         
-
+        /// <summary>
+        /// Trae la data a modificar y la imprime por pantalla en un grid no editable y en paralelo se muestran  las opciones que se pueden modificar
+        /// </summary>
+        /// <param name="persona"></param>
         private void InitDataCliente(Persona persona)
         {
             lblDni.Text = "DNI: " + persona.Dni.ToString();
@@ -66,11 +76,13 @@ namespace TP3Prototipo
                 cmbTipo.SelectedIndex =(int)tipoPersonaModificar;
             }
         }
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
+
+        /// <summary>
+        /// Si hubo cambio y dependiendo del modo del from sea modificacion o baja se realiza la accion luego de verificar condiciones
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (HuboCambios() && VerificarMayoriaEdad() && VerificadorNombre())
@@ -104,7 +116,10 @@ namespace TP3Prototipo
         }
 
          
-
+        /// <summary>
+        /// Determina si es mayor de edad y no permite avanzar con la modificacion
+        /// </summary>
+        /// <returns></returns>
         private bool VerificarMayoriaEdad()
         {
             if (!Persona.EsMayorEdad(dateTimeNacimiento.Value))
@@ -120,7 +135,10 @@ namespace TP3Prototipo
         }
 
 
-
+        /// <summary>
+        /// Verifica el nombre y no permite avanzar con la modificacion en caso contrario
+        /// </summary>
+        /// <returns></returns>
         private bool VerificadorNombre()
         {
 
@@ -135,6 +153,10 @@ namespace TP3Prototipo
                 return true;
             }
         }
+
+        /// <summary>
+        /// Carga los datos viejos en los campos de modificacion para ahorrar tiempo al usuario al modificacar valores
+        /// </summary>
         private void LoadCliente()
         {
             
@@ -154,19 +176,29 @@ namespace TP3Prototipo
 
         }
 
-        private void FrmModificacion_Load(object sender, EventArgs e)
-        {
-            LoadCliente();
-        }
-
+        /// <summary>
+        /// Llama al verificado de nombre cuando escribe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtNombre_TextChanged(object sender, EventArgs e)
         {
             VerificadorNombre();
         }
 
+        /// <summary>
+        /// Llama al verificador de fecha cuando la cambian
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dateTimeNacimiento_ValueChanged(object sender, EventArgs e)
         {
             VerificarMayoriaEdad();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
      

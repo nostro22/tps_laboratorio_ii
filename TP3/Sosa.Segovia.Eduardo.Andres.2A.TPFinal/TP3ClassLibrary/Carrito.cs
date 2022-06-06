@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TP3ClassLibrary
 {
+
+    /// <summary>
+    /// Clase encargada del manejo temporal de objetos a facturar, La grabacion de datos en el respaldo sucede al facturar por lo que si se cierra la aplicacion no se conservara el carrito
+    /// Esto es una desicion de diseño pensada para ser un sistema de facturacion usuario por varios empleados por lo que no es conveniente mantener sesion 
+    /// </summary>
     public static class Carrito
     {
         private static List<Producto> listaCarrito;
@@ -37,6 +39,11 @@ namespace TP3ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Vacia la lista estatica de productos y devuelve estos al stock
+        /// </summary>
+        /// <param name="listaStock"></param>
+        /// <returns></returns>
         public static bool VaciaCarrito(List<Producto> listaStock)
         {
 
@@ -56,7 +63,6 @@ namespace TP3ClassLibrary
 
               
             }
-
 
             listaCarrito.Clear();
            

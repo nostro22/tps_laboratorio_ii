@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP3ClassLibrary;
 
 namespace TP3Prototipo
 {
+    /// <summary>
+    /// Se encarga de pedir DNI si es para modificar o eliminar muestra una ayuda listando a todos los clientes en el sistema
+    /// </summary>
     public partial class FrmSolicitudDni : Form
     {
         private List<Persona> Listpersonas;
@@ -42,7 +39,10 @@ namespace TP3Prototipo
                     break;             
             }
         }
-
+        /// <summary>
+        /// Imprime ayuda con datos resumidos del cliente y lo coloca en la grilla
+        /// </summary>
+        /// <param name="persona"></param>
         private void ImprimirUnaPersonaGuia(Persona persona)
         {            
             int n = dtgvCliente.Rows.Add();
@@ -51,6 +51,9 @@ namespace TP3Prototipo
             dtgvCliente.Rows[n].Cells[2].Value = persona.Activo;
         }
 
+        /// <summary>
+        /// Recorre la lista e imprime a todos los cliente de la lista
+        /// </summary>
         private void ImprimirGuia()
         {
 
@@ -65,6 +68,12 @@ namespace TP3Prototipo
 
         }
 
+        /// <summary>
+        /// Si el dni no esta en la lista te avisa que para modificar debe esta y si es para dar de baja adicionalemente verifica que este activo
+        /// </summary>
+        /// <param name="mensajeError1"></param>
+        /// <param name="mensajeError2"></param>
+        /// <returns></returns>
         private bool VerificarDniErrorProvider(string mensajeError1, string mensajeError2)
         {
             bool isValid = true;
@@ -88,11 +97,21 @@ namespace TP3Prototipo
                 return isValid;
         }
 
+        /// <summary>
+        /// llama al error provider del campo dni
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtDniModificar_TextChanged(object sender, EventArgs e)
         {
             VerificarDniErrorProvider("Solo se permiten numeros en el DNI y debe tener 6-9 digitos maximo", "No se encuentra registrado este DNI en la lista de clientes");
         }
 
+        /// <summary>
+        /// Procede a invocar al frm modificar o dar de baja segun corresponda
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (VerificarDniErrorProvider("Solo se permiten numeros en el DNI y debe tener 6-9 digitos maximo", "No se encuentra registrado este DNI en la lista de clientes") )

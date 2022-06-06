@@ -1660,6 +1660,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "TP3ClassLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/TP3ClassLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TP3ClassLibrary.dll": {}
+        }
       }
     }
   },
@@ -6103,6 +6113,11 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "TP3ClassLibrary/1.0.0": {
+      "type": "project",
+      "path": "../TP3ClassLibrary/TP3ClassLibrary.csproj",
+      "msbuildProject": "../TP3ClassLibrary/TP3ClassLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6110,6 +6125,7 @@
       "MSTest.TestAdapter >= 2.2.3",
       "MSTest.TestFramework >= 2.2.3",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
+      "TP3ClassLibrary >= 1.0.0",
       "coverlet.collector >= 3.0.2"
     ]
   },
@@ -6120,9 +6136,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\utn\\semestre 2\\programacion 2\\tps_laboratorio_ii\\TP3\\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\\TestProject1\\TestProject1.csproj",
-      "projectName": "TestProject1",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\utn\\semestre 2\\programacion 2\\tps_laboratorio_ii\\TP3\\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\\TestProject1\\TestProject1.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\utn\\semestre 2\\programacion 2\\tps_laboratorio_ii\\TP3\\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\\TestProject1\\TestTP3.csproj",
+      "projectName": "TestTP3",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\utn\\semestre 2\\programacion 2\\tps_laboratorio_ii\\TP3\\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\\TestProject1\\TestTP3.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Usuario\\Desktop\\utn\\semestre 2\\programacion 2\\tps_laboratorio_ii\\TP3\\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\\TestProject1\\obj\\",
       "projectStyle": "PackageReference",
@@ -6144,7 +6160,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Usuario\\Desktop\\utn\\semestre 2\\programacion 2\\tps_laboratorio_ii\\TP3\\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\\TP3ClassLibrary\\TP3ClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\utn\\semestre 2\\programacion 2\\tps_laboratorio_ii\\TP3\\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\\TP3ClassLibrary\\TP3ClassLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

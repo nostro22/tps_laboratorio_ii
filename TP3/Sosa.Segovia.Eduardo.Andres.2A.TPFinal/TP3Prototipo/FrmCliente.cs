@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP3ClassLibrary;
 
 namespace TP3Prototipo
 {
+    /// <summary>
+    /// Usada para el alta de clientes
+    /// Se cuenta con un alto grado de verificacion y guia de error provider para facilitar el uso
+    /// </summary>
     public partial class FrmClienteAlta : Form
     {
 
@@ -20,15 +18,19 @@ namespace TP3Prototipo
         {
             InitializeComponent();
             this.listaClientes = listaClientes;
-            cmbTipo.DataSource = Enum.GetNames(typeof(eTipo));
             
         }      
         
         private void FrmCliente_Load(object sender, EventArgs e)
         {
+            cmbTipo.DataSource = Enum.GetNames(typeof(eTipo));
 
         }
 
+        /// <summary>
+        /// Verificacion de ingreso con error provider, no me dio tiempo de implementar esta funcionabilidad en detalle en las otras forms
+        /// </summary>
+        /// <returns></returns>
         protected bool VerificadorDNI()
         {
             bool isValid = true;
@@ -51,6 +53,7 @@ namespace TP3Prototipo
             }
             return isValid;
         }
+
 
         private bool VerificarMayoriaEdad()
         {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject1", "TestProject1\TestProject1.csproj", "{50654971-40FD-4CD4-859B-1218F3E5D0A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTP3", "TestProject1\TestTP3.csproj", "{50654971-40FD-4CD4-859B-1218F3E5D0A2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP3Prototipo", "TP3Prototipo\TP3Prototipo.csproj", "{A7A6E8B7-3BF6-479D-A098-312F8DBE7380}"
 EndProject

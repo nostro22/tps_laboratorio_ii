@@ -97,7 +97,7 @@ namespace TP3Prototipo
             this.btneFECTIVO.TabIndex = 6;
             this.btneFECTIVO.Text = "EFECTIVO";
             this.btneFECTIVO.UseVisualStyleBackColor = true;
-            this.btneFECTIVO.Click += new System.EventHandler(this.btneFECTIVO_Click);
+            this.btneFECTIVO.Click += new System.EventHandler(this.btnEfectivo);
             // 
             // label1
             // 

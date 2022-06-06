@@ -1,29 +1,23 @@
-﻿using System;
+﻿using IO;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP3ClassLibrary;
-using IO;
 
 
 
 
 namespace TP3Prototipo
 {
+    /// <summary>
+    /// Esta es la FrmPrincipal funciona, aqui se realiza la logica del manejo de archivos y serializacion y sirve como hud principal
+    /// </summary>
     public partial class EstoNoEsCompraGamer : Form
     {
-
-        private List<Producto> listaCarrito;
-
-        #region Archivos
-
+        //Archivos
         private string ultimoArchivo;
         private OpenFileDialog openFileDialog;
         private SaveFileDialog saveFileDialog;
@@ -32,14 +26,55 @@ namespace TP3Prototipo
         private PuntoXml<List<Persona>> puntoXmlPersonas;
         private PuntoXml<List<Factura>> puntoXmlFacturas;        
         private FrmClienteAlta AltaCliente;
+        
+        //Listas
+        private List<Producto> listaCarrito;
+        private List<Persona> listaPersonas;
+        private List<Producto> listaProductos;
+        private List<Factura> listaFacturas;
+        
+        //Ayudas para navegacion y muestra de productos
+        private List<Label> listaLabelsPrecio;
+        private List<Label> listaLabelsRareza;
+        private List<Label> listaLabelsCantidad;
+        private List<GroupBox> listaGroupBoxProductos;
 
-        //Databases       
+        /// <summary>
+        /// Rutas a la base de datos default, es como una especie de salvavida que se va actualizando sola, si le da a guardar como puede actualizar su archivo original de trabajo
+        /// pero normalmente se trabajara en default si no se sube ninguna base, no hay verificacion al subir bases de datos propias en los atributos asi que pueden mostrar inconsistencias 
+        /// </summary>
         private string defaultDataProductos = $"{AppDomain.CurrentDomain.BaseDirectory}//DefaultProductosData.json";
         private string actualDataProductos = $"{AppDomain.CurrentDomain.BaseDirectory}//DefaultProductosData.json";
         private string actualDataPersonas = $"{AppDomain.CurrentDomain.BaseDirectory}//DefaultPersonasData.xml";
         private string defaultDataPersonas = $"{AppDomain.CurrentDomain.BaseDirectory}//DefaultPersonasData.xml";
         private string defaultDataFacturas = $"{AppDomain.CurrentDomain.BaseDirectory}//DefaultFacturasData.xml";
-       
+        public EstoNoEsCompraGamer()
+        {
+            InitializeComponent();               
+        }
+
+        private void EstoNoEsCompraGamer_Load(object sender, EventArgs e)
+        {
+            listaPersonas = new List<Persona>();
+            listaProductos = new List<Producto>();
+            listaFacturas = new List<Factura>();
+            listaCarrito = Carrito.ListaCarrito;
+            LabelsProductosSetUp();
+            FeedBackCar();
+            ArchiveSetUp();
+            LoadFacturas();
+            initDatabases();
+            ActualizarCtbSeller();
+            ActualizarListadoProductos();
+        }
+
+
+        #region Archivos
+
+
+        /// <summary>
+        /// Seteo inicial de la base de datos por default y carga de personas y productos
+        /// </summary>
         private void initDatabases()
         {
            openFileDialog.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -74,11 +109,17 @@ namespace TP3Prototipo
             }
         }
 
+        /// <summary>
+        /// Guarda los cambios luego de facturar en el archivo de facturas que solo puede ser el default como para simular el control de la sede
+        /// </summary>
         private void SaveFacturas()
         {
             puntoXmlFacturas.GuardarComo(defaultDataFacturas, listaFacturas);
         }
 
+        /// <summary>
+        /// Usado para que al momento de cargar una base de datos se use ese archivo al momento del guardado automatico
+        /// </summary>
         private string UltimoArchivo
         {
             get
@@ -94,7 +135,9 @@ namespace TP3Prototipo
             }
         }
 
-     
+     /// <summary>
+     /// Inicializacion del sistema de serializacion de archivos
+     /// </summary>
         public void ArchiveSetUp()
         {
             puntoJsonProductos = new puntoJson<List<Producto>>();
@@ -109,7 +152,9 @@ namespace TP3Prototipo
         }
 
       
-
+        /// <summary>
+        /// Guardado sin verificacion de preExistencia del archivo para Personas
+        /// </summary>
          private void GuardarComoPersona()
         {
            
@@ -141,6 +186,9 @@ namespace TP3Prototipo
             }
         }
 
+        /// <summary>
+        /// Guardado sin verificacion de preExistencia del archivo para Producto
+        /// </summary>
         private void GuardarComoProducto()
         {
             saveFileDialog.Filter = "Archivo XML|*.xml|Archivo JSON|*.json";
@@ -180,6 +228,9 @@ namespace TP3Prototipo
            
         }
 
+        /// <summary>
+        /// Actualiza el archivo de guardado Personas
+        /// </summary>
         private void GuardarDatosActualPersonas()
         {
 
@@ -194,6 +245,9 @@ namespace TP3Prototipo
             }
         }
 
+        /// <summary>
+        /// Actualiza el archivo de guardado Productos
+        /// </summary>
         private void GuardarDatosActualProductos()
         {
             try
@@ -218,6 +272,9 @@ namespace TP3Prototipo
 
         #region LoadDataFunctions
 
+        /// <summary>
+        /// Cargado de productos desde un archivo custom. Como no posee herencia puede ser de tipo .xml o .json
+        /// </summary>
         private void LoadProductos()
         {
                 openFileDialog.Filter = "Archivo XML|*.xml|Archivo JSON|*.json";
@@ -250,6 +307,9 @@ namespace TP3Prototipo
         }
 
 
+        /// <summary>
+        /// Cargado de Personas desde un archivo custom. Como  posee herencia puede ser de tipo .xml 
+        /// </summary>
         private void LoadPersonas()
         {
 
@@ -278,6 +338,9 @@ namespace TP3Prototipo
             }
         }
 
+        /// <summary>
+        /// Carga del archivo facturas 
+        /// </summary>
         private void LoadFacturas()
         {
             try
@@ -292,6 +355,11 @@ namespace TP3Prototipo
 
         #endregion
 
+
+        /// <summary>
+        /// Excepcion basica para notificar de errores archivos
+        /// </summary>
+        /// <param name="ex"></param>
         private void MostrarMensajeError(Exception ex)
         {
             StringBuilder sb = new StringBuilder();
@@ -302,22 +370,16 @@ namespace TP3Prototipo
         }
 
         #endregion
-        public EstoNoEsCompraGamer()
-        {
-            InitializeComponent();               
-        }
-        
-        private string resorcesPath =Path.Combine(Directory.GetCurrentDirectory(),"");
+                
 
 
         #region Productos
-        private List<Persona> listaPersonas;
-        private List<Producto> listaProductos;
-        private List<Factura> listaFacturas;
-        private List<Label> listaLabelsPrecio;
-        private List<Label> listaLabelsRareza;
-        private List<Label> listaLabelsCantidad;
-        private List<GroupBox> listaGroupBoxProductos;
+    
+        /// <summary>
+        /// Inicia el setup de un producto a uno de los 6 slots correspondiente para display del mismo
+        /// </summary>
+        /// <param name="unProducto"></param>
+        /// <param name="posicion"></param>
         private void SetOneProducto(Producto unProducto, int posicion)
         {
             if (posicion < 6 && posicion > -1 &&  unProducto!=null)
@@ -332,20 +394,37 @@ namespace TP3Prototipo
 
         }
        
+        /// <summary>
+        /// Recorre los slots disponibles de display y si hay espacios sobrantes los apaga
+        /// </summary>
         private void ActualizarListadoProductos()
         {
             int index = 0;
+            int productoValido = 0;
             foreach (Producto item in listaProductos)
             {
                 if (!(item is null))
                 {
                     SetOneProducto(item, index);
+                    listaGroupBoxProductos[index].Visible = true;
+                    productoValido++;
                 }
                 index++;
             }
+            if(productoValido<6)
+            {
+                for (int i = productoValido; i < 6; i++)
+                {
+                    listaGroupBoxProductos[i].Visible = false;
+
+                }
+            }                
+
         }
 
-        #endregion
+        /// <summary>
+        /// Seteo inicial de container para poder ser apagados si no hay productos que mostrar
+        /// </summary>
         private void LabelsProductosSetUp()
         {
             listaLabelsPrecio = new List<Label>();
@@ -379,16 +458,17 @@ namespace TP3Prototipo
             listaGroupBoxProductos.Add(grbProducto3);
             listaGroupBoxProductos.Add(grbProducto4);
             listaGroupBoxProductos.Add(grbProducto5);
-            listaGroupBoxProductos.Add(grbProducto6);         
-
-
+            listaGroupBoxProductos.Add(grbProducto6);    
         }
+        #endregion
 
 
 
 
 
-
+        /// <summary>
+        /// Selector combo box de cliente a facturar debe ser dado de alta previamente y estar activo
+        /// </summary>
         private void ActualizarCtbSeller()
         {
             Console.WriteLine(listaPersonas.ToString());
@@ -397,6 +477,9 @@ namespace TP3Prototipo
            
         }
 
+        /// <summary>
+        /// Cambia el color de los numero del carrito si esta vacio
+        /// </summary>
         private void FeedBackCar()
         {
             int cantidadCarrito = Carrito.CantidadProductoCarrito;
@@ -404,6 +487,7 @@ namespace TP3Prototipo
             if (cantidadCarrito == 0)
             {
                 lblCar.ForeColor = Color.Red;
+              
             }
             else
             {
@@ -413,23 +497,14 @@ namespace TP3Prototipo
 
 
 
-        private void EstoNoEsCompraGamer_Load(object sender, EventArgs e)
-        {
-            listaPersonas = new List<Persona>();
-            listaProductos = new List<Producto>();
-            listaFacturas = new List<Factura>();
-            listaCarrito = Carrito.ListaCarrito;
-            LabelsProductosSetUp();    
-            FeedBackCar();
-            ArchiveSetUp();
-            LoadFacturas();
-            initDatabases();
-            ActualizarCtbSeller();            
-            ActualizarListadoProductos();        
-        }
+        
       
 
-
+        /// <summary>
+        /// Vacia el carrito y devuelve el stock a los display de producto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
      
         private void btnClearCar_Click(object sender, EventArgs e)
         {
@@ -439,6 +514,11 @@ namespace TP3Prototipo
 
         }
 
+        /// <summary>
+        /// Invoca al FrmFacturacion y luego guarda los cambios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFacturacion(object sender, EventArgs e)
         {
             if (Carrito.CantidadProductoCarrito == 0)
@@ -450,42 +530,63 @@ namespace TP3Prototipo
             else
             {
 
-                FrmFacturacion facturacion = new FrmFacturacion(listaFacturas, listaPersonas, listaCarrito, listaProductos, cmbClientes.Text);                
+                FrmFacturacion facturacion = new FrmFacturacion(listaFacturas, listaPersonas, listaCarrito, cmbClientes.Text);                
                 facturacion.ShowDialog();
                 SaveFacturas();
                 GuardarDatosActualProductos();
                 ActualizarListadoProductos();
                 FeedBackCar();
-
             }
-
-            ////Facturacion
-            ///
+          
 
         }
 
+        /// <summary>
+        /// Permite descargar la base de datos actual de persona en un archivo .xlm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDownloadPersonas_Click(object sender, EventArgs e)
         {
             GuardarComoPersona();
         }
 
+        /// <summary>
+        /// Permite descargar la base de datos actual de Productos en formato .json o .xml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDownloadProductos_Click(object sender, EventArgs e)
         {
             GuardarComoProducto();
         }
 
+        /// <summary>
+        /// Llama a la carga de una base de datos externa para productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUploadProductos_Click(object sender, EventArgs e)
         {
             LoadProductos();
             ActualizarListadoProductos();
         }
 
+        /// <summary>
+        /// Llama a la carga de una base de datos externa para personas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUploadPersonas_Click(object sender, EventArgs e)
         {
             LoadPersonas();
             
         }
-
+        /// <summary>
+        /// Eventos generico de sumar o restar productos al carrito dependiendo del boton que le des sumas un producto u otro
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         #region EvetosBotonesProductos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -572,6 +673,12 @@ namespace TP3Prototipo
         }
 
         #endregion
+
+        /// <summary>
+        /// Llama a la alta del cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddCliente_Click(object sender, EventArgs e)
         {
             AltaCliente = new FrmClienteAlta( listaPersonas);
@@ -581,6 +688,11 @@ namespace TP3Prototipo
 
         }
 
+        /// <summary>
+        /// Llama a la modificacion del cliente se usa la misma frmModificacion para la baja
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificacion_Click(object sender, EventArgs e)
         {
             FrmSolicitudDni frmModificacion = new FrmSolicitudDni(listaPersonas,eAccion.MODIFICAR);
@@ -589,6 +701,12 @@ namespace TP3Prototipo
             GuardarDatosActualPersonas();
         }
 
+        /// <summary>
+        /// Llama a la baja del cliente se usa la misma frmModificacion para la modificacion
+        /// En la baja se realiza una baja logica activo = false o una baja y resubida si hay cambio de clase entre cliente y afiliado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBaja_Click(object sender, EventArgs e)
         {
             FrmSolicitudDni frmBaja = new FrmSolicitudDni(listaPersonas, eAccion.BAJA);
@@ -597,11 +715,17 @@ namespace TP3Prototipo
             GuardarDatosActualPersonas();
         }
 
+        /// <summary>
+        /// Se llama a los informes donde se podra ver en detalle las factiras e imprimirlas 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInformsSales_Click(object sender, EventArgs e)
         {
             FrmImformes frmImformes = new FrmImformes(listaFacturas,listaPersonas);
             frmImformes.ShowDialog();
         }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace TP3ClassLibrary
 {
-
+    /// <summary>
+    /// Clase de producto a vender en mi caso son NFT o productos digitales, Los productos son de producion masiva por lo que el id lo identifa al grupo en general y la cantidad representa su stock
+    /// </summary>
     public class Producto
     {
 
@@ -105,7 +104,12 @@ namespace TP3ClassLibrary
             }
         }
 
-       
+       /// <summary>
+       /// Recorre la lista y devuelve el descuento acumulativo que se recibe en formato 0.D
+       /// </summary>
+       /// <param name="productosComprados"></param>
+       /// <param name="descuento"></param>
+       /// <returns></returns>
 
         public static float CalcularTotal(List<Producto> productosComprados,float descuento)
         {
@@ -147,7 +151,14 @@ namespace TP3ClassLibrary
             return sb.ToString();
         }
 
-
+        /// <summary>
+        /// mantiene la relacion entre stock y carrito de venta para que se vea reflejada el cambio visualmente al agregar productos, 
+        /// recibe una cantidad por si en un futuro se quiere agregar la funcionabilidad de bundle o botones de venta con x cantidad de unidades
+        /// </summary>
+        /// <param name="listaEntregas"></param>
+        /// <param name="productoEnStock"></param>
+        /// <param name="cantidad"></param>
+        /// <returns></returns>
         public static bool VenderProducto(List<Producto> listaEntregas,  Producto productoEnStock, int cantidad)
         {
             if (productoEnStock.cantidad > 0  && listaEntregas is not null && productoEnStock is not null)
@@ -168,7 +179,14 @@ namespace TP3ClassLibrary
             return false;
 
         }
-
+        
+        /// <summary>
+        /// Funcion similar a la de arriba se podria funcionar paro quise conservar la logica separada por la complejidad del proyecto
+        /// </summary>
+        /// <param name="listaStock"></param>
+        /// <param name="productoADevolver"></param>
+        /// <param name="cantidad"></param>
+        /// <returns></returns>
         public static bool DevolverProducto(List<Producto> listaStock, Producto productoADevolver , int cantidad)
         {
             if (cantidad > 0 && listaStock is not null)
@@ -193,7 +211,12 @@ namespace TP3ClassLibrary
 
         }
 
-
+        /// <summary>
+        /// recoore la lista y te dice el total de productos que tienes en ella
+        /// usada principalmente para el carrito de venta
+        /// </summary>
+        /// <param name="listProductos"></param>
+        /// <returns></returns>
         public static int CantidadProductoEnLista(List<Producto> listProductos)
         {
             int cantidadProductos = 0;
@@ -221,6 +244,13 @@ namespace TP3ClassLibrary
 
         }
 
+        /// <summary>
+        /// Suma una lista y un producto 
+        /// use una shallow copie para no alterar a mi producto original y agregar una copia de este a la lista
+        /// </summary>
+        /// <param name="l"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
         public static List<Producto> operator +(List<Producto> l, Producto p)
         {
             

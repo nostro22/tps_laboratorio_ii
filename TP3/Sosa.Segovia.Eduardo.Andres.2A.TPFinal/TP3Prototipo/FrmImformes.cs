@@ -1,18 +1,15 @@
-﻿using System;
+﻿using IO;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using IO;
 using TP3ClassLibrary;
 
 namespace TP3Prototipo
 {
+    /// <summary>
+    /// Te permite Visualizar un resumen de las facturas e ingresando su numero poder leerlas en detalle o descargarlas en un archi de texto
+    /// </summary>
     public partial class FrmImformes : Form
     {
         private List<Factura> facturas;
@@ -26,6 +23,10 @@ namespace TP3Prototipo
 
         }
 
+        /// <summary>
+        /// Manejo de datagrid para imprimir ayuda de factura en forma lineal
+        /// </summary>
+        /// <param name="factura"></param>
         private void ImprimirUnaFactura(Factura factura)
         {
             int n = dtgvFacturas.Rows.Add();
@@ -35,6 +36,9 @@ namespace TP3Prototipo
             dtgvFacturas.Rows[n].Cells[3].Value = factura.TipoPago;
         }
 
+        /// <summary>
+        /// Se recorre la lista de fasturas y se imprime la ayuda completa en la grilla
+        /// </summary>
         private void MostrarAyudaFacturas()
         {
             foreach (Factura item in facturas)
@@ -42,13 +46,18 @@ namespace TP3Prototipo
                 ImprimirUnaFactura(item);
             }
         }
-
+        
+     
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        
+        /// <summary>
+        /// Te muestra en un message box la factura particular que deseaste abrir
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDetalles_Click(object sender, EventArgs e)
         {
             if (Factura.FacturaNEstaEnLista(facturas,txtNumeroFactura.Text))
@@ -61,7 +70,11 @@ namespace TP3Prototipo
         }
 
        
-
+        /// <summary>
+        /// Genera un archivo de texto con la factura ingresada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDescargarFactura_Click(object sender, EventArgs e)
         {
             if (Factura.FacturaNEstaEnLista(facturas, txtNumeroFactura.Text))

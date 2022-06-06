@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
 namespace TP3Prototipo
 {
+    /// <summary>
+    /// Una especie de popup que hice no me gusto mucho asi que solo la aplique cuando el carrito esta vacio y se le da a vaciar carrito
+    /// </summary>
     public partial class FrmNotificacion : Form
     {
         public FrmNotificacion(string mensaje, int segundos)

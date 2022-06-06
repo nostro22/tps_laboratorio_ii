@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace TP3ClassLibrary
 {
+
+    /// <summary>
+    /// Clase con interface generica que determina cargas impositivas, esta clase se encargada de relacionar personas y productos
+    /// </summary>
     public class Factura : ICargaImpositiva<Persona>
     {
 
@@ -117,7 +118,11 @@ namespace TP3ClassLibrary
         }
 
      
-
+        /// <summary>
+        /// Metodo que calcula los descuentos y bonificaciones que le corresponde al cliente deacuerdo al tipo de pago, antiguedad como afiliado 
+        /// </summary>
+        /// <param name="comprador"></param>
+        /// <returns></returns>
         public float CalcularBonificaciones(Persona comprador)
         {
 
@@ -152,6 +157,12 @@ namespace TP3ClassLibrary
             return bonificacionCargos;
         }
 
+
+        /// <summary>
+        /// Metodo que calcula los impuesto del cliente no afiliado dependiendo de su tipo 
+        /// </summary>
+        /// <param name="comprador"></param>
+        /// <returns></returns>
         public float CalcularImpuesto(Persona comprador)
         {
             float impuesto = 0;
@@ -174,6 +185,13 @@ namespace TP3ClassLibrary
             return impuesto;
         }
 
+
+        /// <summary>
+        /// Sobrecarga que Permite adicionar de forma mas comoda productos a la factura 
+        /// </summary>
+        /// <param name="factura"></param>
+        /// <param name="UnProducto"></param>
+        /// <returns></returns>
         public static Factura operator +(Factura factura, Producto UnProducto)
         {
             
@@ -182,6 +200,13 @@ namespace TP3ClassLibrary
            
         }
 
+        /// <summary>
+        /// Metodo para determinar como adicioar el producto a la factura, si el producto ya existia se le cambia el atributo cantidad y si no existia se adiciona
+        /// Tambien existe una verificacion de que la cantidad del producto que deseas agregar no sea mayor a la cantidad que ese producto posee en su atributo
+        /// </summary>
+        /// <param name="unProducto"></param>
+        /// <param name="cantidadQueDeseaAgregar"></param>
+        /// <returns></returns>
         public bool AddProducto(Producto unProducto, int cantidadQueDeseaAgregar)
         {
             bool agregadoConExito = false;
@@ -237,6 +262,11 @@ namespace TP3ClassLibrary
 
         }
 
+        /// <summary>
+        /// Metodo usado para determinar el siguiente id o numero de factura a emiter, se asume que se tiene acceso a la lista de las ultimas facturas emitidas en todo momento
+        /// </summary>
+        /// <param name="facturas"></param>
+        /// <returns>int id factura siguiente</returns>
         public static int GetFacturaActualNumber(List<Factura> facturas)
         {
             int numeroFacturaActual = 0;
@@ -251,6 +281,12 @@ namespace TP3ClassLibrary
             return numeroFacturaActual;
         }
 
+        /// <summary>
+        /// Verifica si el string corresponde a el id o numero de factura y este esta en la lista
+        /// </summary>
+        /// <param name="facturas"></param>
+        /// <param name="numeroFactura"></param>
+        /// <returns> true si esta , flase si no esta</returns>
         public static bool FacturaNEstaEnLista(List<Factura> facturas, string numeroFactura)
         {
 

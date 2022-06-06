@@ -84,7 +84,7 @@ namespace TP3Prototipo
             this.btnQuitar4 = new System.Windows.Forms.Button();
             this.btnAgregar4 = new System.Windows.Forms.Button();
             this.ptBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptcCarrito = new System.Windows.Forms.PictureBox();
             this.grbCart = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnClearCar = new System.Windows.Forms.Button();
@@ -104,7 +104,7 @@ namespace TP3Prototipo
             ((System.ComponentModel.ISupportInitialize)(this.ptBox5)).BeginInit();
             this.grbProducto4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcCarrito)).BeginInit();
             this.grbCart.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -834,20 +834,20 @@ namespace TP3Prototipo
             this.ptBox4.TabIndex = 0;
             this.ptBox4.TabStop = false;
             // 
-            // pictureBox1
+            // ptcCarrito
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(26, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.ptcCarrito.BackColor = System.Drawing.Color.Transparent;
+            this.ptcCarrito.Image = ((System.Drawing.Image)(resources.GetObject("ptcCarrito.Image")));
+            this.ptcCarrito.Location = new System.Drawing.Point(26, 22);
+            this.ptcCarrito.Name = "ptcCarrito";
+            this.ptcCarrito.Size = new System.Drawing.Size(61, 47);
+            this.ptcCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcCarrito.TabIndex = 3;
+            this.ptcCarrito.TabStop = false;
             // 
             // grbCart
             // 
-            this.grbCart.Controls.Add(this.pictureBox1);
+            this.grbCart.Controls.Add(this.ptcCarrito);
             this.grbCart.Controls.Add(this.lblCar);
             this.grbCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.grbCart.Location = new System.Drawing.Point(261, 6);
@@ -948,7 +948,7 @@ namespace TP3Prototipo
             this.grbProducto4.ResumeLayout(false);
             this.grbProducto4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcCarrito)).EndInit();
             this.grbCart.ResumeLayout(false);
             this.grbCart.PerformLayout();
             this.ResumeLayout(false);
@@ -993,7 +993,7 @@ namespace TP3Prototipo
         private System.Windows.Forms.Button btnModificacion;
         private System.Windows.Forms.Button btnAddCliente;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptcCarrito;
         private System.Windows.Forms.GroupBox grbCart;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnClearCar;
