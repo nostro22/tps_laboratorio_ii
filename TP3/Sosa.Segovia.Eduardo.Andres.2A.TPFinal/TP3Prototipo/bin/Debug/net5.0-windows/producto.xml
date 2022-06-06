@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfProducto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Producto>
+    <Price>44.8</Price>
+    <IdProducto>1</IdProducto>
+    <Nombre>Erinaceus Tower</Nombre>
+    <Cantidad>87</Cantidad>
+    <Rareza>epic</Rareza>
+  </Producto>
+  <Producto>
+    <Price>93.63</Price>
+    <IdProducto>2</IdProducto>
+    <Nombre>Turtur Tower</Nombre>
+    <Cantidad>72</Cantidad>
+    <Rareza>rare</Rareza>
+  </Producto>
+  <Producto>
+    <Price>31.57</Price>
+    <IdProducto>3</IdProducto>
+    <Nombre>Vulpes Tower</Nombre>
+    <Cantidad>72</Cantidad>
+    <Rareza>common</Rareza>
+  </Producto>
+  <Producto>
+    <Price>71.34</Price>
+    <IdProducto>4</IdProducto>
+    <Nombre>Canis Tower</Nombre>
+    <Cantidad>20</Cantidad>
+    <Rareza>epic</Rareza>
+  </Producto>
+  <Producto>
+    <Price>43.83</Price>
+    <IdProducto>5</IdProducto>
+    <Nombre>Centrocercus Tower</Nombre>
+    <Cantidad>98</Cantidad>
+    <Rareza>epic</Rareza>
+  </Producto>
+  <Producto>
+    <Price>65.28</Price>
+    <IdProducto>6</IdProducto>
+    <Nombre>Larus Car</Nombre>
+    <Cantidad>27</Cantidad>
+    <Rareza>common</Rareza>
+  </Producto>
+</ArrayOfProducto>

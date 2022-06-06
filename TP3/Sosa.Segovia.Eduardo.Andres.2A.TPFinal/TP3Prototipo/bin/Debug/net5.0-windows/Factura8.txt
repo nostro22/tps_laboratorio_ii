@@ -1,0 +1,20 @@
+Factura # 8
+DNI: 123456
+Nombre: ALEJANDROFecha Nacimiento: $4/6/1986 00:00:00
+Facturacion: responsable_Inscrito
+
+Lista Productos
+Id: 1
+ | Nombre: ERINACEUS TOWER | Rareza: EPIC | Cantidad: 0 | Precio: 44,8
+Id: 2
+ | Nombre: TURTUR TOWER | Rareza: RARE | Cantidad: 0 | Precio: 93,63
+Id: 5
+ | Nombre: CENTROCERCUS TOWER | Rareza: EPIC | Cantidad: 0 | Precio: 43,83
+Id: 6
+ | Nombre: LARUS CAR | Rareza: COMMON | Cantidad: 0 | Precio: 65,28
+
+
+
+Medio Pago: $ credito
+Bonificacion y cargos Extras: $ -7,1808
+Total: $ 71,808

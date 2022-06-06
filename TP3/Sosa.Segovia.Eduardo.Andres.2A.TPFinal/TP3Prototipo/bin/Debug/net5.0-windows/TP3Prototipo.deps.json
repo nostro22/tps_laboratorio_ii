@@ -1,0 +1,47 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "TP3Prototipo/1.0.0": {
+        "dependencies": {
+          "IO": "1.0.0",
+          "TP3ClassLibrary": "1.0.0"
+        },
+        "runtime": {
+          "TP3Prototipo.dll": {}
+        }
+      },
+      "IO/1.0.0": {
+        "runtime": {
+          "IO.dll": {}
+        }
+      },
+      "TP3ClassLibrary/1.0.0": {
+        "runtime": {
+          "TP3ClassLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TP3Prototipo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "IO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TP3ClassLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>TP3Prototipo</id>
+    <version>1.0.0</version>
+    <authors>TP3Prototipo</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0-windows7.0">
+        <dependency id="IO" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="TP3ClassLibrary" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net5.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3Prototipo\bin\Debug\net5.0-windows\TP3Prototipo.runtimeconfig.json" target="lib\net5.0-windows7.0\TP3Prototipo.runtimeconfig.json" />
+    <file src="C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3Prototipo\bin\Debug\net5.0-windows\TP3Prototipo.dll" target="lib\net5.0-windows7.0\TP3Prototipo.dll" />
+  </files>
+</package>

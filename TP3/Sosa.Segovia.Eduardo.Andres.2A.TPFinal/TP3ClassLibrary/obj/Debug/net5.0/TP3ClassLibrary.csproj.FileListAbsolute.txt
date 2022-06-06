@@ -1,0 +1,24 @@
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\bin\Debug\net5.0\TP3ClassLibrary.deps.json
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\bin\Debug\net5.0\TP3ClassLibrary.dll
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\bin\Debug\net5.0\ref\TP3ClassLibrary.dll
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\bin\Debug\net5.0\TP3ClassLibrary.pdb
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.AssemblyInfo.cs
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.dll
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\obj\Debug\net5.0\ref\TP3ClassLibrary.dll
+C:\Users\Usuario\source\repos\Sosa.Eduardo\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.pdb
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\bin\Debug\net5.0\TP3ClassLibrary.deps.json
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\bin\Debug\net5.0\TP3ClassLibrary.dll
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\bin\Debug\net5.0\ref\TP3ClassLibrary.dll
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\bin\Debug\net5.0\TP3ClassLibrary.pdb
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.dll
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\obj\Debug\net5.0\ref\TP3ClassLibrary.dll
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP3\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3ClassLibrary\obj\Debug\net5.0\TP3ClassLibrary.pdb
