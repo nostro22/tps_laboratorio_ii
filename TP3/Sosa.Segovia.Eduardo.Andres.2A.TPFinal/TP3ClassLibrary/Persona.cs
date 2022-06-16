@@ -138,7 +138,7 @@ namespace TP3ClassLibrary
         }
 
         /// <summary>
-        /// Verificacion que el DNI tenga 6-9 digitos, solo numeros y que no se usen ceros a la izquierda
+        /// Verificacion que el DNI sea  solo numeros y que no se usen ceros a la izquierda
         /// </summary>
         /// <param name="dni"></param>
         /// <returns></returns>
@@ -149,23 +149,16 @@ namespace TP3ClassLibrary
             {
                 retorno = true;
                 dni =dni.TrimStart(new Char[] {'0'});
-                if (dni.Length >9 || dni.Length<6)
-                {
-                    retorno = false;
-                   
-                }
-                else
-                {
-                    foreach (char unChar in dni)
-                    {
+                 foreach (char unChar in dni)
+                 {
                         if (char.IsLetter(unChar))
                         {
                             retorno =false;
                             break;
                         }
-                    }                
+                 }                
 
-                }
+                
             }
 
             return retorno;

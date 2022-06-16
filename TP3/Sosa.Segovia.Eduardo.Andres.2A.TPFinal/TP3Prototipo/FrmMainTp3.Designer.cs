@@ -88,7 +88,7 @@ namespace TP3Prototipo
             this.grbCart = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnClearCar = new System.Windows.Forms.Button();
-            this.btnBillingCar = new System.Windows.Forms.Button();
+            this.btnVentasCarrito = new System.Windows.Forms.Button();
             this.lblClientes = new System.Windows.Forms.Label();
             this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
@@ -203,7 +203,7 @@ namespace TP3Prototipo
             this.btnInformsSales.Name = "btnInformsSales";
             this.btnInformsSales.Size = new System.Drawing.Size(200, 48);
             this.btnInformsSales.TabIndex = 7;
-            this.btnInformsSales.Text = "INFORMES SALES";
+            this.btnInformsSales.Text = "INFORMES VENTAS";
             this.btnInformsSales.UseVisualStyleBackColor = true;
             this.btnInformsSales.Click += new System.EventHandler(this.btnInformsSales_Click);
             // 
@@ -872,20 +872,20 @@ namespace TP3Prototipo
             this.btnClearCar.UseVisualStyleBackColor = true;
             this.btnClearCar.Click += new System.EventHandler(this.btnClearCar_Click);
             // 
-            // btnBillingCar
+            // btnVentasCarrito
             // 
-            this.btnBillingCar.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.btnBillingCar.FlatAppearance.BorderSize = 2;
-            this.btnBillingCar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBillingCar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBillingCar.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.btnBillingCar.Location = new System.Drawing.Point(326, 96);
-            this.btnBillingCar.Name = "btnBillingCar";
-            this.btnBillingCar.Size = new System.Drawing.Size(84, 32);
-            this.btnBillingCar.TabIndex = 20;
-            this.btnBillingCar.Text = "BILLING";
-            this.btnBillingCar.UseVisualStyleBackColor = true;
-            this.btnBillingCar.Click += new System.EventHandler(this.btnFacturacion);
+            this.btnVentasCarrito.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnVentasCarrito.FlatAppearance.BorderSize = 2;
+            this.btnVentasCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentasCarrito.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVentasCarrito.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.btnVentasCarrito.Location = new System.Drawing.Point(326, 96);
+            this.btnVentasCarrito.Name = "btnVentasCarrito";
+            this.btnVentasCarrito.Size = new System.Drawing.Size(84, 32);
+            this.btnVentasCarrito.TabIndex = 20;
+            this.btnVentasCarrito.Text = "VENTAS";
+            this.btnVentasCarrito.UseVisualStyleBackColor = true;
+            this.btnVentasCarrito.Click += new System.EventHandler(this.btnFacturacion);
             // 
             // lblClientes
             // 
@@ -914,7 +914,7 @@ namespace TP3Prototipo
             this.Controls.Add(this.grbProducto);
             this.Controls.Add(this.lblClientes);
             this.Controls.Add(this.cmbClientes);
-            this.Controls.Add(this.btnBillingCar);
+            this.Controls.Add(this.btnVentasCarrito);
             this.Controls.Add(this.btnClearCar);
             this.Controls.Add(this.grbCart);
             this.Controls.Add(this.grbProducto6);
@@ -997,7 +997,7 @@ namespace TP3Prototipo
         private System.Windows.Forms.GroupBox grbCart;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnClearCar;
-        private System.Windows.Forms.Button btnBillingCar;
+        private System.Windows.Forms.Button btnVentasCarrito;
         private System.Windows.Forms.Label lblClientes;
         private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.Button btnInformsSales;

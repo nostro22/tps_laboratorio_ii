@@ -139,6 +139,7 @@ namespace TP3Prototipo
             // 
             // cmbTipo
             // 
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(129, 294);
             this.cmbTipo.Name = "cmbTipo";
@@ -167,7 +168,7 @@ namespace TP3Prototipo
             this.lblAccion.TabIndex = 14;
             this.lblAccion.Text = "ALTA";
             // 
-            // FrmCliente
+            // FrmClienteAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,7 +187,7 @@ namespace TP3Prototipo
             this.Controls.Add(this.btnCancelar);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmCliente";
+            this.Name = "FrmClienteAlta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);

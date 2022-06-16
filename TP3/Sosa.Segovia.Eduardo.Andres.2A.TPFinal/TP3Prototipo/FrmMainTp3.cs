@@ -21,7 +21,7 @@ namespace TP3Prototipo
         private string ultimoArchivo;
         private OpenFileDialog openFileDialog;
         private SaveFileDialog saveFileDialog;
-        private puntoJson<List<Producto>> puntoJsonProductos;        
+        private PuntoJson<List<Producto>> puntoJsonProductos;        
         private PuntoXml<List<Producto>> puntoXmlProductos;        
         private PuntoXml<List<Persona>> puntoXmlPersonas;
         private PuntoXml<List<Factura>> puntoXmlFacturas;        
@@ -103,9 +103,9 @@ namespace TP3Prototipo
                 listaFacturas = new(puntoXmlFacturas.Leer(defaultDataFacturas));
 
             }
-            catch (Exception ex)
+            catch (ExcepcionArchivos ex)
             {
-                MostrarMensajeError(ex);
+                MostrarMensajeError(ex, "Error en Iniciacion de Archivos");
             }
         }
 
@@ -140,7 +140,7 @@ namespace TP3Prototipo
      /// </summary>
         public void ArchiveSetUp()
         {
-            puntoJsonProductos = new puntoJson<List<Producto>>();
+            puntoJsonProductos = new PuntoJson<List<Producto>>();
             puntoXmlProductos = new PuntoXml<List<Producto>>();          
             puntoXmlPersonas = new PuntoXml<List<Persona>>();
             puntoXmlFacturas = new PuntoXml<List<Factura>>();         
@@ -178,9 +178,9 @@ namespace TP3Prototipo
                         MessageBox.Show("Los base de datos personas solo pueden ser guardados como .xml para no comprometer la integridad", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception ex)
+                catch (ExcepcionArchivos ex)
                 {
-                    MostrarMensajeError(ex);
+                    MostrarMensajeError(ex,"Error Guardado de archivos de personas");
                 }
             
             }
@@ -218,10 +218,9 @@ namespace TP3Prototipo
                     }
 
                 }
-                catch (Exception ex)
+                catch (ExcepcionArchivos ex)
                 {
-
-                    MostrarMensajeError(ex);
+                    MostrarMensajeError(ex,"Error Guardado de productos en el archivo");
                 }
             }
             
@@ -239,9 +238,9 @@ namespace TP3Prototipo
                 puntoXmlPersonas.GuardarComo(actualDataPersonas, listaPersonas);
             }
 
-            catch (Exception ex)
+            catch (ExcepcionArchivos ex)
             {
-                MostrarMensajeError(ex);
+                MostrarMensajeError(ex,"Error Guardado de seguridad datos Personas");
             }
         }
 
@@ -264,9 +263,9 @@ namespace TP3Prototipo
                         
             }
 
-            catch (Exception ex)
+            catch (ExcepcionArchivos ex)
             {
-                MostrarMensajeError(ex);
+                MostrarMensajeError(ex,"Error en guardado de seguridad de productos");
             }
         }
 
@@ -299,9 +298,9 @@ namespace TP3Prototipo
                             break;
                     }
                 }
-                catch (Exception ex)
+                catch (ExcepcionArchivos ex)
                 {
-                    MostrarMensajeError(ex);
+                    MostrarMensajeError(ex,"Error en carga de productos desde el archivo");
                 }
             }
         }
@@ -331,9 +330,9 @@ namespace TP3Prototipo
                     }
 
                 }
-                catch (Exception ex)
+                catch (ExcepcionArchivos ex)
                 {
-                    MostrarMensajeError(ex);
+                    MostrarMensajeError(ex,"Error en carga de personas desde el archivo");
                 }
             }
         }
@@ -360,13 +359,9 @@ namespace TP3Prototipo
         /// Excepcion basica para notificar de errores archivos
         /// </summary>
         /// <param name="ex"></param>
-        private void MostrarMensajeError(Exception ex)
+        private void MostrarMensajeError(ExcepcionArchivos ex , string mensaje)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Error: {ex.Message}");
-            sb.AppendLine(ex.StackTrace);
-
-            MessageBox.Show(sb.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion

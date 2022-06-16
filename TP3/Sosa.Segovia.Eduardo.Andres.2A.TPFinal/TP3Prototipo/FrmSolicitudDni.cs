@@ -12,6 +12,7 @@ namespace TP3Prototipo
     {
         private List<Persona> Listpersonas;
         private eAccion accionARealizar;
+      
 
         public FrmSolicitudDni(List<Persona> listPersonas, eAccion accion)
         {
@@ -44,11 +45,20 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="persona"></param>
         private void ImprimirUnaPersonaGuia(Persona persona)
-        {            
+        {
+            string estado = string.Empty;
             int n = dtgvCliente.Rows.Add();
             dtgvCliente.Rows[n].Cells[0].Value = persona.Dni.ToString();
             dtgvCliente.Rows[n].Cells[1].Value = persona.Nombre.ToString();
-            dtgvCliente.Rows[n].Cells[2].Value = persona.Activo;
+            if(persona.Activo)
+            {
+                estado = "Activo";
+            }
+            else
+            {
+                estado = "Inactivo";
+            }
+            dtgvCliente.Rows[n].Cells[2].Value = estado;
         }
 
         /// <summary>
@@ -56,15 +66,12 @@ namespace TP3Prototipo
         /// </summary>
         private void ImprimirGuia()
         {
-
-           
             foreach (Persona unaPersona in Listpersonas)
             {
 
                 ImprimirUnaPersonaGuia(unaPersona);
 
             }
-
 
         }
 
@@ -104,30 +111,32 @@ namespace TP3Prototipo
         /// <param name="e"></param>
         private void txtDniModificar_TextChanged(object sender, EventArgs e)
         {
-            VerificarDniErrorProvider("Solo se permiten numeros en el DNI y debe tener 6-9 digitos maximo", "No se encuentra registrado este DNI en la lista de clientes");
+            VerificarDniErrorProvider("Solo se permiten numeros en el DNI y debe ser positivo", "No se encuentra registrado este DNI en la lista de clientes");
         }
 
         /// <summary>
-        /// Procede a invocar al frm modificar o dar de baja segun corresponda
+        /// Procede a invocar al frm modificar o dar de baja segun corresponda Lo hice asi medio rebuscado para usar expresiones lamda
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (VerificarDniErrorProvider("Solo se permiten numeros en el DNI y debe tener 6-9 digitos maximo", "No se encuentra registrado este DNI en la lista de clientes") )
+            if (VerificarDniErrorProvider("Solo se permiten numeros en el DNI ", "No se encuentra registrado este DNI en la lista de clientes") )
             {
                 switch (accionARealizar)
                 {
                     case eAccion.MODIFICAR:
                         FrmModificacion frmModificacion = new FrmModificacion(Listpersonas.Find(personaEncontrada => personaEncontrada.Dni == int.Parse(txtDniModificar.Text)),Listpersonas);
                         frmModificacion.ShowDialog();
+                        ImprimirGuia();
                         break;
                     case eAccion.BAJA:
                         Persona clienteDarBaja = Listpersonas.Find(personaEncontrada => personaEncontrada.Dni == int.Parse(txtDniModificar.Text));
                         if (clienteDarBaja.Activo)
                         {
                             clienteDarBaja.Activo = false;
-                            MessageBox.Show(clienteDarBaja.ToString(), "Dado de baja con exito");                        
+                            MessageBox.Show(clienteDarBaja.ToString(), "Dado de baja con exito");
+                            ImprimirGuia();
                         }
                         else
                         {
@@ -147,6 +156,11 @@ namespace TP3Prototipo
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dtgvCliente_SelectionChanged(object sender, EventArgs e)
+        {
+            txtDniModificar.Text = dtgvCliente[0, dtgvCliente.CurrentRow.Index].Value.ToString();
         }
     }
 }

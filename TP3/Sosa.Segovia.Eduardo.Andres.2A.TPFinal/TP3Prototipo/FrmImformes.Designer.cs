@@ -31,12 +31,7 @@ namespace TP3Prototipo
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvFacturas = new System.Windows.Forms.DataGridView();
-            this.NumeroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DniCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VerFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txtNumeroFactura = new System.Windows.Forms.TextBox();
             this.btnDetalles = new System.Windows.Forms.Button();
             this.lblIngresoFactura = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,6 +42,8 @@ namespace TP3Prototipo
             // dtgvFacturas
             // 
             this.dtgvFacturas.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dtgvFacturas.AllowUserToAddRows = false;
+            this.dtgvFacturas.AllowUserToDeleteRows = false;
             this.dtgvFacturas.AllowUserToResizeColumns = false;
             this.dtgvFacturas.AllowUserToResizeRows = false;
             this.dtgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -54,11 +51,6 @@ namespace TP3Prototipo
             this.dtgvFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvFacturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dtgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NumeroFactura,
-            this.DniCliente,
-            this.Total,
-            this.VerFactura});
             this.dtgvFacturas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dtgvFacturas.Location = new System.Drawing.Point(24, 36);
             this.dtgvFacturas.MultiSelect = false;
@@ -81,30 +73,7 @@ namespace TP3Prototipo
             this.dtgvFacturas.ShowEditingIcon = false;
             this.dtgvFacturas.Size = new System.Drawing.Size(552, 487);
             this.dtgvFacturas.TabIndex = 27;
-            // 
-            // NumeroFactura
-            // 
-            this.NumeroFactura.HeaderText = "#Factura";
-            this.NumeroFactura.Name = "NumeroFactura";
-            this.NumeroFactura.ReadOnly = true;
-            // 
-            // DniCliente
-            // 
-            this.DniCliente.HeaderText = "DNI Cliente";
-            this.DniCliente.Name = "DniCliente";
-            this.DniCliente.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "TOTAL";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
-            // VerFactura
-            // 
-            this.VerFactura.HeaderText = "VER FACTURA";
-            this.VerFactura.Name = "VerFactura";
-            this.VerFactura.ReadOnly = true;
+            this.dtgvFacturas.SelectionChanged += new System.EventHandler(this.dtgvFacturas_SelectionChanged);
             // 
             // btnSalir
             // 
@@ -117,13 +86,6 @@ namespace TP3Prototipo
             this.btnSalir.Text = "VOLVER";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // txtNumeroFactura
-            // 
-            this.txtNumeroFactura.Location = new System.Drawing.Point(610, 149);
-            this.txtNumeroFactura.Name = "txtNumeroFactura";
-            this.txtNumeroFactura.Size = new System.Drawing.Size(149, 23);
-            this.txtNumeroFactura.TabIndex = 29;
             // 
             // btnDetalles
             // 
@@ -141,11 +103,11 @@ namespace TP3Prototipo
             this.lblIngresoFactura.AutoSize = true;
             this.lblIngresoFactura.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblIngresoFactura.ForeColor = System.Drawing.Color.White;
-            this.lblIngresoFactura.Location = new System.Drawing.Point(614, 125);
+            this.lblIngresoFactura.Location = new System.Drawing.Point(610, 130);
             this.lblIngresoFactura.Name = "lblIngresoFactura";
-            this.lblIngresoFactura.Size = new System.Drawing.Size(145, 21);
+            this.lblIngresoFactura.Size = new System.Drawing.Size(167, 21);
             this.lblIngresoFactura.TabIndex = 31;
-            this.lblIngresoFactura.Text = "Ingrese #  factura ";
+            this.lblIngresoFactura.Text = "Factura Selecionada ";
             // 
             // label1
             // 
@@ -178,7 +140,6 @@ namespace TP3Prototipo
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblIngresoFactura);
             this.Controls.Add(this.btnDetalles);
-            this.Controls.Add(this.txtNumeroFactura);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dtgvFacturas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -194,12 +155,7 @@ namespace TP3Prototipo
         #endregion
 
         private System.Windows.Forms.DataGridView dtgvFacturas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DniCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VerFactura;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.TextBox txtNumeroFactura;
         private System.Windows.Forms.Button btnDetalles;
         private System.Windows.Forms.Label lblIngresoFactura;
         private System.Windows.Forms.Label label1;

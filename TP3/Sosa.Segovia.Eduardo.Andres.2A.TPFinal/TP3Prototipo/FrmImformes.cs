@@ -23,17 +23,20 @@ namespace TP3Prototipo
 
         }
 
+        
+
         /// <summary>
         /// Manejo de datagrid para imprimir ayuda de factura en forma lineal
         /// </summary>
         /// <param name="factura"></param>
         private void ImprimirUnaFactura(Factura factura)
         {
-            int n = dtgvFacturas.Rows.Add();
-            dtgvFacturas.Rows[n].Cells[0].Value = factura.NumeroFactura.ToString();
-            dtgvFacturas.Rows[n].Cells[1].Value = factura.CompradorId.ToString();
-            dtgvFacturas.Rows[n].Cells[2].Value = factura.Total;
-            dtgvFacturas.Rows[n].Cells[3].Value = factura.TipoPago;
+            dtgvFacturas.DataSource = facturas;
+            dtgvFacturas.Columns[0].HeaderText = "PAGO";
+            dtgvFacturas.Columns[1].HeaderText = "# FACTURA";
+            dtgvFacturas.Columns[2].HeaderText = "DNI";
+            dtgvFacturas.Columns[3].HeaderText = "TOTAL";
+            dtgvFacturas.Columns[4].Visible = false;
         }
 
         /// <summary>
@@ -60,11 +63,13 @@ namespace TP3Prototipo
         /// <param name="e"></param>
         private void btnDetalles_Click(object sender, EventArgs e)
         {
-            if (Factura.FacturaNEstaEnLista(facturas,txtNumeroFactura.Text))
+          
+            if (dtgvFacturas.SelectedRows.Count > 0)
             {               
                 Factura facturaADetallar;
-                facturaADetallar = facturas.Find( facturaADetallar => facturaADetallar.NumeroFactura == int.Parse(txtNumeroFactura.Text));
-                MessageBox.Show(facturaADetallar.GenerarFacturaString(personas, facturaADetallar.CompradorId.ToString()));            
+                facturaADetallar = (Factura)dtgvFacturas.CurrentRow.DataBoundItem;                 
+                FrmDetalles frmDetalles = new FrmDetalles(facturaADetallar, personas);
+                frmDetalles.Show();
             }
 
         }
@@ -77,30 +82,45 @@ namespace TP3Prototipo
         /// <param name="e"></param>
         private void btnDescargarFactura_Click(object sender, EventArgs e)
         {
-            if (Factura.FacturaNEstaEnLista(facturas, txtNumeroFactura.Text))
+            if (dtgvFacturas.SelectedRows.Count > 0)
             {
                 Factura facturaADetallar;
-                facturaADetallar = facturas.Find(facturaADetallar => facturaADetallar.NumeroFactura == int.Parse(txtNumeroFactura.Text));
-                SaveFileDialog saveFactura = new SaveFileDialog();                
-                saveFactura.Filter = "Archivo texto |*.txt";
-                saveFactura.DefaultExt = ".txt";
-                PuntoTxt puntoTxt = new PuntoTxt();
-
-                if (saveFactura.ShowDialog() == DialogResult.OK)
+                facturaADetallar = (Factura)dtgvFacturas.CurrentRow.DataBoundItem;
+                if (Factura.FacturaNEstaEnLista(facturas, facturaADetallar.NumeroFactura.ToString()))
                 {
-                    string filePath = saveFactura.FileName;
-                        
-                    try
-                    {
-                        puntoTxt.GuardarComo(Path.GetFileNameWithoutExtension(filePath)+".txt", facturaADetallar.GenerarFacturaString(personas, facturaADetallar.CompradorId.ToString()));   
-                    }
-                    catch 
-                    {
+                        SaveFileDialog saveFactura = new SaveFileDialog();                
+                        saveFactura.Filter = "Archivo texto |*.txt";
+                        saveFactura.DefaultExt = ".txt";
+                        PuntoTxt puntoTxt = new PuntoTxt();
 
-                        MessageBox.Show("Error al descarga Factura");
-                    }
+                        if (saveFactura.ShowDialog() == DialogResult.OK)
+                        {
+                            string filePath = saveFactura.FileName;
+                        
+                            try
+                            {
+                                puntoTxt.GuardarComo(Path.GetFileNameWithoutExtension(filePath)+".txt", facturaADetallar.GenerarFacturaString(personas, facturaADetallar.CompradorId.ToString()));   
+                            }
+                            catch 
+                            {
+
+                                MessageBox.Show("Error al descarga Factura");
+                            }
+                        }
+
                 }
 
+            }
+        }
+
+      
+
+        private void dtgvFacturas_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgvFacturas.SelectedRows.Count > 0)
+            {
+                Factura facturaADetallar;
+                facturaADetallar = (Factura)dtgvFacturas.CurrentRow.DataBoundItem;                
             }
         }
     }

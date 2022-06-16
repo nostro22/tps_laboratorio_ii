@@ -8,7 +8,7 @@ using System.IO;
 
 namespace IO
 {
-    public class puntoJson<T> : Archivo, IArchivo<T>
+    public class PuntoJson<T> : Archivo, IArchivo<T>
         where T : class
     {
         

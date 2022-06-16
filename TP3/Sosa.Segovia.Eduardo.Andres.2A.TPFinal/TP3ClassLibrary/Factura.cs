@@ -262,6 +262,8 @@ namespace TP3ClassLibrary
 
         }
 
+
+
         /// <summary>
         /// Metodo usado para determinar el siguiente id o numero de factura a emiter, se asume que se tiene acceso a la lista de las ultimas facturas emitidas en todo momento
         /// </summary>

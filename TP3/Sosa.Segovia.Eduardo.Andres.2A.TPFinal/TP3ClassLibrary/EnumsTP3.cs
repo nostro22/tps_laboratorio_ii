@@ -1,35 +1,37 @@
-﻿public enum eTipo
+﻿namespace TP3ClassLibrary
 {
-    afiliado, particular, monotributo, responsable_Inscrito
-}
+    public enum eTipo
+    {
+        afiliado, particular, monotributo, responsable_Inscrito
+    }
 
-public enum eTipoAfiliado
-{
-    trainee, junior, senior
-}
+    public enum eTipoAfiliado
+    {
+        trainee, junior, senior
+    }
 
-public enum eTipoPago
-{
-   all, efectivo, credito, debito
-}
+    public enum eTipoPago
+    {
+        all, efectivo, credito, debito
+    }
 
-public enum eRareza
-{
-   all, common, rare, epic
-}
+    public enum eRareza
+    {
+        all, common, rare, epic
+    }
 
-public enum eSorts
-{
-none, max_price, low_price, type 
-}
+    public enum eSorts
+    {
+        none, max_price, low_price, type
+    }
 
-public enum eExtension 
-{
-    TXT , JSON , XML  
-}
+    public enum eExtension
+    {
+        TXT, JSON, XML
+    }
 
-
-public enum eAccion
-{
-MODIFICAR, BAJA
+    public enum eAccion
+    {
+        MODIFICAR, BAJA
+    }
 }

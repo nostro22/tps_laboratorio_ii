@@ -1,0 +1,22 @@
+Factura # 9
+DNI: 458756
+Nombre: LUCAS DUCANFecha Nacimiento: $4/6/1986 00:00:00
+Facturacion: particular
+
+Lista Productos
+Id: 1
+ | Nombre: ERINACEUS TOWER | Rareza: EPIC | Cantidad: 0 | Precio: 44,8
+Id: 2
+ | Nombre: TURTUR TOWER | Rareza: RARE | Cantidad: 0 | Precio: 93,63
+Id: 5
+ | Nombre: CENTROCERCUS TOWER | Rareza: EPIC | Cantidad: 0 | Precio: 43,83
+Id: 6
+ | Nombre: LARUS CAR | Rareza: COMMON | Cantidad: 0 | Precio: 65,28
+Id: 3
+ | Nombre: VULPES TOWER | Rareza: COMMON | Cantidad: 0 | Precio: 31,57
+
+
+
+Medio Pago: $ debito
+Bonificacion y cargos Extras: $ 0
+Total: $ 153,972

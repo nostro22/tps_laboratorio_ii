@@ -9,14 +9,14 @@
   </Persona>
   <Persona xsi:type="Cliente">
     <Dni>6685100</Dni>
-    <Nombre>Maria Perez</Nombre>
+    <Nombre>Maria Perez </Nombre>
     <FechaNacimiento>1980-06-02T23:18:29</FechaNacimiento>
     <Activo>false</Activo>
     <Tipo>monotributo</Tipo>
   </Persona>
   <Persona xsi:type="Cliente">
     <Dni>5125011</Dni>
-    <Nombre>Pedro Sosa</Nombre>
+    <Nombre>Pedro Sosa s</Nombre>
     <FechaNacimiento>1960-06-02T23:18:29</FechaNacimiento>
     <Activo>true</Activo>
     <Tipo>particular</Tipo>
@@ -25,14 +25,14 @@
     <Dni>95768450</Dni>
     <Nombre>Eduardo Sosa</Nombre>
     <FechaNacimiento>1990-06-22T22:13:07</FechaNacimiento>
-    <Activo>true</Activo>
+    <Activo>false</Activo>
     <Tipo>monotributo</Tipo>
   </Persona>
   <Persona xsi:type="Cliente">
     <Dni>123456</Dni>
-    <Nombre>Alejandro</Nombre>
+    <Nombre>Alejandro Alonso</Nombre>
     <FechaNacimiento>1986-06-04T00:00:00</FechaNacimiento>
-    <Activo>false</Activo>
+    <Activo>true</Activo>
     <Tipo>responsable_Inscrito</Tipo>
   </Persona>
   <Persona xsi:type="Cliente">
@@ -47,6 +47,13 @@
     <Nombre>Lucas Ducan</Nombre>
     <FechaNacimiento>1986-06-04T00:00:00</FechaNacimiento>
     <Activo>false</Activo>
+    <Tipo>particular</Tipo>
+  </Persona>
+  <Persona xsi:type="Cliente">
+    <Dni>1234568</Dni>
+    <Nombre>eduardo</Nombre>
+    <FechaNacimiento>1980-06-04T00:00:00</FechaNacimiento>
+    <Activo>true</Activo>
     <Tipo>particular</Tipo>
   </Persona>
 </ArrayOfPersona>

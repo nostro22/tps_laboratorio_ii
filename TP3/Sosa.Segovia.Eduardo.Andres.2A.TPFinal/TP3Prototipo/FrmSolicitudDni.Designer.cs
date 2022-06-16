@@ -32,7 +32,6 @@ namespace TP3Prototipo
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDniAccion = new System.Windows.Forms.Label();
-            this.txtDniModificar = new System.Windows.Forms.TextBox();
             this.lblTituloSolicitud = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -41,6 +40,7 @@ namespace TP3Prototipo
             this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDniModificar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCliente)).BeginInit();
             this.SuspendLayout();
@@ -52,19 +52,9 @@ namespace TP3Prototipo
             this.lblDniAccion.ForeColor = System.Drawing.Color.White;
             this.lblDniAccion.Location = new System.Drawing.Point(45, 117);
             this.lblDniAccion.Name = "lblDniAccion";
-            this.lblDniAccion.Size = new System.Drawing.Size(445, 30);
+            this.lblDniAccion.Size = new System.Drawing.Size(486, 30);
             this.lblDniAccion.TabIndex = 0;
-            this.lblDniAccion.Text = "Ingre el DNI del cliente que desea Modificar";
-            // 
-            // txtDniModificar
-            // 
-            this.txtDniModificar.Location = new System.Drawing.Point(164, 172);
-            this.txtDniModificar.Name = "txtDniModificar";
-            this.txtDniModificar.PlaceholderText = "DNI A MODIFICAR";
-            this.txtDniModificar.Size = new System.Drawing.Size(201, 23);
-            this.txtDniModificar.TabIndex = 1;
-            this.txtDniModificar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtDniModificar.TextChanged += new System.EventHandler(this.txtDniModificar_TextChanged);
+            this.lblDniAccion.Text = "Selecione el DNI del cliente que desea Modificar";
             // 
             // lblTituloSolicitud
             // 
@@ -95,7 +85,7 @@ namespace TP3Prototipo
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(118, 42);
             this.btnAceptar.TabIndex = 4;
-            this.btnAceptar.Text = "ACEPTAR";
+            this.btnAceptar.Text = "MODIFICAR";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -140,6 +130,7 @@ namespace TP3Prototipo
             this.dtgvCliente.ShowEditingIcon = false;
             this.dtgvCliente.Size = new System.Drawing.Size(391, 325);
             this.dtgvCliente.TabIndex = 27;
+            this.dtgvCliente.SelectionChanged += new System.EventHandler(this.dtgvCliente_SelectionChanged);
             // 
             // Dni
             // 
@@ -159,17 +150,24 @@ namespace TP3Prototipo
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
+            // txtDniModificar
+            // 
+            this.txtDniModificar.Location = new System.Drawing.Point(139, 167);
+            this.txtDniModificar.Name = "txtDniModificar";
+            this.txtDniModificar.Size = new System.Drawing.Size(226, 23);
+            this.txtDniModificar.TabIndex = 28;
+            // 
             // FrmSolicitudDni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(999, 371);
+            this.Controls.Add(this.txtDniModificar);
             this.Controls.Add(this.dtgvCliente);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblTituloSolicitud);
-            this.Controls.Add(this.txtDniModificar);
             this.Controls.Add(this.lblDniAccion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSolicitudDni";
@@ -185,7 +183,6 @@ namespace TP3Prototipo
         #endregion
 
         private System.Windows.Forms.Label lblDniAccion;
-        private System.Windows.Forms.TextBox txtDniModificar;
         private System.Windows.Forms.Label lblTituloSolicitud;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
@@ -194,5 +191,6 @@ namespace TP3Prototipo
         private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.TextBox txtDniModificar;
     }
 }
