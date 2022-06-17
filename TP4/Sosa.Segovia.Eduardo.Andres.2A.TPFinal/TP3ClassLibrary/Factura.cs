@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace TP3ClassLibrary
@@ -14,8 +15,8 @@ namespace TP3ClassLibrary
         private int numeroFactura;
         private int compradorId;
         private List<Producto> listProductos;
-        private float total;
-        private float bonificacionCargos;
+        private double total;
+        private double bonificacionCargos;
         private eTipoPago tipoPago;
 
         public eTipoPago TipoPago
@@ -94,7 +95,7 @@ namespace TP3ClassLibrary
             }
         }
 
-        public float Total
+        public double Total
         {
             get
             {
@@ -107,7 +108,7 @@ namespace TP3ClassLibrary
             }
         }
 
-        public float Descuento
+        public double Descuento
         {
             get
             {
@@ -123,7 +124,7 @@ namespace TP3ClassLibrary
         /// </summary>
         /// <param name="comprador"></param>
         /// <returns></returns>
-        public float CalcularBonificaciones(Persona comprador)
+        public double CalcularBonificaciones(Persona comprador)
         {
 
             bonificacionCargos = 0;
@@ -163,7 +164,7 @@ namespace TP3ClassLibrary
         /// </summary>
         /// <param name="comprador"></param>
         /// <returns></returns>
-        public float CalcularImpuesto(Persona comprador)
+        public double CalcularImpuesto(Persona comprador)
         {
             float impuesto = 0;
 
@@ -256,9 +257,10 @@ namespace TP3ClassLibrary
             sb.AppendLine(Producto.ImprimirListaProductos(listProductos));
             sb.AppendLine("").AppendLine("");
             sb.AppendLine($"Medio Pago: $ {this.tipoPago}");
-            sb.AppendLine($"Bonificacion y cargos Extras: $ {this.Descuento}");
-            sb.AppendLine($"Total: $ {this.total}");
+            sb.AppendLine($"Bonificacion y cargos Extras: $ {String.Format("{0:0.00}", this.Descuento)}");
+            sb.AppendLine($"Total: $ {String.Format("{0:0.00}",this.total)}");
             return sb.ToString();
+            
         }
 
 

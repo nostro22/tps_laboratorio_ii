@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfFactura xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Factura>
+    <TipoPago>credito</TipoPago>
+    <NumeroFactura>0</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>44.8</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+      <Producto>
+        <Price>93.63</Price>
+        <IdProducto>2</IdProducto>
+        <Nombre>Turtur Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>rare</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>147.84</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>credito</TipoPago>
+    <NumeroFactura>1</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>44.8</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+      <Producto>
+        <Price>93.63</Price>
+        <IdProducto>2</IdProducto>
+        <Nombre>Turtur Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>rare</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>308.97897</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>2</NumeroFactura>
+    <CompradorId>95768450</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>44.8</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+      <Producto>
+        <Price>93.63</Price>
+        <IdProducto>2</IdProducto>
+        <Nombre>Turtur Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>rare</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>373.76099938116965</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>3</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>44.8</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>362.8799993991852</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>4</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>44.8</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>403.199999332428</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>debito</TipoPago>
+    <NumeroFactura>5</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>44.8</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+      <Producto>
+        <Price>93.63</Price>
+        <IdProducto>2</IdProducto>
+        <Nombre>Turtur Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>rare</Rareza>
+      </Producto>
+      <Producto>
+        <Price>31.57</Price>
+        <IdProducto>3</IdProducto>
+        <Nombre>Vulpes Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>common</Rareza>
+      </Producto>
+      <Producto>
+        <Price>65.28</Price>
+        <IdProducto>6</IdProducto>
+        <Nombre>Larus Car</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>common</Rareza>
+      </Producto>
+      <Producto>
+        <Price>43.83</Price>
+        <IdProducto>5</IdProducto>
+        <Nombre>Centrocercus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+      <Producto>
+        <Price>71.34</Price>
+        <IdProducto>4</IdProducto>
+        <Nombre>Canis Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>120.95999979972837</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>credito</TipoPago>
+    <NumeroFactura>6</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>44.8</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+      <Producto>
+        <Price>93.63</Price>
+        <IdProducto>2</IdProducto>
+        <Nombre>Turtur Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>rare</Rareza>
+      </Producto>
+      <Producto>
+        <Price>31.57</Price>
+        <IdProducto>3</IdProducto>
+        <Nombre>Vulpes Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>common</Rareza>
+      </Producto>
+      <Producto>
+        <Price>65.28</Price>
+        <IdProducto>6</IdProducto>
+        <Nombre>Larus Car</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>common</Rareza>
+      </Producto>
+      <Producto>
+        <Price>43.83</Price>
+        <IdProducto>5</IdProducto>
+        <Nombre>Centrocercus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+      <Producto>
+        <Price>71.34</Price>
+        <IdProducto>4</IdProducto>
+        <Nombre>Canis Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>98.5600001335144</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>7</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>44.8</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+      <Producto>
+        <Price>93.63</Price>
+        <IdProducto>2</IdProducto>
+        <Nombre>Turtur Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>rare</Rareza>
+      </Producto>
+      <Producto>
+        <Price>31.57</Price>
+        <IdProducto>3</IdProducto>
+        <Nombre>Vulpes Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>common</Rareza>
+      </Producto>
+      <Producto>
+        <Price>65.28</Price>
+        <IdProducto>6</IdProducto>
+        <Nombre>Larus Car</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>common</Rareza>
+      </Producto>
+      <Producto>
+        <Price>43.83</Price>
+        <IdProducto>5</IdProducto>
+        <Nombre>Centrocercus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+      <Producto>
+        <Price>71.34</Price>
+        <IdProducto>4</IdProducto>
+        <Nombre>Canis Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>315.40499947778886</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>8</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>94</Price>
+        <IdProducto>2</IdProducto>
+        <Nombre>Turtur Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>253.79999957978725</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>9</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>45</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>80.99999986588955</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>10</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>45</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>80.99999986588955</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>11</NumeroFactura>
+    <CompradorId>95768450</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>45</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>1214.9999979883432</Total>
+  </Factura>
+</ArrayOfFactura>

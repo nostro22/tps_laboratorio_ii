@@ -1,0 +1,14 @@
+Factura # 3
+DNI: 458756
+Nombre: LUCAS DUCANFecha Nacimiento: $4/6/1986 00:00:00
+Facturacion: particular
+
+Lista Productos
+Id: 1
+ | Nombre: ERINACEUS TOWER | Rareza: EPIC | Cantidad: 0 | Precio: 44,8
+
+
+
+Medio Pago: $ credito
+Bonificacion y cargos Extras: $ 0
+Total: $ 49,28
