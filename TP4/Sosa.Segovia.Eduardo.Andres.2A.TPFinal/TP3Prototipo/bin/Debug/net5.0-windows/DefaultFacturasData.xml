@@ -351,4 +351,71 @@
     </ListaProductos>
     <Total>179.99999970197678</Total>
   </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>15</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>122</Price>
+        <IdProducto>6</IdProducto>
+        <Nombre>Rarito</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>988.1999983638525</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>debito</TipoPago>
+    <NumeroFactura>16</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>122</Price>
+        <IdProducto>6</IdProducto>
+        <Nombre>Rarito</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>109.79999981820583</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>credito</TipoPago>
+    <NumeroFactura>17</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>40</Price>
+        <IdProducto>2</IdProducto>
+        <Nombre>Turtur Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>176.00000023841858</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>debito</TipoPago>
+    <NumeroFactura>18</NumeroFactura>
+    <CompradorId>123456</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>180</Price>
+        <IdProducto>1</IdProducto>
+        <Nombre>Erinaceus Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+      <Producto>
+        <Price>40</Price>
+        <IdProducto>2</IdProducto>
+        <Nombre>Turtur Tower</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>197.99999967217445</Total>
+  </Factura>
 </ArrayOfFactura>

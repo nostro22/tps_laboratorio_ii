@@ -49,7 +49,7 @@ namespace TP3Prototipo
             this.dtgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvFacturas.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.dtgvFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvFacturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dtgvFacturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dtgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvFacturas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dtgvFacturas.Location = new System.Drawing.Point(24, 36);

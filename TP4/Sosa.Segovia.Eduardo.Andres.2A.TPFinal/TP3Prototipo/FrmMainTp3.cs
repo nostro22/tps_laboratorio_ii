@@ -8,8 +8,6 @@ using System.Windows.Forms;
 using TP3ClassLibrary;
 
 
-
-
 namespace TP3Prototipo
 {
     /// <summary>
@@ -68,7 +66,6 @@ namespace TP3Prototipo
             CargarProductosBD();
         }
 
-            
 
         #region Archivos
 
@@ -347,7 +344,6 @@ namespace TP3Prototipo
             {
                 Action d = new Action(()=>SetOneProducto(unProducto,posicion));               
                 this.Invoke(d);
-                Thread.Sleep(200);
             }
             else
             {                
@@ -390,9 +386,16 @@ namespace TP3Prototipo
            
 
         }
+        /// <summary>
+        /// Simula la carga inicial de los productos traidos desde la BD una vez completa
+        /// </summary>
         private void CargarProductosBD()
         {
-            
+            FrmApertura frmLoading = new FrmApertura();
+            frmLoading.Show();
+            Action action = new Action (()=> frmLoading.Refresh());
+            action.Invoke();
+
             int index = 0;
             int productoValido = 0;
             foreach (Producto item in listaProductos)
@@ -401,13 +404,13 @@ namespace TP3Prototipo
                 {
                     Thread hiloActualizacion = new Thread(()=>SetOneProducto(item, index));                    
                     hiloActualizacion.Start();
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                     productoValido++;
                 }
                 index++;
             }
-           
 
+            frmLoading.Close();
         }
 
         /// <summary>
