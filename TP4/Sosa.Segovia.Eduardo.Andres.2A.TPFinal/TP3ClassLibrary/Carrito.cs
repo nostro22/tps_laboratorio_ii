@@ -70,6 +70,9 @@ namespace TP3ClassLibrary
         }
     }
 
+    /// <summary>
+    /// Una excepcion sencilla para mostrar un mensaje controlado
+    /// </summary>
     public class CarritoExcepion : Exception
     {
         public CarritoExcepion(string mensaje) : base(mensaje) { }

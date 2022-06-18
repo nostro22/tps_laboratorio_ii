@@ -3,9 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP3ClassLibrary;
 
@@ -93,7 +91,7 @@ namespace TP3Prototipo
             }
             try
             {
-                 ProductoDAO.OnFalloConexionDataBase += backUpData;
+                 ProductoDAO.OnFalloConexionDataBase += BackUpData_EventHandler;
                  listaProductos = ProductoDAO.Leer();                  
             }
             catch (ExcepcionArchivos ex)
@@ -378,7 +376,7 @@ namespace TP3Prototipo
             int productoValido = 0;
             foreach (Producto item in listaProductos)
             {
-                if (!(item is null) && item.ProductoConStock())
+                if (item.ProductoConStock())
                 {
                     SetOneProducto(item, index);
                     productoValido++;
@@ -399,7 +397,7 @@ namespace TP3Prototipo
             int productoValido = 0;
             foreach (Producto item in listaProductos)
             {
-                if (!(item is null) && item.ProductoConStock())
+                if (item.ProductoConStock())
                 {
                     Thread hiloActualizacion = new Thread(()=>SetOneProducto(item, index));                    
                     hiloActualizacion.Start();
@@ -543,17 +541,7 @@ namespace TP3Prototipo
             GuardarComoProducto();
         }
 
-        /// <summary>
-        /// Llama a la carga de una base de datos externa para productos
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnUploadProductos_Click(object sender, EventArgs e)
-        {
-            ProductoDAO.ActualizarProductos(listaProductos);
-            ActualizarListadoProductos();
-        }
-
+      
         /// <summary>
         /// Llama a la carga de una base de datos externa para personas
         /// </summary>
@@ -717,26 +705,38 @@ namespace TP3Prototipo
             {
                 this.Close();
             }
-           
-            
         }
 
-        private void backUpData()
+        /// <summary>
+        /// Captura el evento cuando falla la carga de la base de datos por conexion
+        /// </summary>
+        private void BackUpData_EventHandler()
         {
-            string message = "Error conecion. \n\n ¿Desea usar el respaldo local ?";
-            string title = "Confirme";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            string message = "Error conecion. \n\n Se Desactivaran las opciones de venta pero podra usar las funciones locales";
+            string title = "MODO LOCAL";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result = MessageBox.Show(message, title, buttons);
-            if (result == DialogResult.Yes)
-            {
-               
-            }
-         
+            btnClearCar.Hide();
+            grbCart.Hide();
+            btnVentasCarrito.Hide();
+            btnModificarProductos.Hide();
+            btnDownloadProductos.Hide();
         }
 
         private void btnModificarProductos_Click(object sender, EventArgs e)
         {
-
+            if(listaProductos.Count>0)
+            {
+                Carrito.VaciaCarrito(listaProductos);
+                FrmModificarProductos frmModificarProductos = new FrmModificarProductos(listaProductos);
+                frmModificarProductos.ShowDialog();
+                listaProductos = ProductoDAO.Leer();
+                ActualizarListadoProductos();
+            }
+            else
+            {
+                MessageBox.Show("Asegurece de estar conectado al servidor", "Error Lista de productos Vacia", MessageBoxButtons.YesNo);
+            }
         }
     }
 }

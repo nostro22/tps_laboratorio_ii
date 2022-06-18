@@ -105,3 +105,4 @@ C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP4\So
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP4\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3Prototipo\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP4\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3Prototipo\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP4\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3Prototipo\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP4\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3Prototipo\obj\Debug\net5.0-windows\TP3Prototipo.FrmModificarProductos.resources

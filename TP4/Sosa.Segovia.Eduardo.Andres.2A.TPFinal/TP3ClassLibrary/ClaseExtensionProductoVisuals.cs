@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TP3ClassLibrary
 {
+    /// <summary>
+    /// Se usa para controlar con un booleano si hay o no stock y posteriormente apagar la visual
+    /// </summary>
     public static class ClaseExtensionProductoVisuals
     {
 

@@ -31,7 +31,7 @@ namespace TP3Prototipo
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EstoNoEsCompraGamer));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnUploadProductos = new System.Windows.Forms.Button();
+            this.btnModificarProductos = new System.Windows.Forms.Button();
             this.btnDownloadProductos = new System.Windows.Forms.Button();
             this.btnUploadPersonas = new System.Windows.Forms.Button();
             this.btnDownloadPersonas = new System.Windows.Forms.Button();
@@ -91,7 +91,6 @@ namespace TP3Prototipo
             this.btnVentasCarrito = new System.Windows.Forms.Button();
             this.lblClientes = new System.Windows.Forms.Label();
             this.cmbClientes = new System.Windows.Forms.ComboBox();
-            this.btnModificarProductos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.grbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptBox)).BeginInit();
@@ -113,7 +112,6 @@ namespace TP3Prototipo
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(80)))));
             this.panel1.Controls.Add(this.btnModificarProductos);
-            this.panel1.Controls.Add(this.btnUploadProductos);
             this.panel1.Controls.Add(this.btnDownloadProductos);
             this.panel1.Controls.Add(this.btnUploadPersonas);
             this.panel1.Controls.Add(this.btnDownloadPersonas);
@@ -129,21 +127,21 @@ namespace TP3Prototipo
             this.panel1.Size = new System.Drawing.Size(200, 651);
             this.panel1.TabIndex = 0;
             // 
-            // btnUploadProductos
+            // btnModificarProductos
             // 
-            this.btnUploadProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnUploadProductos.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.btnUploadProductos.FlatAppearance.BorderSize = 2;
-            this.btnUploadProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadProductos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnUploadProductos.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.btnUploadProductos.Location = new System.Drawing.Point(0, 372);
-            this.btnUploadProductos.Name = "btnUploadProductos";
-            this.btnUploadProductos.Size = new System.Drawing.Size(200, 48);
-            this.btnUploadProductos.TabIndex = 14;
-            this.btnUploadProductos.Text = "UPLOAD DATABASE PRODUCTOS";
-            this.btnUploadProductos.UseVisualStyleBackColor = true;
-            this.btnUploadProductos.Click += new System.EventHandler(this.btnUploadProductos_Click);
+            this.btnModificarProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnModificarProductos.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnModificarProductos.FlatAppearance.BorderSize = 2;
+            this.btnModificarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarProductos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnModificarProductos.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.btnModificarProductos.Location = new System.Drawing.Point(0, 258);
+            this.btnModificarProductos.Name = "btnModificarProductos";
+            this.btnModificarProductos.Size = new System.Drawing.Size(200, 48);
+            this.btnModificarProductos.TabIndex = 15;
+            this.btnModificarProductos.Text = "MODIFICAR PRODUCTOS";
+            this.btnModificarProductos.UseVisualStyleBackColor = true;
+            this.btnModificarProductos.Click += new System.EventHandler(this.btnModificarProductos_Click);
             // 
             // btnDownloadProductos
             // 
@@ -913,22 +911,6 @@ namespace TP3Prototipo
             this.cmbClientes.Size = new System.Drawing.Size(200, 23);
             this.cmbClientes.TabIndex = 21;
             // 
-            // btnModificarProductos
-            // 
-            this.btnModificarProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnModificarProductos.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.btnModificarProductos.FlatAppearance.BorderSize = 2;
-            this.btnModificarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarProductos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnModificarProductos.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.btnModificarProductos.Location = new System.Drawing.Point(0, 258);
-            this.btnModificarProductos.Name = "btnModificarProductos";
-            this.btnModificarProductos.Size = new System.Drawing.Size(200, 48);
-            this.btnModificarProductos.TabIndex = 15;
-            this.btnModificarProductos.Text = "MODIFICAR PRODUCTOS";
-            this.btnModificarProductos.UseVisualStyleBackColor = true;
-            this.btnModificarProductos.Click += new System.EventHandler(this.btnModificarProductos_Click);
-            // 
             // EstoNoEsCompraGamer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1040,7 +1022,6 @@ namespace TP3Prototipo
         private System.Windows.Forms.Label lblCantidad5;
         private System.Windows.Forms.Label lblRareza4;
         private System.Windows.Forms.Label lblCantidad4;
-        private System.Windows.Forms.Button btnUploadProductos;
         private System.Windows.Forms.Button btnDownloadProductos;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnModificarProductos;

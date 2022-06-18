@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 
 namespace TP3ClassLibrary
 {
+
+    /// <summary>
+    /// Clase principal para el control de base de datos de los productos. 
+    /// Se puede modificar, la carga sencilla esta inaccesible al usuario se usa para actualizar cuando se modifique y la baja se realiza de forma logica por lo que no la usamos en el proyecto.
+    /// </summary>
     public class ProductoDAO
     {
         static string cadenaConexion;
         static SqlCommand comando;
         static SqlConnection conexion;
 
-        //Delegado Eventos
+        //Delegado Eventos Cuando falla la conexion al servidor la app entra en modo local y solo se pueden usar las funciones de archivos
         public delegate void FalloDB();       
         public static FalloDB OnFalloConexionDataBase;
 
@@ -22,7 +24,6 @@ namespace TP3ClassLibrary
         static ProductoDAO()
         {
             cadenaConexion = @"Server=localhost;Database=TP4SosaDB;Trusted_Connection=True;";
-            //cadenaConexion = "";
             comando = new SqlCommand();
             conexion = new SqlConnection(cadenaConexion);
             comando.Connection = conexion;
@@ -57,7 +58,11 @@ namespace TP3ClassLibrary
 
         }
 
-
+        /// <summary>
+        /// Usando el Id del producto determinamos si este esta en la base de datos
+        /// </summary>
+        /// <param name="producto"> Producto a determinar si esta en la base</param>
+        /// <returns>true si el producto esta en la base false si no esta</returns>
         public static bool ProductoEnBaseDato(Producto producto)
         {
             bool retorno = true;
@@ -70,6 +75,10 @@ namespace TP3ClassLibrary
             return retorno;
         }
 
+        /// <summary>
+        /// Actualizado inteligente de la base de datos añade al producto si no esta y reemplaza el existente si ya esta en la base de datos
+        /// </summary>
+        /// <param name="productos"></param>
         public static void ActualizarProductos(List<Producto> productos)
         {
             if (productos != null && productos.Count > 0)
@@ -88,6 +97,11 @@ namespace TP3ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Busca a un producto por id y retorna este como objeto
+        /// </summary>
+        /// <param name="idProducto"></param>
+        /// <returns> Producto </returns>
         public static Producto LeerPorId(int idProducto)
         {
 
@@ -109,7 +123,6 @@ namespace TP3ClassLibrary
                                     Convert.ToInt32(dataReader["CANTIDAD"]),
                                     Convert.ToInt32(dataReader[("RAREZA")])
                                     );
-
                 }
 
                 dataReader.Close();
@@ -126,7 +139,10 @@ namespace TP3ClassLibrary
             return producto;
         }
 
-
+        /// <summary>
+        /// Lee la bade de datos y retorna una lista con todos los productos que hay en esta
+        /// </summary>
+        /// <returns></returns>
         public static List<Producto> Leer()
         {
             List<Producto> productos = new List<Producto>();
@@ -164,6 +180,10 @@ namespace TP3ClassLibrary
             return productos;
         }
 
+        /// <summary>
+        /// Eliminacion dura de un producto usando el id, no se uso preferi hacer una baja logica 
+        /// </summary>
+        /// <param name="idProducto"></param>
         public static void Eliminar(int idProducto)
         {
 
@@ -183,6 +203,10 @@ namespace TP3ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Modifica el producto que recibe por parametro obteniendolo por id
+        /// </summary>
+        /// <param name="producto"></param>
         public static void Modificar(Producto producto)
         {
             try

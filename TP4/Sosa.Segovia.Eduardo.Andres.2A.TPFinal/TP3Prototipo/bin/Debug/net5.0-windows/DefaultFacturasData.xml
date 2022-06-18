@@ -306,4 +306,49 @@
     </ListaProductos>
     <Total>1214.9999979883432</Total>
   </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>12</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>100</Price>
+        <IdProducto>6</IdProducto>
+        <Nombre>Rarito</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>89.99999985098839</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>13</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>100</Price>
+        <IdProducto>6</IdProducto>
+        <Nombre>Rarito</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>179.99999970197678</Total>
+  </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>14</NumeroFactura>
+    <CompradorId>5125011</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Price>100</Price>
+        <IdProducto>6</IdProducto>
+        <Nombre>Rarito</Nombre>
+        <Cantidad>0</Cantidad>
+        <Rareza>epic</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>179.99999970197678</Total>
+  </Factura>
 </ArrayOfFactura>
