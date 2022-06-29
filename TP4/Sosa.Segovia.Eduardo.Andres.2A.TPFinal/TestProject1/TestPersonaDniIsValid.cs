@@ -6,70 +6,24 @@ namespace TestTP3
     [TestClass]
     public class TestPersonaDniIsValid
     {
-        [TestMethod]
-        //Dni valido cunado solo contiene numero y un maximo de 6-9 digitos
-        public void validarDni_CuandoDniEsMenorA6_ReturnFalse()
+        [TestMethod]       
+        public void ValidarDni_CuandoDniEsMenorCero_ReturnFalse()
         {
             //Arrange
-            string dni = "12345";
+            string dni = "-12345";
             
             //Act
             bool retorno = Persona.DniIsValid(dni);
 
             //Assert
-
             Assert.IsFalse(retorno);
         }
-        
-        [TestMethod]
-       
+             
 
-        public void validarDni_CuandoDniEsMayorA9_ReturnFalse()
-        {
-            //Arrange
-            string dni = "12345678910";
-
-            //Act
-            bool retorno = Persona.DniIsValid(dni);
-
-            //Assert
-
-            Assert.IsFalse(retorno);
-        }
-
-        [TestMethod]
-        
-        public void validarDni_CuandoDniEsDigits9_ReturnTrue()
-        {
-            //Arrange
-            string dni = "123456789";
-
-            //Act
-            bool retorno = Persona.DniIsValid(dni);
-
-            //Assert
-
-            Assert.IsTrue(retorno);
-        }
 
         [TestMethod]
 
-        public void validarDni_CuandoDniEsDigits6_ReturnTrue()
-        {
-            //Arrange
-            string dni = "123456";
-
-            //Act
-            bool retorno = Persona.DniIsValid(dni);
-
-            //Assert
-
-            Assert.IsTrue(retorno);
-        }
-
-        [TestMethod]
-
-        public void validarDni_CuandoContinerLetras_ReturnFalse()
+        public void ValidarDni_CuandoContinerLetras_ReturnFalse()
         {
             //Arrange
             string dni = "12345C78A";
@@ -84,7 +38,22 @@ namespace TestTP3
 
         [TestMethod]
 
-        public void validarDni_CuandoEsSoloCeros_ReturnFalse()
+        public void ValidarDni_CuandoSonLetras_ReturnFalse()
+        {
+            //Arrange
+            string dni = "BfdA";
+
+            //Act
+            bool retorno = Persona.DniIsValid(dni);
+
+            //Assert
+
+            Assert.IsFalse(retorno);
+        }
+
+        [TestMethod]
+
+        public void ValidarDni_CuandoEsSoloCeros_ReturnFalse()
         {
             //Arrange
             string dni = "000000";
@@ -99,7 +68,7 @@ namespace TestTP3
 
         [TestMethod]
 
-        public void validarDni_CuandoEsCeroYNumeroPeroDigitMenor6_ReturnFalse()
+        public void ValidarDni_CuandoEsCeroYNumero_ReturnTrue()
         {
             //Arrange
             string dni = "000022";
@@ -109,7 +78,7 @@ namespace TestTP3
 
             //Assert
 
-            Assert.IsFalse(retorno);
+            Assert.IsTrue(retorno);
         }
     }
 

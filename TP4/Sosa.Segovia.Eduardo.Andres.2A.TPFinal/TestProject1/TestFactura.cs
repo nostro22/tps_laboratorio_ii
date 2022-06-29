@@ -33,7 +33,7 @@ namespace TestTP3
             //Arrange
             List<Factura> facturas = new List<Factura>();
             List<Producto> productos = new List<Producto>();
-            Persona personaTest = new Cliente(123456, "test", DateTime.Now,eTipo.monotributo);
+            Persona personaTest = new Cliente(123456, "test", DateTime.Now,eTipo.Monotributo);
             Factura facturaTest = new Factura(0, personaTest, productos, eTipoPago.credito);
             facturas.Add(facturaTest);
             int expected = 1;
@@ -54,7 +54,7 @@ namespace TestTP3
             //Arrange
             List<Factura> facturas = new List<Factura>();
             List<Producto> productos = new List<Producto>();
-            Persona personaTest = new Cliente(123456, "test", DateTime.Now, eTipo.monotributo);
+            Persona personaTest = new Cliente(123456, "test", DateTime.Now, eTipo.Monotributo);
             Factura facturaTest = new Factura(0, personaTest, productos, eTipoPago.credito);
             facturas.Add(facturaTest);
             

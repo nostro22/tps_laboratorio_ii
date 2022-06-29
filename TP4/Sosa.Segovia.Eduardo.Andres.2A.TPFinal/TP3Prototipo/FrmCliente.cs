@@ -36,7 +36,7 @@ namespace TP3Prototipo
             bool isValid = true;
             if (!Persona.DniIsValid(txtDNI.Text))
             {
-                errorProviderAlta.SetError(txtDNI, "Campo obligatorio. Solo se permiten numeros en el DNI de 7-9 digitos maximo");
+                errorProviderAlta.SetError(txtDNI, "Campo obligatorio. Solo se permiten numeros positivos en el DNI");
                 isValid = false;
                 
             }
@@ -90,7 +90,7 @@ namespace TP3Prototipo
         {
             if (VerificadorDNI() && VerificadorNombre() && VerificarMayoriaEdad() )
             {
-                if (cmbTipo.Text == Enum.GetName(eTipo.afiliado))
+                if (cmbTipo.Text == Enum.GetName(eTipo.Afiliado))
                 {
                     listaClientes.Add(new Afiliado(int.Parse(txtDNI.Text), TxtNombre.Text, dateTimeNacimiento.Value, DateTime.Now));
                 }

@@ -54,7 +54,7 @@ namespace TP3ClassLibrary
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.ToString());
                    
-            sb.AppendLine($"Facturacion: {eTipo.afiliado}");
+            sb.AppendLine($"Facturacion: {eTipo.Afiliado}");
             sb.AppendLine($"Aniversario: {((Afiliado)this).FechaContratacion.Date}");            
 
             return sb.ToString();

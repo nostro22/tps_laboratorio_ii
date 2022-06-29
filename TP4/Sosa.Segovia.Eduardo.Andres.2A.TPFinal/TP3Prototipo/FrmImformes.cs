@@ -64,11 +64,17 @@ namespace TP3Prototipo
         private void btnDetalles_Click(object sender, EventArgs e)
         {
           
+            //if (dtgvFacturas.SelectedRows.Count > 0)
+            //{               
+            //    Factura facturaADetallar;
+            //    facturaADetallar = (Factura)dtgvFacturas.CurrentRow.DataBoundItem;                 
+            //    FrmDetalles frmDetalles = new FrmDetalles(facturaADetallar, personas);
+            //    frmDetalles.Show();
+            //}
+
             if (dtgvFacturas.SelectedRows.Count > 0)
-            {               
-                Factura facturaADetallar;
-                facturaADetallar = (Factura)dtgvFacturas.CurrentRow.DataBoundItem;                 
-                FrmDetalles frmDetalles = new FrmDetalles(facturaADetallar, personas);
+            {
+                FrmDetalles frmDetalles = new FrmDetalles(facturas[dtgvFacturas.CurrentRow.Index], personas);
                 frmDetalles.Show();
             }
 

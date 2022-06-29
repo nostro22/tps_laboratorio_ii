@@ -2,7 +2,7 @@
 {
     public enum eTipo
     {
-        afiliado, particular, monotributo, responsable_Inscrito
+        Afiliado, Particular, Monotributo, Inscrito
     }
 
     public enum eTipoAfiliado

@@ -54,17 +54,7 @@ namespace TP3Prototipo
             txtFacturaCredito.Text = ImprimirFactura(eTipoPago.credito);
         }
 
-        /// <summary>
-        /// Actualiza la cantidad de articulos en el carrito a cero
-        /// </summary>
-        private void ActualizarCarrito()
-        {
-            foreach (Producto item in productoVentas)
-            {
-               item.Cantidad = 0; 
-            }
-            
-        }
+      
 
 
 
@@ -84,7 +74,7 @@ namespace TP3Prototipo
                 facturas.Add(factura);
                 FrmDetalles frmDetalles = new FrmDetalles(factura, personas);
                 frmDetalles.ShowDialog();
-                ActualizarCarrito();
+                DialogResult = DialogResult.OK;
             }
             catch (Exception)
             {
@@ -111,7 +101,7 @@ namespace TP3Prototipo
                 facturas.Add(factura);
                 FrmDetalles frmDetalles = new FrmDetalles(factura, personas);
                 frmDetalles.ShowDialog();
-                ActualizarCarrito();               
+                DialogResult = DialogResult.OK;
             }
             catch (Exception)
             {
@@ -137,7 +127,7 @@ namespace TP3Prototipo
                 facturas.Add(factura);
                 FrmDetalles frmDetalles = new FrmDetalles(factura, personas);
                 frmDetalles.ShowDialog();
-                ActualizarCarrito();
+                DialogResult = DialogResult.OK;
             }
             catch (Exception)
             {

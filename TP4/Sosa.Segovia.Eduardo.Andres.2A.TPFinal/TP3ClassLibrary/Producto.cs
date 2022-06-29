@@ -16,12 +16,12 @@ namespace TP3ClassLibrary
         private eRareza rareza;       
 
         public Producto() { }
-        public Producto(double price, int idProducto, string nombre, int stock, eRareza rareza)
+        public Producto(double price, int idProducto, string nombre, int cantidad, eRareza rareza)
         {
             this.precio = price;
             this.idProducto = idProducto;
             this.nombre = nombre;
-            this.cantidad = stock;
+            this.cantidad = cantidad;
             if (rareza == eRareza.all)
             {
                 this.rareza = eRareza.common;
@@ -32,12 +32,12 @@ namespace TP3ClassLibrary
             }
             
         }
-        public Producto(double price, int idProducto, string nombre, int stock, int rareza)
+        public Producto(double price, int idProducto, string nombre, int cantidad, int rareza)
         {
             this.precio = price;
             this.idProducto = idProducto;
             this.nombre = nombre;
-            this.cantidad = stock;
+            this.cantidad = cantidad;
             if (rareza == 3)
             {
                 this.rareza = eRareza.epic;

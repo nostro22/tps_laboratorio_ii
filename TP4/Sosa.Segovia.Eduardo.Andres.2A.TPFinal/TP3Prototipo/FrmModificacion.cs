@@ -72,7 +72,7 @@ namespace TP3Prototipo
             }
             else
             {
-                tipoPersonaModificar = eTipo.afiliado;
+                tipoPersonaModificar = eTipo.Afiliado;
                 cmbTipo.SelectedIndex =(int)tipoPersonaModificar;
             }
         }
@@ -171,7 +171,7 @@ namespace TP3Prototipo
             }
             else
             {
-                dtgvCliente.Rows[0].Cells[3].Value = eTipo.afiliado.ToString();
+                dtgvCliente.Rows[0].Cells[3].Value = eTipo.Afiliado.ToString();
             }
 
         }

@@ -39,7 +39,7 @@ namespace TP3ClassLibrary
         {
             this.numeroFactura = numeroFactura;
             this.compradorId = comprador.Dni;
-            this.listProductos = productos;
+            this.listProductos = new List<Producto>(productos);            
             if (tipoPago == eTipoPago.all)
             {
                 this.tipoPago = eTipoPago.efectivo;
@@ -91,7 +91,7 @@ namespace TP3ClassLibrary
 
             set
             {
-                listProductos = value;
+                listProductos = new List<Producto>(value);
             }
         }
 
@@ -173,12 +173,12 @@ namespace TP3ClassLibrary
                 switch (((Cliente)comprador).Tipo)
                 {
 
-                    case eTipo.particular:
-                    case eTipo.monotributo:
+                    case eTipo.Particular:
+                    case eTipo.Monotributo:
                         impuesto = 0.21f;
                         break;
 
-                    case eTipo.responsable_Inscrito:
+                    case eTipo.Inscrito:
                         impuesto = 0;
                         break;
                 }
@@ -252,7 +252,7 @@ namespace TP3ClassLibrary
 
             StringBuilder sb = new StringBuilder();
             Persona cliente = Persona.GetPersonaWtihResumen(listaPersonas, resumenPersonaCmb);
-            sb.AppendLine($"Factura # {this.numeroFactura}");
+            sb.AppendLine($"Factura # {this.numeroFactura}\n");
             sb.AppendLine(cliente.ToString());
             sb.AppendLine(Producto.ImprimirListaProductos(listProductos));
             sb.AppendLine("").AppendLine("");

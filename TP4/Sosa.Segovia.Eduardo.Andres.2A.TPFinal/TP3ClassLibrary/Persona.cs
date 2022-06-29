@@ -89,8 +89,8 @@ namespace TP3ClassLibrary
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"DNI: {this.dni}");
-            sb.Append("Nombre: " + this.nombre.ToUpper());
-            sb.AppendFormat($"Fecha Nacimiento: ${this.FechaNacimiento.Date}");           
+            sb.AppendLine("Nombre: " + this.nombre.ToUpper());
+            sb.AppendLine($"Fecha Nacimiento: {this.FechaNacimiento.Date.ToShortDateString()}");           
 
             return sb.ToString();
         }
@@ -145,7 +145,8 @@ namespace TP3ClassLibrary
         public static bool DniIsValid(string dni)
         {
             bool retorno = false;
-            if (!string.IsNullOrWhiteSpace(dni))
+            int dniNumerico;
+            if (!string.IsNullOrWhiteSpace(dni) && int.TryParse(dni, out dniNumerico) && dniNumerico>0)
             {
                 retorno = true;
                 dni =dni.TrimStart(new Char[] {'0'});

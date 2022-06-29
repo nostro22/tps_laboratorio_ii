@@ -61,7 +61,7 @@ namespace TP3Prototipo
             FeedBackCar();
             ArchiveSetUp();
             LoadFacturas();
-            initDatabases();
+            InitDatabases();
             ActualizarCtbSeller();
             CargarProductosBD();
         }
@@ -73,7 +73,7 @@ namespace TP3Prototipo
         /// <summary>
         /// Seteo inicial de la base de datos por default y carga de personas y productos
         /// </summary>
-        private void initDatabases()
+        private void InitDatabases()
         {
            openFileDialog.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory;          
        
@@ -513,12 +513,17 @@ namespace TP3Prototipo
             else
             {
 
-                FrmFacturacion facturacion = new FrmFacturacion(listaFacturas, listaPersonas, listaCarrito, cmbClientes.Text);                
-                facturacion.ShowDialog();
-                SaveFacturas();
-                GuardarDatosActualProductos();
-                ActualizarListadoProductos();
-                FeedBackCar();
+                FrmFacturacion facturacion = new FrmFacturacion(listaFacturas, listaPersonas, listaCarrito, cmbClientes.Text);
+                DialogResult dialogResult = facturacion.ShowDialog();
+              if(dialogResult == DialogResult.OK)
+                {
+                    SaveFacturas();
+                    GuardarDatosActualProductos();                    
+                    ActualizarListadoProductos();
+                    listaCarrito.Clear();
+                    FeedBackCar();     
+
+                }
             }
           
 

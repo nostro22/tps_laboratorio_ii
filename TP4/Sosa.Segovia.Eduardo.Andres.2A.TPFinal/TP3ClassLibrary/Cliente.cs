@@ -28,9 +28,9 @@ namespace TP3ClassLibrary
         public Cliente(int dni, string nombre, DateTime fechaNacimiento,eTipo tipo) : base(dni, nombre, fechaNacimiento)
         {
             this.tipo = tipo;
-            if (tipo == eTipo.afiliado)
+            if (tipo == eTipo.Afiliado)
             {
-                this.tipo = eTipo.particular;
+                this.tipo = eTipo.Particular;
             }
         }
 

@@ -115,11 +115,11 @@ namespace TP3Prototipo
             // txtDNI
             // 
             this.txtDNI.Location = new System.Drawing.Point(131, 89);
-            this.txtDNI.MaxLength = 12;
+            this.txtDNI.MaxLength = 18;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(248, 23);
             this.txtDNI.TabIndex = 6;
-            this.toolTipAlta.SetToolTip(this.txtDNI, "El DNI debe contener solo numeros y no ser mayor a 12 digitos");
+            this.toolTipAlta.SetToolTip(this.txtDNI, "El DNI debe contener solo numeros ");
             // 
             // dateTimeNacimiento
             // 
