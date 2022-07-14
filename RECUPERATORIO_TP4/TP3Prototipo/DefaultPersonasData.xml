@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPersona xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Persona xsi:type="Afiliado">
+    <Dni>95768458</Dni>
+    <Nombre>Eduardo</Nombre>
+    <FechaNacimiento>1990-06-22T00:00:00</FechaNacimiento>
+    <Activo>false</Activo>
+    <FechaContratacion>2022-06-04T23:59:29.5022113-03:00</FechaContratacion>
+  </Persona>
+  <Persona xsi:type="Cliente">
+    <Dni>6685100</Dni>
+    <Nombre>Maria Perez</Nombre>
+    <FechaNacimiento>1980-06-02T23:18:29</FechaNacimiento>
+    <Activo>false</Activo>
+    <Tipo>Monotributo</Tipo>
+  </Persona>
+  <Persona xsi:type="Cliente">
+    <Dni>5125011</Dni>
+    <Nombre>Pedro Sosa</Nombre>
+    <FechaNacimiento>1960-06-02T23:18:29</FechaNacimiento>
+    <Activo>true</Activo>
+    <Tipo>Particular</Tipo>
+  </Persona>
+  <Persona xsi:type="Cliente">
+    <Dni>95768450</Dni>
+    <Nombre>Eduardo Sosa</Nombre>
+    <FechaNacimiento>1990-06-22T22:13:07</FechaNacimiento>
+    <Activo>true</Activo>
+    <Tipo>Monotributo</Tipo>
+  </Persona>
+  <Persona xsi:type="Cliente">
+    <Dni>123456</Dni>
+    <Nombre>Alejandro</Nombre>
+    <FechaNacimiento>1986-06-04T00:00:00</FechaNacimiento>
+    <Activo>true</Activo>
+    <Tipo>Inscrito</Tipo>
+  </Persona>
+  <Persona xsi:type="Cliente">
+    <Dni>9578546</Dni>
+    <Nombre>Rafael Ramirez</Nombre>
+    <FechaNacimiento>1980-06-02T23:18:29</FechaNacimiento>
+    <Activo>true</Activo>
+    <Tipo>Inscrito</Tipo>
+  </Persona>
+</ArrayOfPersona>

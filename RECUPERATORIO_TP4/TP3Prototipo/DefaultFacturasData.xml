@@ -1,0 +1,46 @@
+<ArrayOfFactura xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Factura>
+		<TipoPago>credito</TipoPago>
+		<NumeroFactura>0</NumeroFactura>
+		<CompradorId>5125011</CompradorId>
+		<ListaProductos>
+			<Producto>
+				<Price>44.8</Price>
+				<IdProducto>1</IdProducto>
+				<Nombre>Erinaceus Tower</Nombre>
+				<Cantidad>0</Cantidad>
+				<Rareza>epic</Rareza>
+			</Producto>
+			<Producto>
+				<Price>93.63</Price>
+				<IdProducto>2</IdProducto>
+				<Nombre>Turtur Tower</Nombre>
+				<Cantidad>0</Cantidad>
+				<Rareza>rare</Rareza>
+			</Producto>
+		</ListaProductos>
+		<Total>147.84</Total>
+	</Factura>
+	<Factura>
+		<TipoPago>credito</TipoPago>
+		<NumeroFactura>1</NumeroFactura>
+		<CompradorId>5125011</CompradorId>
+		<ListaProductos>
+			<Producto>
+				<Price>44.8</Price>
+				<IdProducto>1</IdProducto>
+				<Nombre>Erinaceus Tower</Nombre>
+				<Cantidad>0</Cantidad>
+				<Rareza>epic</Rareza>
+			</Producto>
+			<Producto>
+				<Price>93.63</Price>
+				<IdProducto>2</IdProducto>
+				<Nombre>Turtur Tower</Nombre>
+				<Cantidad>0</Cantidad>
+				<Rareza>rare</Rareza>
+			</Producto>
+		</ListaProductos>
+		<Total>308.97897</Total>
+	</Factura>
+</ArrayOfFactura>
