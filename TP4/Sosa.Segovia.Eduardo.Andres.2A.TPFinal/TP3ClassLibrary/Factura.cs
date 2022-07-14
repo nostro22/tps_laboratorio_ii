@@ -15,8 +15,8 @@ namespace TP3ClassLibrary
         private int numeroFactura;
         private int compradorId;
         private List<Producto> listProductos;
-        private double total;
-        private double bonificacionCargos;
+        private decimal total;
+        private decimal bonificacionCargos;
         private eTipoPago tipoPago;
 
         public eTipoPago TipoPago
@@ -95,7 +95,7 @@ namespace TP3ClassLibrary
             }
         }
 
-        public double Total
+        public decimal Total
         {
             get
             {
@@ -108,7 +108,7 @@ namespace TP3ClassLibrary
             }
         }
 
-        public double Descuento
+        public decimal Descuento
         {
             get
             {
@@ -124,7 +124,7 @@ namespace TP3ClassLibrary
         /// </summary>
         /// <param name="comprador"></param>
         /// <returns></returns>
-        public double CalcularBonificaciones(Persona comprador)
+        public decimal CalcularBonificaciones(Persona comprador)
         {
 
             bonificacionCargos = 0;
@@ -134,13 +134,13 @@ namespace TP3ClassLibrary
                 switch (((Afiliado)comprador).TipoAfiliado)
                 {
                     case eTipoAfiliado.trainee:
-                        bonificacionCargos = 0.1f;
+                        bonificacionCargos = (decimal)0.1f;
                         break;
                     case eTipoAfiliado.junior:
-                        bonificacionCargos = 0.15f;
+                        bonificacionCargos = (decimal)0.15f;
                         break;
                     case eTipoAfiliado.senior:
-                        bonificacionCargos = 0.2f;
+                        bonificacionCargos = (decimal)0.2f;
                         break;
                 }
             }
@@ -148,10 +148,10 @@ namespace TP3ClassLibrary
             {
                 case eTipoPago.efectivo:
                 case eTipoPago.debito:
-                    bonificacionCargos += 0.1f;
+                    bonificacionCargos += (decimal)0.1f;
                     break;
                 case eTipoPago.credito:
-                    bonificacionCargos -= 0.1f;
+                    bonificacionCargos -= (decimal)0.1f;
                     break;
             }
 
@@ -164,9 +164,9 @@ namespace TP3ClassLibrary
         /// </summary>
         /// <param name="comprador"></param>
         /// <returns></returns>
-        public double CalcularImpuesto(Persona comprador)
+        public decimal CalcularImpuesto(Persona comprador)
         {
-            float impuesto = 0;
+            decimal impuesto = 0;
 
             if (comprador is Cliente)
             {
@@ -175,7 +175,7 @@ namespace TP3ClassLibrary
 
                     case eTipo.Particular:
                     case eTipo.Monotributo:
-                        impuesto = 0.21f;
+                        impuesto = (decimal)0.21f;
                         break;
 
                     case eTipo.Inscrito:
@@ -263,6 +263,20 @@ namespace TP3ClassLibrary
             
         }
 
+        public string GenerarFacturaStringWithDni(List<Persona> listaPersonas, Persona cliente)
+        {
+
+            StringBuilder sb = new StringBuilder();           
+            sb.AppendLine($"Factura # {this.numeroFactura}\n");
+            sb.AppendLine(cliente.ToString());
+            sb.AppendLine(Producto.ImprimirListaProductos(listProductos));
+            sb.AppendLine("").AppendLine("");
+            sb.AppendLine($"Medio Pago: $ {this.tipoPago}");
+            sb.AppendLine($"Bonificacion y cargos Extras: $ {String.Format("{0:0.00}", this.Descuento)}");
+            sb.AppendLine($"Total: $ {String.Format("{0:0.00}", this.total)}");
+            return sb.ToString();
+
+        }
 
 
         /// <summary>

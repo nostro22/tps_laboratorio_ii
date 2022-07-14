@@ -255,5 +255,14 @@ namespace TP3ClassLibrary
 
             return null;
         }
+
+
+        public string FullName
+        {
+            get
+            {
+                return $"{this.Dni} - {this.nombre}";
+            }
+        }
     }
 }

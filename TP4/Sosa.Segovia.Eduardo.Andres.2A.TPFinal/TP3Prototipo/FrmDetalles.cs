@@ -24,7 +24,7 @@ namespace TP3Prototipo
             txtFactura.Text = factura.GenerarFacturaString(personas, factura.CompradorId.ToString());
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void BtnCerrar_Click(object sender, EventArgs e)
         {
             Close();
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using TP3ClassLibrary;
 
@@ -15,21 +16,29 @@ namespace TP3Prototipo
 
         private List<Factura> facturas;
         private List<Persona> personas;
-        private List<Producto> productoVentas;        
-        private string resumenPersonaAFacturar;
+        private List<Producto> productoVentas;       
+       
 
 
-        public FrmFacturacion(List<Factura> facturas, List<Persona> personas, List<Producto> producto, string resumenPersona)
+        public FrmFacturacion(List<Factura> facturas, List<Persona> personas, List<Producto> producto)
         {
             InitializeComponent();
             this.facturas = facturas;
-            this.personas = personas;
-            this.resumenPersonaAFacturar = resumenPersona;
-            this.productoVentas = producto;           
+            this.personas = personas;            
+            this.productoVentas = producto;
+            cmbLCliente.DataSource = personas;
+            cmbLCliente.DisplayMember = "FullName";
+            List<eTipoPago> mediosPago = new List<eTipoPago>();
+            foreach (eTipoPago contact in Enum.GetValues(typeof(eTipoPago)).OfType<eTipoPago>().Where(m => m != eTipoPago.all))
+            {
+                mediosPago.Add(contact);
+            }
+            cmbMedioPago.DataSource = mediosPago;            
         }
         private void FrmBilling_Load(object sender, EventArgs e)
         {
-            InitFacturacionOpciones();
+            cmbMedioPago.SelectedItem = eTipoPago.efectivo;            
+            txtFactura.Text = ImprimirFactura();
         }
 
         /// <summary>
@@ -37,67 +46,30 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="tipoPago"></param>
         /// <returns></returns>
-        private string ImprimirFactura(eTipoPago tipoPago)
+        private string ImprimirFactura()
         {
            int numeroFactura = Factura.GetFacturaActualNumber(facturas);
-           Persona comprador = Persona.GetPersonaWtihResumen(personas,resumenPersonaAFacturar);
-           Factura factura = new Factura(numeroFactura, comprador, productoVentas, tipoPago);
-            return factura.GenerarFacturaString(personas,resumenPersonaAFacturar);
+           Persona comprador = (Persona)cmbLCliente.SelectedItem;
+           eTipoPago pago = eTipoPago.efectivo;
+            if(cmbMedioPago.SelectedItem!=null)
+            {
+                pago = (eTipoPago)cmbMedioPago.SelectedItem;
+            }
+           Factura factura = new Factura(numeroFactura, comprador, productoVentas, pago);
+           return factura.GenerarFacturaStringWithDni(personas,comprador);
         }
-
-        /// <summary>
-        /// Imprime la facturas preview con sus descuentos correspondientes
-        /// </summary>
-        private void InitFacturacionOpciones()
+        private void BtnClose_Click(object sender, EventArgs e)
         {
-            txtFactura.Text = ImprimirFactura(eTipoPago.all);
-            txtFacturaCredito.Text = ImprimirFactura(eTipoPago.credito);
+            this.Close();
         }
-
-      
-
-
-
-
-        /// <summary>
-        /// Genera una factura final abona en efectivo
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEfectivo(object sender, EventArgs e)
+        private void btnConfirmar_Click(object sender, EventArgs e)
         {
             try
             {
                 int numeroFactura = Factura.GetFacturaActualNumber(facturas);
-                Persona comprador = Persona.GetPersonaWtihResumen(personas, resumenPersonaAFacturar);
-                Factura factura = new Factura(numeroFactura, comprador, productoVentas, eTipoPago.efectivo);
-                facturas.Add(factura);
-                FrmDetalles frmDetalles = new FrmDetalles(factura, personas);
-                frmDetalles.ShowDialog();
-                DialogResult = DialogResult.OK;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al generar cobro efectivo");
-            }
-            finally
-            {
-                this.Close();
-            }
-        }
-
-        /// <summary>
-        /// Genera una factura final abonada en debito
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDebito_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int numeroFactura = Factura.GetFacturaActualNumber(facturas);
-                Persona comprador = Persona.GetPersonaWtihResumen(personas, resumenPersonaAFacturar);
-                Factura factura = new Factura(numeroFactura, comprador, productoVentas, eTipoPago.debito);
+                Persona comprador = (Persona)cmbLCliente.SelectedItem;
+                eTipoPago medioPago = (eTipoPago)cmbMedioPago.SelectedItem;
+                Factura factura = new Factura(numeroFactura, comprador, productoVentas,medioPago);
                 facturas.Add(factura);
                 FrmDetalles frmDetalles = new FrmDetalles(factura, personas);
                 frmDetalles.ShowDialog();
@@ -112,35 +84,17 @@ namespace TP3Prototipo
                 this.Close();
             }
         }
-        /// <summary>
-        /// Genera una factura final abona en credito
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnCredito_Click(object sender, EventArgs e)
+
+        private void cmbMedioPago_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                int numeroFactura = Factura.GetFacturaActualNumber(facturas);
-                Persona comprador = Persona.GetPersonaWtihResumen(personas, resumenPersonaAFacturar);
-                Factura factura = new Factura(numeroFactura, comprador, productoVentas, eTipoPago.credito);
-                facturas.Add(factura);
-                FrmDetalles frmDetalles = new FrmDetalles(factura, personas);
-                frmDetalles.ShowDialog();
-                DialogResult = DialogResult.OK;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al generar cobro credito");
-            }
-            finally
-            {
-                this.Close();
-            }
+            txtFactura.Text = ImprimirFactura();
+            this.txtFactura.Refresh();
         }
-        private void btnClose_Click(object sender, EventArgs e)
+
+        private void cmbLCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Close();
+            this.txtFactura.Refresh();
+            txtFactura.Text = ImprimirFactura();
         }
     }
 }

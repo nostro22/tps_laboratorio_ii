@@ -56,7 +56,7 @@ namespace TP3Prototipo
             this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // btnConfirmar
             // 
@@ -68,7 +68,7 @@ namespace TP3Prototipo
             this.btnConfirmar.TabIndex = 1;
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
             // 
             // lblDni
             // 
@@ -111,6 +111,7 @@ namespace TP3Prototipo
             this.TxtNombre.Size = new System.Drawing.Size(248, 23);
             this.TxtNombre.TabIndex = 5;
             this.toolTipAlta.SetToolTip(this.TxtNombre, "Ingrese el nombre maximo 30 caracteres permitidos");
+            this.TxtNombre.TextChanged += new System.EventHandler(this.TxtNombre_TextChanged);
             // 
             // txtDNI
             // 
@@ -120,6 +121,7 @@ namespace TP3Prototipo
             this.txtDNI.Size = new System.Drawing.Size(248, 23);
             this.txtDNI.TabIndex = 6;
             this.toolTipAlta.SetToolTip(this.txtDNI, "El DNI debe contener solo numeros ");
+            this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
             // 
             // dateTimeNacimiento
             // 

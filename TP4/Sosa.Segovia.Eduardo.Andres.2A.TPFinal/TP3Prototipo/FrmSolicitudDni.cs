@@ -36,6 +36,7 @@ namespace TP3Prototipo
                 case eAccion.BAJA:
                     lblTituloSolicitud.Text = "BAJA";
                     lblDniAccion.Text = "Ingrese el DNI del usuario que desea dar de baja";
+                    btnAceptar.Text = "DAR BAJA";
 
                     break;             
             }
@@ -109,7 +110,7 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtDniModificar_TextChanged(object sender, EventArgs e)
+        private void TxtDniModificar_TextChanged(object sender, EventArgs e)
         {
             VerificarDniErrorProvider("Solo se permiten numeros en el DNI y debe ser positivo", "No se encuentra registrado este DNI en la lista de clientes");
         }
@@ -119,7 +120,7 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
             if (VerificarDniErrorProvider("Solo se permiten numeros en el DNI ", "No se encuentra registrado este DNI en la lista de clientes") )
             {
@@ -142,23 +143,20 @@ namespace TP3Prototipo
                         {
                             MessageBox.Show(clienteDarBaja.ToString(), "El Cliente ya esta Dado de Baja");
                         }
-                       
                         break;
-                
                 }
                 this.Hide();
                 this.Close();
-
             }
             
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void dtgvCliente_SelectionChanged(object sender, EventArgs e)
+        private void DtgvCliente_SelectionChanged(object sender, EventArgs e)
         {
             txtDniModificar.Text = dtgvCliente[0, dtgvCliente.CurrentRow.Index].Value.ToString();
         }

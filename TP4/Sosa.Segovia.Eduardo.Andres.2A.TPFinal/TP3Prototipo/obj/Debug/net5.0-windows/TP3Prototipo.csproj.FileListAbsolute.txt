@@ -118,3 +118,4 @@ C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP4\So
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP4\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3Prototipo\bin\Debug\net5.0-windows\Resorces\producto6.png
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP4\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3Prototipo\bin\Debug\net5.0-windows\Resorces\sellingMode.png
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP4\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3Prototipo\obj\Debug\net5.0-windows\TP3Prototipo.FrmApertura.resources
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\TP4\Sosa.Segovia.Eduardo.Andres.2A.TPFinal\TP3Prototipo\obj\Debug\net5.0-windows\TP3Prototipo.FrmModificacionProductoIngreso.resources

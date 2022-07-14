@@ -51,7 +51,7 @@ namespace TP3Prototipo
         }
         
      
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -61,7 +61,7 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDetalles_Click(object sender, EventArgs e)
+        private void BtnDetalles_Click(object sender, EventArgs e)
         {
           
             //if (dtgvFacturas.SelectedRows.Count > 0)
@@ -86,7 +86,7 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDescargarFactura_Click(object sender, EventArgs e)
+        private void BtnDescargarFactura_Click(object sender, EventArgs e)
         {
             if (dtgvFacturas.SelectedRows.Count > 0)
             {
@@ -121,7 +121,7 @@ namespace TP3Prototipo
 
       
 
-        private void dtgvFacturas_SelectionChanged(object sender, EventArgs e)
+        private void DtgvFacturas_SelectionChanged(object sender, EventArgs e)
         {
             if (dtgvFacturas.SelectedRows.Count > 0)
             {

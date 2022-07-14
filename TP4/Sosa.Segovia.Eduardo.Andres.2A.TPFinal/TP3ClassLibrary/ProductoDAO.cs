@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace TP3ClassLibrary
 {
@@ -38,8 +39,8 @@ namespace TP3ClassLibrary
                 comando.Parameters.Clear();
                 conexion.Open();
                 comando.CommandText = "INSERT INTO PRODUCTOS (ID,PRECIO,NOMBRE,CANTIDAD,RAREZA) VALUES (@id,@precio,@nombre,@cantidad,@rareza)";
-                comando.Parameters.AddWithValue("@id", producto.IdProducto);
-                comando.Parameters.AddWithValue("@precio", producto.Price);
+                comando.Parameters.AddWithValue("@id", producto.Id);
+                comando.Parameters.AddWithValue("@precio", producto.Precio);
                 comando.Parameters.AddWithValue("@nombre", producto.Nombre);
                 comando.Parameters.AddWithValue("@cantidad", producto.Cantidad);
                 comando.Parameters.AddWithValue("@rareza", producto.Rareza);
@@ -66,7 +67,7 @@ namespace TP3ClassLibrary
         public static bool ProductoEnBaseDato(Producto producto)
         {
             bool retorno = true;
-            producto = ProductoDAO.LeerPorId(producto.IdProducto);
+            producto = ProductoDAO.LeerPorId(producto.Id);
             if(producto is null)
             {
                 retorno = false;
@@ -117,7 +118,7 @@ namespace TP3ClassLibrary
                 {
                     producto = new Producto
                                     (
-                                    Convert.ToDouble(dataReader["PRECIO"]),
+                                    Convert.ToDecimal(dataReader["PRECIO"]),
                                     Convert.ToInt32(dataReader["ID"]),
                                     (dataReader["NOMBRE"].ToString()),
                                     Convert.ToInt32(dataReader["CANTIDAD"]),
@@ -157,7 +158,7 @@ namespace TP3ClassLibrary
                 {
                     productos.Add(new Producto
                                     (
-                                    Convert.ToDouble(dataReader["PRECIO"]),
+                                    Convert.ToDecimal(dataReader["PRECIO"]),
                                     Convert.ToInt32(dataReader["ID"]),
                                     dataReader["NOMBRE"].ToString(),
                                     Convert.ToInt32(dataReader["CANTIDAD"]),
@@ -176,7 +177,7 @@ namespace TP3ClassLibrary
             {
                 conexion.Close();
             }
-
+            productos.Sort( (p1, p2) => p2.Id.CompareTo(p1.Id));
             return productos;
         }
 
@@ -214,9 +215,9 @@ namespace TP3ClassLibrary
 
                 comando.Parameters.Clear();
                 conexion.Open();
-                comando.CommandText = $"UPDATE PRODUCTOS SET PRECIO = @precio, ID = @id, NOMBRE=@nombre, CANTIDAD=@cantidad, RAREZA = @rareza WHERE ID = {producto.IdProducto}";
-                comando.Parameters.AddWithValue("@precio", producto.Price);
-                comando.Parameters.AddWithValue("@id", producto.IdProducto);
+                comando.CommandText = $"UPDATE PRODUCTOS SET PRECIO = @precio, ID = @id, NOMBRE=@nombre, CANTIDAD=@cantidad, RAREZA = @rareza WHERE ID = {producto.Id}";
+                comando.Parameters.AddWithValue("@precio", producto.Precio);
+                comando.Parameters.AddWithValue("@id", producto.Id);
                 comando.Parameters.AddWithValue("@nombre", producto.Nombre);
                 comando.Parameters.AddWithValue("@cantidad", producto.Cantidad);
                 comando.Parameters.AddWithValue("@rareza", producto.Rareza);

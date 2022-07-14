@@ -77,7 +77,7 @@ namespace TP3Prototipo
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -87,7 +87,7 @@ namespace TP3Prototipo
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "MODIFICAR";
             this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // errorProviderDni
             // 
@@ -130,7 +130,7 @@ namespace TP3Prototipo
             this.dtgvCliente.ShowEditingIcon = false;
             this.dtgvCliente.Size = new System.Drawing.Size(391, 325);
             this.dtgvCliente.TabIndex = 27;
-            this.dtgvCliente.SelectionChanged += new System.EventHandler(this.dtgvCliente_SelectionChanged);
+            this.dtgvCliente.SelectionChanged += new System.EventHandler(this.DtgvCliente_SelectionChanged);
             // 
             // Dni
             // 

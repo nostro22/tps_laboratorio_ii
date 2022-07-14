@@ -20,7 +20,7 @@ namespace TP3Prototipo
         private int ticks;
         private int segundos;     
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             ticks++;
             if (ticks >= segundos)

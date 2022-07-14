@@ -6,7 +6,7 @@
     /// <typeparam name="T"></typeparam>
     interface ICargaImpositiva<T>
     {
-        double CalcularBonificaciones(T comprador);
-        double CalcularImpuesto(T comprador);
+        decimal CalcularBonificaciones(T comprador);
+        decimal CalcularImpuesto(T comprador);
     }
 }

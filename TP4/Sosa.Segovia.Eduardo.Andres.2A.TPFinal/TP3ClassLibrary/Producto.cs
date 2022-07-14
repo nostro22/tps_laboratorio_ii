@@ -9,33 +9,27 @@ namespace TP3ClassLibrary
     public class Producto
     {
 
-        private double precio;
-        private int idProducto;
+        private int id;
         private string nombre;
-        private int cantidad;
         private eRareza rareza;       
+        private int cantidad;
+        private decimal precio;
 
         public Producto() { }
-        public Producto(double price, int idProducto, string nombre, int cantidad, eRareza rareza)
+        public Producto(decimal price, int idProducto, string nombre, int cantidad, eRareza rareza)
         {
             this.precio = price;
-            this.idProducto = idProducto;
+            this.id = idProducto;
             this.nombre = nombre;
             this.cantidad = cantidad;
-            if (rareza == eRareza.all)
-            {
-                this.rareza = eRareza.common;
-            }
-            else
-            {
-                this.rareza = rareza;
-            }
+            this.rareza = rareza;
+           
             
         }
-        public Producto(double price, int idProducto, string nombre, int cantidad, int rareza)
+        public Producto(decimal price, int idProducto, string nombre, int cantidad, int rareza)
         {
             this.precio = price;
-            this.idProducto = idProducto;
+            this.id = idProducto;
             this.nombre = nombre;
             this.cantidad = cantidad;
             if (rareza == 3)
@@ -59,7 +53,7 @@ namespace TP3ClassLibrary
         }
 
 
-        public double Price
+        public decimal Precio
         {
             get
             {
@@ -72,16 +66,16 @@ namespace TP3ClassLibrary
             }
         }
 
-        public int IdProducto
+        public int Id
         {
             get
             {
-                return idProducto;
+                return id;
             }
 
             set
             {
-                idProducto = value;
+                id = value;
             }
         }
 
@@ -131,10 +125,10 @@ namespace TP3ClassLibrary
        /// <param name="descuento"></param>
        /// <returns></returns>
 
-        public static double CalcularTotal(List<Producto> productosComprados,double descuento)
+        public static decimal CalcularTotal(List<Producto> productosComprados,decimal descuento)
         {
 
-            double total = 0;
+            decimal total = 0;
          
 
             foreach (Producto item in productosComprados)
@@ -149,7 +143,7 @@ namespace TP3ClassLibrary
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"Id: {this.idProducto}");
+            sb.AppendLine($"Id: {this.id}");
             sb.Append($" | Nombre: " + this.nombre.ToUpper());
             sb.Append($" | Rareza: " + this.Rareza.ToString().ToUpper());
             sb.Append($" | Cantidad: " + this.Cantidad.ToString());
@@ -213,7 +207,7 @@ namespace TP3ClassLibrary
             {
                 foreach (Producto item in Carrito.ListaCarrito)
                 {
-                    if (item.idProducto == productoADevolver.idProducto && item.cantidad>0)
+                    if (item.id == productoADevolver.id && item.cantidad>0)
                     {
                         item.cantidad--;
                         productoADevolver.cantidad++;
@@ -253,7 +247,7 @@ namespace TP3ClassLibrary
         // override object.Equals
         public override bool Equals(object obj)
         {
-            if (obj is not null && obj is Producto unProducto && unProducto.IdProducto == this.IdProducto)
+            if (obj is not null && obj is Producto unProducto && unProducto.Id == this.Id)
             {
                 return true;
             }
@@ -334,13 +328,12 @@ namespace TP3ClassLibrary
 
         public static bool operator !=(Producto p , Producto p1)
         {
-         
                  return !(p==p1);
         }
         public static bool operator ==(Producto p, Producto p1)
         {
             bool isEqual = false;
-            if (p is not null && p1 is not null && p.idProducto == p1.idProducto)
+            if (p is not null && p1 is not null && p.id == p1.id)
             {
                 isEqual = true;
             }

@@ -54,7 +54,6 @@ namespace TP3Prototipo
             return isValid;
         }
 
-
         private bool VerificarMayoriaEdad()
         {
             if (!Persona.EsMayorEdad(dateTimeNacimiento.Value))
@@ -68,8 +67,6 @@ namespace TP3Prototipo
                 return true;
             }
         }
-
-      
 
         private bool VerificadorNombre()
         {
@@ -86,7 +83,7 @@ namespace TP3Prototipo
             }
         }
        
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private void BtnConfirmar_Click(object sender, EventArgs e)
         {
             if (VerificadorDNI() && VerificadorNombre() && VerificarMayoriaEdad() )
             {
@@ -103,9 +100,19 @@ namespace TP3Prototipo
             
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtDNI_TextChanged(object sender, EventArgs e)
+        {
+            VerificadorDNI();
+        }
+
+        private void TxtNombre_TextChanged(object sender, EventArgs e)
+        {
+            VerificadorNombre();
         }
     }
 }

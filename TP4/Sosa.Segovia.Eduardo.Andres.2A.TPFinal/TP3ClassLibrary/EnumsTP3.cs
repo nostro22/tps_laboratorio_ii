@@ -17,7 +17,7 @@
 
     public enum eRareza
     {
-        all, common, rare, epic
+        common, rare, epic
     }
 
     public enum eSorts

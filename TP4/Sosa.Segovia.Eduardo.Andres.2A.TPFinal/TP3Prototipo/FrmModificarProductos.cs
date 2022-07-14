@@ -21,91 +21,45 @@ namespace TP3Prototipo
         {
             InitializeComponent();
             CargarGridBD();
-            RestricionesDataGrid();
-            this.stock = productos;
+            this.stock = productos;           
+            this.Refresh();
         }
 
         private void CargarGridBD()
         {
+            dtgProductos.DataSource = null;
             dtgProductos.DataSource = ProductoDAO.Leer();
+            AdjustColumnOrder();
         }
 
-        private void RestricionesDataGrid()
-        {
-            dtgProductos.Columns[1].ReadOnly = true;
-            dtgProductos.Columns[1].DefaultCellStyle.BackColor = Color.Red;
-            dtgProductos.Columns[2].ReadOnly = true;
-            dtgProductos.Columns[2].DefaultCellStyle.BackColor = Color.Red;
-            dtgProductos.Columns[4].ReadOnly = true;
-            dtgProductos.Columns[4].DefaultCellStyle.BackColor = Color.Red;
-          
-        }
-
-        private void btnVover_Click(object sender, EventArgs e)
+        private void BtnVover_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void dtgProductos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-
-            if(!inputInvalid(this.dtgProductos.CurrentCell.Value))
-            {
-                dtgProductos[e.ColumnIndex, e.RowIndex].Value = "0";
-            }
-            stock = (List<Producto>)dtgProductos.DataSource;
-            ProductoDAO.ActualizarProductos((List<Producto>)dtgProductos.DataSource);
-            
-            
-        }
-    
-
-        private void dtgProductos_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            if(e.ColumnIndex==3)
-            {
-                MessageBox.Show("Solo debe ingresar numero enteros en cantidad \nCorrija error", "ERROR INPUT", MessageBoxButtons.OK,MessageBoxIcon.Warning);
-
-            }
-            else
-            {
-                MessageBox.Show("Solo debe ingresar numero \nCorrija error", "ERROR INPUT", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         /// <summary>
-        /// Analisa los inpust del usuario y si no son numeros positivos devuelve false 
+        /// Ordena el las columnas a mostrar con los productos
         /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        private bool inputInvalid(object data)
+        private void AdjustColumnOrder()
         {
-            bool retorno = false;
-            if(data is Int32)
-            {
-                if((Int32)data<0)
-                {
+            dtgProductos.Columns["Id"].DisplayIndex = 0;         
+            dtgProductos.Columns["Nombre"].DisplayIndex = 1;
+            dtgProductos.Columns["Rareza"].DisplayIndex = 2;
+            dtgProductos.Columns["Cantidad"].DisplayIndex = 3;
+            dtgProductos.Columns["Precio"].DisplayIndex = 4;
+        }
 
-                    retorno = false;
-                }
-                else
-                {
-                    retorno = true;
-                }
-            }
-            if (data is double)
-            {
-                if ((double)data < 0)
-                {
-                    retorno = false;
-                }
-                else
-                {
-                    retorno = true;
-                }
-            }
-
-            return retorno;
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            string id = dtgProductos[1, dtgProductos.CurrentRow.Index].Value.ToString();
+            Producto producto = stock.Find(producto => producto.Id == int.Parse(id));
+            FrmModificacionProductoIngreso modificacion = new  FrmModificacionProductoIngreso(producto);
+            this.Hide();
+            modificacion.ShowDialog();
+            CargarGridBD();
+            this.Refresh();
+            this.Show();
         }
     }
+
 }

@@ -93,7 +93,7 @@ namespace TP3Prototipo
             this.dateTimeNacimiento.Size = new System.Drawing.Size(248, 23);
             this.dateTimeNacimiento.TabIndex = 22;
             this.dateTimeNacimiento.Value = new System.DateTime(2022, 6, 4, 0, 0, 0, 0);
-            this.dateTimeNacimiento.ValueChanged += new System.EventHandler(this.dateTimeNacimiento_ValueChanged);
+            this.dateTimeNacimiento.ValueChanged += new System.EventHandler(this.DateTimeNacimiento_ValueChanged);
             // 
             // TxtNombre
             // 
@@ -147,7 +147,7 @@ namespace TP3Prototipo
             this.btnConfirmar.TabIndex = 16;
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
             // 
             // btnCancelar
             // 
@@ -159,7 +159,7 @@ namespace TP3Prototipo
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // dtgvCliente
             // 
@@ -249,8 +249,8 @@ namespace TP3Prototipo
             // 
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
-            "FALSE",
-            "TRUE"});
+            "Inactivo",
+            "Activo"});
             this.cmbEstado.Location = new System.Drawing.Point(143, 442);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(248, 23);

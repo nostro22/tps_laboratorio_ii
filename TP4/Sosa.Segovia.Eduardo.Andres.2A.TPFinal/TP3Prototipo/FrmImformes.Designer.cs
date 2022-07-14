@@ -73,7 +73,7 @@ namespace TP3Prototipo
             this.dtgvFacturas.ShowEditingIcon = false;
             this.dtgvFacturas.Size = new System.Drawing.Size(552, 487);
             this.dtgvFacturas.TabIndex = 27;
-            this.dtgvFacturas.SelectionChanged += new System.EventHandler(this.dtgvFacturas_SelectionChanged);
+            this.dtgvFacturas.SelectionChanged += new System.EventHandler(this.DtgvFacturas_SelectionChanged);
             // 
             // btnSalir
             // 
@@ -85,7 +85,7 @@ namespace TP3Prototipo
             this.btnSalir.TabIndex = 28;
             this.btnSalir.Text = "VOLVER";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // btnDetalles
             // 
@@ -96,7 +96,7 @@ namespace TP3Prototipo
             this.btnDetalles.TabIndex = 30;
             this.btnDetalles.Text = "VER DETALLES";
             this.btnDetalles.UseVisualStyleBackColor = true;
-            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
+            this.btnDetalles.Click += new System.EventHandler(this.BtnDetalles_Click);
             // 
             // lblIngresoFactura
             // 
@@ -128,7 +128,7 @@ namespace TP3Prototipo
             this.btnDescargarFactura.TabIndex = 33;
             this.btnDescargarFactura.Text = "DESCARGAR";
             this.btnDescargarFactura.UseVisualStyleBackColor = true;
-            this.btnDescargarFactura.Click += new System.EventHandler(this.btnDescargarFactura_Click);
+            this.btnDescargarFactura.Click += new System.EventHandler(this.BtnDescargarFactura_Click);
             // 
             // FrmImformes
             // 

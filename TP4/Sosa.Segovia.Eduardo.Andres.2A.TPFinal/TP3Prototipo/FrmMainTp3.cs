@@ -62,7 +62,6 @@ namespace TP3Prototipo
             ArchiveSetUp();
             LoadFacturas();
             InitDatabases();
-            ActualizarCtbSeller();
             CargarProductosBD();
         }
 
@@ -352,7 +351,7 @@ namespace TP3Prototipo
                     unProducto = listaProductos[posicion];
                     listaGroupBoxProductos[posicion].Text = unProducto.Nombre;
                     listaLabelsRareza[posicion].Text = unProducto.Rareza.ToString();
-                    listaLabelsPrecio[posicion].Text = "$" + unProducto.Price.ToString();
+                    listaLabelsPrecio[posicion].Text = "$" + unProducto.Precio.ToString();
                     listaLabelsCantidad[posicion].Text = "Cant: " + unProducto.Cantidad.ToString();
                     listaGroupBoxProductos[posicion].Visible = true;
                 }
@@ -454,16 +453,6 @@ namespace TP3Prototipo
         #endregion
 
 
-        /// <summary>
-        /// Selector combo box de cliente a facturar debe ser dado de alta previamente y estar activo
-        /// </summary>
-        private void ActualizarCtbSeller()
-        {
-            Console.WriteLine(listaPersonas.ToString());
-            List<string> listaClientesActivos = Persona.GetNamesDni(Persona.ListaActivos(listaPersonas));
-            cmbClientes.DataSource = listaClientesActivos;
-           
-        }
 
         /// <summary>
         /// Cambia el color de los numero del carrito si esta vacio
@@ -490,7 +479,7 @@ namespace TP3Prototipo
         /// <param name="sender"></param>
         /// <param name="e"></param>
      
-        private void btnClearCar_Click(object sender, EventArgs e)
+        private void BtnClearCar_Click(object sender, EventArgs e)
         {
             Carrito.VaciaCarrito(listaProductos);
             FeedBackCar();
@@ -502,7 +491,7 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnFacturacion(object sender, EventArgs e)
+        private void BtnFacturacion(object sender, EventArgs e)
         {
             if (Carrito.CantidadProductoCarrito == 0)
             {
@@ -513,7 +502,7 @@ namespace TP3Prototipo
             else
             {
 
-                FrmFacturacion facturacion = new FrmFacturacion(listaFacturas, listaPersonas, listaCarrito, cmbClientes.Text);
+                FrmFacturacion facturacion = new FrmFacturacion(listaFacturas, listaPersonas, listaCarrito);
                 DialogResult dialogResult = facturacion.ShowDialog();
               if(dialogResult == DialogResult.OK)
                 {
@@ -534,7 +523,7 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDownloadPersonas_Click(object sender, EventArgs e)
+        private void BtnDownloadPersonas_Click(object sender, EventArgs e)
         {
             GuardarComoPersona();
         }
@@ -544,7 +533,7 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDownloadProductos_Click(object sender, EventArgs e)
+        private void BtnDownloadProductos_Click(object sender, EventArgs e)
         {
             GuardarComoProducto();
         }
@@ -555,7 +544,7 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnUploadPersonas_Click(object sender, EventArgs e)
+        private void BtnUploadPersonas_Click(object sender, EventArgs e)
         {
             LoadPersonas();           
         }
@@ -565,7 +554,7 @@ namespace TP3Prototipo
         /// <param name="sender"></param>
         /// <param name="e"></param>
         #region EvetosBotonesProductos
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void BtnAgregar_Click(object sender, EventArgs e)
         {
             Producto.VenderProducto(listaCarrito, listaProductos[0],1);            
             ActualizarListadoProductos();
@@ -573,76 +562,76 @@ namespace TP3Prototipo
             
         }
 
-        private void btnAgregar2_Click(object sender, EventArgs e)
+        private void BtnAgregar2_Click(object sender, EventArgs e)
         {
             Producto.VenderProducto(listaCarrito, listaProductos[1], 1);            
             FeedBackCar();
             ActualizarListadoProductos();
         }
 
-        private void btnAgregar3_Click(object sender, EventArgs e)
+        private void BtnAgregar3_Click(object sender, EventArgs e)
         {
             Producto.VenderProducto(listaCarrito, listaProductos[2], 1);           
             FeedBackCar();
             ActualizarListadoProductos();
         }
 
-        private void btnAgregar4_Click(object sender, EventArgs e)
+        private void BtnAgregar4_Click(object sender, EventArgs e)
         {
             Producto.VenderProducto(listaCarrito, listaProductos[3], 1);         
             FeedBackCar();
             ActualizarListadoProductos();
         }
 
-        private void btnAgregar5_Click(object sender, EventArgs e)
+        private void BtnAgregar5_Click(object sender, EventArgs e)
         {
             Producto.VenderProducto(listaCarrito, listaProductos[4], 1);           
             FeedBackCar();
             ActualizarListadoProductos();
         }
 
-        private void btnAgregar6_Click(object sender, EventArgs e)
+        private void BtnAgregar6_Click(object sender, EventArgs e)
         {
             Producto.VenderProducto(listaCarrito, listaProductos[5], 1);         
             FeedBackCar();
             ActualizarListadoProductos();
         }
-        private void btnDevolver(object sender, EventArgs e)
+        private void BtnDevolver(object sender, EventArgs e)
         {
             Producto.DevolverProducto(listaProductos, listaProductos[0], 1);     
             FeedBackCar();
             ActualizarListadoProductos();
         }
 
-        private void btnDevolver2(object sender, EventArgs e)
+        private void BtnDevolver2(object sender, EventArgs e)
         {
             Producto.DevolverProducto(listaProductos, listaProductos[1], 1);        
             FeedBackCar();
             ActualizarListadoProductos();
         }
        
-        private void btnDevolver3(object sender, EventArgs e)
+        private void BtnDevolver3(object sender, EventArgs e)
         {
             Producto.DevolverProducto(listaProductos, listaProductos[2], 1);
             FeedBackCar();
             ActualizarListadoProductos();
         }
 
-        private void btnDevolver4(object sender, EventArgs e)
+        private void BtnDevolver4(object sender, EventArgs e)
         {
             Producto.DevolverProducto(listaProductos, listaProductos[3], 1);
             FeedBackCar();
             ActualizarListadoProductos();
         }
 
-        private void btnDevolver5(object sender, EventArgs e)
+        private void BtnDevolver5(object sender, EventArgs e)
         {
             Producto.DevolverProducto(listaProductos, listaProductos[4], 1);
             FeedBackCar();
             ActualizarListadoProductos();
         }
 
-        private void btnDevolver6(object sender, EventArgs e)
+        private void BtnDevolver6(object sender, EventArgs e)
         {
             Producto.DevolverProducto(listaProductos, listaProductos[5], 1);
             FeedBackCar();
@@ -656,11 +645,10 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAddCliente_Click(object sender, EventArgs e)
+        private void BtnAddCliente_Click(object sender, EventArgs e)
         {
             AltaCliente = new FrmClienteAlta( listaPersonas);
             AltaCliente.ShowDialog();
-            ActualizarCtbSeller();
             GuardarDatosActualPersonas();
 
         }
@@ -670,11 +658,10 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnModificacion_Click(object sender, EventArgs e)
+        private void BtnModificacion_Click(object sender, EventArgs e)
         {
             FrmSolicitudDni frmModificacion = new FrmSolicitudDni(listaPersonas,eAccion.MODIFICAR);
             frmModificacion.ShowDialog();
-            ActualizarCtbSeller();
             GuardarDatosActualPersonas();
         }
 
@@ -684,11 +671,10 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnBaja_Click(object sender, EventArgs e)
+        private void BtnBaja_Click(object sender, EventArgs e)
         {
             FrmSolicitudDni frmBaja = new FrmSolicitudDni(listaPersonas, eAccion.BAJA);
             frmBaja.ShowDialog();
-            ActualizarCtbSeller();
             GuardarDatosActualPersonas();
         }
 
@@ -697,13 +683,13 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnInformsSales_Click(object sender, EventArgs e)
+        private void BtnInformsSales_Click(object sender, EventArgs e)
         {
             FrmImformes frmImformes = new FrmImformes(listaFacturas,listaPersonas);
             frmImformes.ShowDialog();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             string message = "Seguro que desea salir";
             string title = "Confirme";
@@ -731,7 +717,7 @@ namespace TP3Prototipo
             btnDownloadProductos.Hide();
         }
 
-        private void btnModificarProductos_Click(object sender, EventArgs e)
+        private void BtnModificarProductos_Click(object sender, EventArgs e)
         {
             if(listaProductos.Count>0)
             {

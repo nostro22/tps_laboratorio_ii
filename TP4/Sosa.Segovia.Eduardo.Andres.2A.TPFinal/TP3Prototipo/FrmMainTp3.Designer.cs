@@ -89,8 +89,6 @@ namespace TP3Prototipo
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnClearCar = new System.Windows.Forms.Button();
             this.btnVentasCarrito = new System.Windows.Forms.Button();
-            this.lblClientes = new System.Windows.Forms.Label();
-            this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.grbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptBox)).BeginInit();
@@ -141,7 +139,7 @@ namespace TP3Prototipo
             this.btnModificarProductos.TabIndex = 15;
             this.btnModificarProductos.Text = "MODIFICAR PRODUCTOS";
             this.btnModificarProductos.UseVisualStyleBackColor = true;
-            this.btnModificarProductos.Click += new System.EventHandler(this.btnModificarProductos_Click);
+            this.btnModificarProductos.Click += new System.EventHandler(this.BtnModificarProductos_Click);
             // 
             // btnDownloadProductos
             // 
@@ -157,7 +155,7 @@ namespace TP3Prototipo
             this.btnDownloadProductos.TabIndex = 13;
             this.btnDownloadProductos.Text = "DOWNLOAD DATABASE PRODUCTOS";
             this.btnDownloadProductos.UseVisualStyleBackColor = true;
-            this.btnDownloadProductos.Click += new System.EventHandler(this.btnDownloadProductos_Click);
+            this.btnDownloadProductos.Click += new System.EventHandler(this.BtnDownloadProductos_Click);
             // 
             // btnUploadPersonas
             // 
@@ -173,7 +171,7 @@ namespace TP3Prototipo
             this.btnUploadPersonas.TabIndex = 8;
             this.btnUploadPersonas.Text = "UPLOAD DATABASE  PERSONAS";
             this.btnUploadPersonas.UseVisualStyleBackColor = true;
-            this.btnUploadPersonas.Click += new System.EventHandler(this.btnUploadPersonas_Click);
+            this.btnUploadPersonas.Click += new System.EventHandler(this.BtnUploadPersonas_Click);
             // 
             // btnDownloadPersonas
             // 
@@ -189,7 +187,7 @@ namespace TP3Prototipo
             this.btnDownloadPersonas.TabIndex = 11;
             this.btnDownloadPersonas.Text = "DOWNLOAD DATABASE PERSONAS";
             this.btnDownloadPersonas.UseVisualStyleBackColor = true;
-            this.btnDownloadPersonas.Click += new System.EventHandler(this.btnDownloadPersonas_Click);
+            this.btnDownloadPersonas.Click += new System.EventHandler(this.BtnDownloadPersonas_Click);
             // 
             // btnInformsSales
             // 
@@ -205,7 +203,7 @@ namespace TP3Prototipo
             this.btnInformsSales.TabIndex = 7;
             this.btnInformsSales.Text = "INFORMES VENTAS";
             this.btnInformsSales.UseVisualStyleBackColor = true;
-            this.btnInformsSales.Click += new System.EventHandler(this.btnInformsSales_Click);
+            this.btnInformsSales.Click += new System.EventHandler(this.BtnInformsSales_Click);
             // 
             // btnBaja
             // 
@@ -221,7 +219,7 @@ namespace TP3Prototipo
             this.btnBaja.TabIndex = 6;
             this.btnBaja.Text = "BAJA CLIENTE";
             this.btnBaja.UseVisualStyleBackColor = true;
-            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
+            this.btnBaja.Click += new System.EventHandler(this.BtnBaja_Click);
             // 
             // btnModificacion
             // 
@@ -237,7 +235,7 @@ namespace TP3Prototipo
             this.btnModificacion.TabIndex = 5;
             this.btnModificacion.Text = "MODIFICAR  CLIENTE";
             this.btnModificacion.UseVisualStyleBackColor = true;
-            this.btnModificacion.Click += new System.EventHandler(this.btnModificacion_Click);
+            this.btnModificacion.Click += new System.EventHandler(this.BtnModificacion_Click);
             // 
             // btnAddCliente
             // 
@@ -253,7 +251,7 @@ namespace TP3Prototipo
             this.btnAddCliente.TabIndex = 4;
             this.btnAddCliente.Text = "ALTA CLIENTE";
             this.btnAddCliente.UseVisualStyleBackColor = true;
-            this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
+            this.btnAddCliente.Click += new System.EventHandler(this.BtnAddCliente_Click);
             // 
             // btnClose
             // 
@@ -269,7 +267,7 @@ namespace TP3Prototipo
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "CLOSE APP";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // panel2
             // 
@@ -354,7 +352,7 @@ namespace TP3Prototipo
             this.btnQuitar.TabIndex = 5;
             this.btnQuitar.Text = "-";
             this.btnQuitar.UseVisualStyleBackColor = false;
-            this.btnQuitar.Click += new System.EventHandler(this.btnDevolver);
+            this.btnQuitar.Click += new System.EventHandler(this.BtnDevolver);
             // 
             // btnAgregar
             // 
@@ -368,7 +366,7 @@ namespace TP3Prototipo
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "+";
             this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // ptBox
             // 
@@ -445,7 +443,7 @@ namespace TP3Prototipo
             this.btnQuitar2.TabIndex = 5;
             this.btnQuitar2.Text = "-";
             this.btnQuitar2.UseVisualStyleBackColor = false;
-            this.btnQuitar2.Click += new System.EventHandler(this.btnDevolver2);
+            this.btnQuitar2.Click += new System.EventHandler(this.BtnDevolver2);
             // 
             // btnAgregar2
             // 
@@ -459,7 +457,7 @@ namespace TP3Prototipo
             this.btnAgregar2.TabIndex = 6;
             this.btnAgregar2.Text = "+";
             this.btnAgregar2.UseVisualStyleBackColor = false;
-            this.btnAgregar2.Click += new System.EventHandler(this.btnAgregar2_Click);
+            this.btnAgregar2.Click += new System.EventHandler(this.BtnAgregar2_Click);
             // 
             // ptBox2
             // 
@@ -536,7 +534,7 @@ namespace TP3Prototipo
             this.btnQuitar3.TabIndex = 5;
             this.btnQuitar3.Text = "-";
             this.btnQuitar3.UseVisualStyleBackColor = false;
-            this.btnQuitar3.Click += new System.EventHandler(this.btnDevolver3);
+            this.btnQuitar3.Click += new System.EventHandler(this.BtnDevolver3);
             // 
             // btnAgregar3
             // 
@@ -554,7 +552,7 @@ namespace TP3Prototipo
             this.btnAgregar3.TabIndex = 6;
             this.btnAgregar3.Text = "+";
             this.btnAgregar3.UseVisualStyleBackColor = true;
-            this.btnAgregar3.Click += new System.EventHandler(this.btnAgregar3_Click);
+            this.btnAgregar3.Click += new System.EventHandler(this.BtnAgregar3_Click);
             // 
             // ptBox3
             // 
@@ -631,7 +629,7 @@ namespace TP3Prototipo
             this.btnQuitar6.TabIndex = 5;
             this.btnQuitar6.Text = "-";
             this.btnQuitar6.UseVisualStyleBackColor = false;
-            this.btnQuitar6.Click += new System.EventHandler(this.btnDevolver6);
+            this.btnQuitar6.Click += new System.EventHandler(this.BtnDevolver6);
             // 
             // btnAgregar6
             // 
@@ -645,7 +643,7 @@ namespace TP3Prototipo
             this.btnAgregar6.TabIndex = 6;
             this.btnAgregar6.Text = "+";
             this.btnAgregar6.UseVisualStyleBackColor = false;
-            this.btnAgregar6.Click += new System.EventHandler(this.btnAgregar6_Click);
+            this.btnAgregar6.Click += new System.EventHandler(this.BtnAgregar6_Click);
             // 
             // ptBox6
             // 
@@ -722,7 +720,7 @@ namespace TP3Prototipo
             this.btnQuitar5.TabIndex = 5;
             this.btnQuitar5.Text = "-";
             this.btnQuitar5.UseVisualStyleBackColor = false;
-            this.btnQuitar5.Click += new System.EventHandler(this.btnDevolver5);
+            this.btnQuitar5.Click += new System.EventHandler(this.BtnDevolver5);
             // 
             // btnAgregar5
             // 
@@ -736,7 +734,7 @@ namespace TP3Prototipo
             this.btnAgregar5.TabIndex = 6;
             this.btnAgregar5.Text = "+";
             this.btnAgregar5.UseVisualStyleBackColor = false;
-            this.btnAgregar5.Click += new System.EventHandler(this.btnAgregar5_Click);
+            this.btnAgregar5.Click += new System.EventHandler(this.BtnAgregar5_Click);
             // 
             // ptBox5
             // 
@@ -813,7 +811,7 @@ namespace TP3Prototipo
             this.btnQuitar4.TabIndex = 5;
             this.btnQuitar4.Text = "-";
             this.btnQuitar4.UseVisualStyleBackColor = false;
-            this.btnQuitar4.Click += new System.EventHandler(this.btnDevolver4);
+            this.btnQuitar4.Click += new System.EventHandler(this.BtnDevolver4);
             // 
             // btnAgregar4
             // 
@@ -827,7 +825,7 @@ namespace TP3Prototipo
             this.btnAgregar4.TabIndex = 6;
             this.btnAgregar4.Text = "+";
             this.btnAgregar4.UseVisualStyleBackColor = false;
-            this.btnAgregar4.Click += new System.EventHandler(this.btnAgregar4_Click);
+            this.btnAgregar4.Click += new System.EventHandler(this.BtnAgregar4_Click);
             // 
             // ptBox4
             // 
@@ -876,7 +874,7 @@ namespace TP3Prototipo
             this.btnClearCar.TabIndex = 19;
             this.btnClearCar.Text = "CLEAR";
             this.btnClearCar.UseVisualStyleBackColor = true;
-            this.btnClearCar.Click += new System.EventHandler(this.btnClearCar_Click);
+            this.btnClearCar.Click += new System.EventHandler(this.BtnClearCar_Click);
             // 
             // btnVentasCarrito
             // 
@@ -891,25 +889,7 @@ namespace TP3Prototipo
             this.btnVentasCarrito.TabIndex = 20;
             this.btnVentasCarrito.Text = "VENTAS";
             this.btnVentasCarrito.UseVisualStyleBackColor = true;
-            this.btnVentasCarrito.Click += new System.EventHandler(this.btnFacturacion);
-            // 
-            // lblClientes
-            // 
-            this.lblClientes.AutoSize = true;
-            this.lblClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblClientes.Location = new System.Drawing.Point(473, 26);
-            this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(44, 15);
-            this.lblClientes.TabIndex = 22;
-            this.lblClientes.Text = "Cliente";
-            // 
-            // cmbClientes
-            // 
-            this.cmbClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbClientes.Location = new System.Drawing.Point(532, 23);
-            this.cmbClientes.Name = "cmbClientes";
-            this.cmbClientes.Size = new System.Drawing.Size(200, 23);
-            this.cmbClientes.TabIndex = 21;
+            this.btnVentasCarrito.Click += new System.EventHandler(this.BtnFacturacion);
             // 
             // EstoNoEsCompraGamer
             // 
@@ -918,8 +898,6 @@ namespace TP3Prototipo
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(952, 651);
             this.Controls.Add(this.grbProducto);
-            this.Controls.Add(this.lblClientes);
-            this.Controls.Add(this.cmbClientes);
             this.Controls.Add(this.btnVentasCarrito);
             this.Controls.Add(this.btnClearCar);
             this.Controls.Add(this.grbCart);
@@ -958,7 +936,6 @@ namespace TP3Prototipo
             this.grbCart.ResumeLayout(false);
             this.grbCart.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1004,8 +981,6 @@ namespace TP3Prototipo
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnClearCar;
         private System.Windows.Forms.Button btnVentasCarrito;
-        private System.Windows.Forms.Label lblClientes;
-        private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.Button btnInformsSales;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.Button btnUploadPersonas;

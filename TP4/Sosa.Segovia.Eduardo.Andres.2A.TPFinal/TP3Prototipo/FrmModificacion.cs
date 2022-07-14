@@ -83,7 +83,7 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private void BtnConfirmar_Click(object sender, EventArgs e)
         {
             if (HuboCambios() && VerificarMayoriaEdad() && VerificadorNombre())
             {
@@ -105,7 +105,7 @@ namespace TP3Prototipo
                 {
                     personaAModificar.Nombre = TxtNombre.Text;
                     personaAModificar.FechaNacimiento = dateTimeNacimiento.Value;
-                    personaAModificar.Activo = Conversions.ToBoolean(cmbEstado.SelectedItem);
+                    personaAModificar.Activo = Conversions.ToBoolean(cmbEstado.SelectedIndex);
                     if (personaAModificar is Cliente)
                     {
                         ((Cliente)personaAModificar).Tipo = (eTipo)cmbTipo.SelectedIndex; 
@@ -159,11 +159,19 @@ namespace TP3Prototipo
         /// </summary>
         private void LoadCliente()
         {
-            
+            string estado = string.Empty;
             dtgvCliente.Rows[0].Cells[0].Value = personaAModificar.Dni.ToString();
             dtgvCliente.Rows[0].Cells[1].Value = personaAModificar.Nombre.ToString();
             dtgvCliente.Rows[0].Cells[2].Value = personaAModificar.FechaNacimiento.ToString();
-            dtgvCliente.Rows[0].Cells[4].Value = personaAModificar.Activo;
+            if (personaAModificar.Activo)
+            {
+                estado = "Activo";
+            }
+            else
+            {
+                estado = "Inactivo";
+            }
+            dtgvCliente.Rows[0].Cells[4].Value = estado;
             dtgvCliente.ForeColor = Color.Black;
             if (personaAModificar is Cliente)
             {
@@ -191,12 +199,12 @@ namespace TP3Prototipo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dateTimeNacimiento_ValueChanged(object sender, EventArgs e)
+        private void DateTimeNacimiento_ValueChanged(object sender, EventArgs e)
         {
             VerificarMayoriaEdad();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
