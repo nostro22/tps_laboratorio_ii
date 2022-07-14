@@ -38,7 +38,7 @@ namespace TP3ClassLibrary
             }
             else if ( rareza ==2)
             {
-                this.rareza = eRareza.epic;
+                this.rareza = eRareza.rare;
             }
             else
             {
