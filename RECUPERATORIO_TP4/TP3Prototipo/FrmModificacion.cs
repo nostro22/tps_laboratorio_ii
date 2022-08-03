@@ -142,7 +142,7 @@ namespace TP3Prototipo
         private bool VerificadorNombre()
         {
 
-            if (!Persona.NombreIsValid(TxtNombre.Text))
+            if (!Persona.NombreValidado(TxtNombre.Text))
             {
                 errorProviderModificacion.SetError(TxtNombre, "Campo obligatorio. Solo se permiten letras en el nombre");
                 return false;

@@ -263,7 +263,7 @@ namespace TP3ClassLibrary
             
         }
 
-        public string GenerarFacturaStringWithDni(List<Persona> listaPersonas, Persona cliente)
+        public string GenerarFacturaStringConDni(List<Persona> listaPersonas, Persona cliente)
         {
 
             StringBuilder sb = new StringBuilder();           

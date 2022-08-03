@@ -63,6 +63,8 @@ namespace TP3Prototipo
             LoadFacturas();
             InitDatabases();
             CargarProductosBD();
+            cmbLCliente.DataSource = listaPersonas;
+            cmbLCliente.DisplayMember = "NombreCompleto";
         }
 
 
@@ -502,7 +504,7 @@ namespace TP3Prototipo
             else
             {
 
-                FrmFacturacion facturacion = new FrmFacturacion(listaFacturas, listaPersonas, listaCarrito);
+                FrmFacturacion facturacion = new FrmFacturacion(listaFacturas, listaPersonas, listaCarrito, cmbLCliente.SelectedIndex);
                 DialogResult dialogResult = facturacion.ShowDialog();
               if(dialogResult == DialogResult.OK)
                 {

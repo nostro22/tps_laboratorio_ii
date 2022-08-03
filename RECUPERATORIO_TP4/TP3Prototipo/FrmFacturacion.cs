@@ -20,14 +20,15 @@ namespace TP3Prototipo
        
 
 
-        public FrmFacturacion(List<Factura> facturas, List<Persona> personas, List<Producto> producto)
+        public FrmFacturacion(List<Factura> facturas, List<Persona> personas, List<Producto> producto, int indexPersonaFacturar)
         {
             InitializeComponent();
             this.facturas = facturas;
             this.personas = personas;            
             this.productoVentas = producto;
             cmbLCliente.DataSource = personas;
-            cmbLCliente.DisplayMember = "FullName";
+            cmbLCliente.DisplayMember = "NombreCompleto";
+            cmbLCliente.SelectedIndex = indexPersonaFacturar;
             List<eTipoPago> mediosPago = new List<eTipoPago>();
             foreach (eTipoPago contact in Enum.GetValues(typeof(eTipoPago)).OfType<eTipoPago>().Where(m => m != eTipoPago.all))
             {
@@ -56,7 +57,7 @@ namespace TP3Prototipo
                 pago = (eTipoPago)cmbMedioPago.SelectedItem;
             }
            Factura factura = new Factura(numeroFactura, comprador, productoVentas, pago);
-           return factura.GenerarFacturaStringWithDni(personas,comprador);
+           return factura.GenerarFacturaStringConDni(personas,comprador);
         }
         private void BtnClose_Click(object sender, EventArgs e)
         {

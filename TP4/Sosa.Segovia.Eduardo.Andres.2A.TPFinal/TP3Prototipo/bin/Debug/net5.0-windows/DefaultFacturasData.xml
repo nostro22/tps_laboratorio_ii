@@ -146,4 +146,33 @@
     </ListaProductos>
     <Total>474.255</Total>
   </Factura>
+  <Factura>
+    <TipoPago>efectivo</TipoPago>
+    <NumeroFactura>6</NumeroFactura>
+    <CompradorId>95768450</CompradorId>
+    <ListaProductos>
+      <Producto>
+        <Precio>200.22</Precio>
+        <Id>6</Id>
+        <Nombre>Pirus Tower</Nombre>
+        <Cantidad>3</Cantidad>
+        <Rareza>common</Rareza>
+      </Producto>
+      <Producto>
+        <Precio>200.00</Precio>
+        <Id>4</Id>
+        <Nombre>Canis Tower</Nombre>
+        <Cantidad>2</Cantidad>
+        <Rareza>common</Rareza>
+      </Producto>
+      <Producto>
+        <Precio>500.00</Precio>
+        <Id>5</Id>
+        <Nombre>Centro Tower</Nombre>
+        <Cantidad>2</Cantidad>
+        <Rareza>rare</Rareza>
+      </Producto>
+    </ListaProductos>
+    <Total>1800.594</Total>
+  </Factura>
 </ArrayOfFactura>

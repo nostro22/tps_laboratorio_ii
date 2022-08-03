@@ -41,6 +41,7 @@ namespace TP3Prototipo
             this.btnAddCliente = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblMainInc = new System.Windows.Forms.Label();
             this.lblCar = new System.Windows.Forms.Label();
             this.grbProducto = new System.Windows.Forms.GroupBox();
             this.lblRareza = new System.Windows.Forms.Label();
@@ -89,7 +90,10 @@ namespace TP3Prototipo
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnClearCar = new System.Windows.Forms.Button();
             this.btnVentasCarrito = new System.Windows.Forms.Button();
+            this.cmbLCliente = new System.Windows.Forms.ComboBox();
+            this.lblClienteFacturar = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.grbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptBox)).BeginInit();
             this.grbProducto2.SuspendLayout();
@@ -271,11 +275,23 @@ namespace TP3Prototipo
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblMainInc);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 66);
             this.panel2.TabIndex = 1;
+            // 
+            // lblMainInc
+            // 
+            this.lblMainInc.AutoSize = true;
+            this.lblMainInc.BackColor = System.Drawing.Color.Black;
+            this.lblMainInc.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMainInc.Location = new System.Drawing.Point(36, 18);
+            this.lblMainInc.Name = "lblMainInc";
+            this.lblMainInc.Size = new System.Drawing.Size(113, 32);
+            this.lblMainInc.TabIndex = 0;
+            this.lblMainInc.Text = "Main.SA";
             // 
             // lblCar
             // 
@@ -891,12 +907,34 @@ namespace TP3Prototipo
             this.btnVentasCarrito.UseVisualStyleBackColor = true;
             this.btnVentasCarrito.Click += new System.EventHandler(this.BtnFacturacion);
             // 
+            // cmbLCliente
+            // 
+            this.cmbLCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLCliente.FormattingEnabled = true;
+            this.cmbLCliente.Location = new System.Drawing.Point(551, 43);
+            this.cmbLCliente.Name = "cmbLCliente";
+            this.cmbLCliente.Size = new System.Drawing.Size(374, 23);
+            this.cmbLCliente.TabIndex = 21;
+            // 
+            // lblClienteFacturar
+            // 
+            this.lblClienteFacturar.AutoSize = true;
+            this.lblClienteFacturar.BackColor = System.Drawing.Color.Transparent;
+            this.lblClienteFacturar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblClienteFacturar.Location = new System.Drawing.Point(653, 15);
+            this.lblClienteFacturar.Name = "lblClienteFacturar";
+            this.lblClienteFacturar.Size = new System.Drawing.Size(172, 21);
+            this.lblClienteFacturar.TabIndex = 4;
+            this.lblClienteFacturar.Text = "CLIENTE A FACTURAR";
+            // 
             // EstoNoEsCompraGamer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(952, 651);
+            this.Controls.Add(this.lblClienteFacturar);
+            this.Controls.Add(this.cmbLCliente);
             this.Controls.Add(this.grbProducto);
             this.Controls.Add(this.btnVentasCarrito);
             this.Controls.Add(this.btnClearCar);
@@ -914,6 +952,8 @@ namespace TP3Prototipo
             this.Text = "No Compra Gamer ";
             this.Load += new System.EventHandler(this.EstoNoEsCompraGamer_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.grbProducto.ResumeLayout(false);
             this.grbProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptBox)).EndInit();
@@ -936,6 +976,7 @@ namespace TP3Prototipo
             this.grbCart.ResumeLayout(false);
             this.grbCart.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1000,6 +1041,9 @@ namespace TP3Prototipo
         private System.Windows.Forms.Button btnDownloadProductos;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnModificarProductos;
+        private System.Windows.Forms.Label lblMainInc;
+        private System.Windows.Forms.ComboBox cmbLCliente;
+        private System.Windows.Forms.Label lblClienteFacturar;
     }
 }
 

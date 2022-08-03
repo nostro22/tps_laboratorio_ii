@@ -120,7 +120,7 @@ namespace TP3ClassLibrary
         /// </summary>
         /// <param name="nombre"></param>
         /// <returns></returns>
-        public static bool NombreIsValid(string nombre)
+        public static bool NombreValidado(string nombre)
         {
             bool retorno = true;
             foreach (char unChar in nombre)
@@ -146,7 +146,7 @@ namespace TP3ClassLibrary
         {
             bool retorno = false;
             int dniNumerico;
-            if (!string.IsNullOrWhiteSpace(dni) && int.TryParse(dni, out dniNumerico) && dniNumerico>0)
+            if (!string.IsNullOrWhiteSpace(dni) && int.TryParse(dni, out dniNumerico) && dniNumerico>=1000000 && dniNumerico<=99999999)
             {
                 retorno = true;
                 dni =dni.TrimStart(new Char[] {'0'});
