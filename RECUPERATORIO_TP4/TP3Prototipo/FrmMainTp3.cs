@@ -87,7 +87,7 @@ namespace TP3Prototipo
             }
             try
             {
-                 ProductoDAO.OnFalloConexionDataBase += BackUpData_EventHandler;
+                 ProductoDAO.OnFalloConexionBaseDatos += BackUpData_EventHandler;
                  listaProductos = ProductoDAO.Leer();                  
             }
             catch (ExcepcionArchivos ex)
@@ -371,12 +371,12 @@ namespace TP3Prototipo
             int productoValido = 0;
             foreach (Producto item in listaProductos)
             {
-                if (item.ProductoConStock())
+                if (item.ProductoDisponible())
                 {
                     SetOneProducto(item, index);
                     productoValido++;
                 }
-                else if(!item.ProductoConStock())
+                else if(!item.ProductoDisponible())
                 {
                     listaGroupBoxProductos[index].Visible = false;
                 }
@@ -399,7 +399,7 @@ namespace TP3Prototipo
             int productoValido = 0;
             foreach (Producto item in listaProductos)
             {
-                if (item.ProductoConStock())
+                if (item.ProductoDisponible())
                 {
                     Thread hiloActualizacion = new Thread(()=>SetOneProducto(item, index));                    
                     hiloActualizacion.Start();

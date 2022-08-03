@@ -47,7 +47,7 @@ namespace TP3ClassLibrary
 
         }
 
-        public Producto ShallowCopy()
+        public Producto GenerarCopia()
         {
             return (Producto)this.MemberwiseClone();
         }
@@ -177,7 +177,7 @@ namespace TP3ClassLibrary
         {
             if (productoEnStock.cantidad > 0  && listaEntregas is not null && productoEnStock is not null)
             {
-                Producto aux = productoEnStock.ShallowCopy();
+                Producto aux = productoEnStock.GenerarCopia();
                 if(productoEnStock.cantidad<cantidad)
                 {
                     cantidad = productoEnStock.cantidad;
@@ -285,7 +285,7 @@ namespace TP3ClassLibrary
                 }
                 else
                 {
-                    Producto aux = p.ShallowCopy();
+                    Producto aux = p.GenerarCopia();
                     p.cantidad = 0;
                     l.Add(aux);
                 }

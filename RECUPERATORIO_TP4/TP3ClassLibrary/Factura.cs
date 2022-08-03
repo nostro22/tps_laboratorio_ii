@@ -196,7 +196,7 @@ namespace TP3ClassLibrary
         public static Factura operator +(Factura factura, Producto UnProducto)
         {
             
-            factura.AddProducto(UnProducto,UnProducto.Cantidad);
+            factura.AgregarProducto(UnProducto,UnProducto.Cantidad);
             return factura;
            
         }
@@ -208,7 +208,7 @@ namespace TP3ClassLibrary
         /// <param name="unProducto"></param>
         /// <param name="cantidadQueDeseaAgregar"></param>
         /// <returns></returns>
-        public bool AddProducto(Producto unProducto, int cantidadQueDeseaAgregar)
+        public bool AgregarProducto(Producto unProducto, int cantidadQueDeseaAgregar)
         {
             bool agregadoConExito = false;
             if (unProducto != null && unProducto.Cantidad>0 && cantidadQueDeseaAgregar >0)
@@ -251,7 +251,7 @@ namespace TP3ClassLibrary
         {
 
             StringBuilder sb = new StringBuilder();
-            Persona cliente = Persona.GetPersonaWtihResumen(listaPersonas, resumenPersonaCmb);
+            Persona cliente = Persona.ObtenerPersonaConResumen(listaPersonas, resumenPersonaCmb);
             sb.AppendLine($"Factura # {this.numeroFactura}\n");
             sb.AppendLine(cliente.ToString());
             sb.AppendLine(Producto.ImprimirListaProductos(listProductos));
@@ -284,7 +284,7 @@ namespace TP3ClassLibrary
         /// </summary>
         /// <param name="facturas"></param>
         /// <returns>int id factura siguiente</returns>
-        public static int GetFacturaActualNumber(List<Factura> facturas)
+        public static int ObtenerFacturaActualNumber(List<Factura> facturas)
         {
             int numeroFacturaActual = 0;
             foreach (Factura item in facturas)

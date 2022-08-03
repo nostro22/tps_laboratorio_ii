@@ -142,7 +142,7 @@ namespace TP3ClassLibrary
         /// </summary>
         /// <param name="dni"></param>
         /// <returns></returns>
-        public static bool DniIsValid(string dni)
+        public static bool DniValido(string dni)
         {
             bool retorno = false;
             int dniNumerico;
@@ -201,7 +201,7 @@ namespace TP3ClassLibrary
         {
             dni = dni.TrimStart(new Char[] { '0' });
 
-            if (DniIsValid(dni))
+            if (DniValido(dni))
             {
                 foreach (Persona unaPersona in lista)
                 {
@@ -221,7 +221,7 @@ namespace TP3ClassLibrary
         /// </summary>
         /// <param name="lista"></param>
         /// <returns></returns>
-        public static List<string> GetNamesDni(List<Persona> lista)
+        public static List<string> ObtenerNombreDni(List<Persona> lista)
         {
             List<string> listaActivos = new List<string>();
             foreach (Persona item in lista)
@@ -240,7 +240,7 @@ namespace TP3ClassLibrary
         /// <param name="lista"></param>
         /// <param name="resumenPersona"></param>
         /// <returns></returns>
-        public static Persona GetPersonaWtihResumen(List<Persona> lista, string resumenPersona)
+        public static Persona ObtenerPersonaConResumen(List<Persona> lista, string resumenPersona)
         {
             resumenPersona = resumenPersona.Trim(' ');
             string[] arrayString = resumenPersona.Split('-');
@@ -257,7 +257,7 @@ namespace TP3ClassLibrary
         }
 
 
-        public string FullName
+        public string NombreCompleto
         {
             get
             {

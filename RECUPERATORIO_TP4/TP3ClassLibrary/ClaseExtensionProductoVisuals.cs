@@ -13,7 +13,7 @@ namespace TP3ClassLibrary
     {
 
 
-        public static bool ProductoConStock(this Producto producto)
+        public static bool ProductoDisponible(this Producto producto)
         {
 
             

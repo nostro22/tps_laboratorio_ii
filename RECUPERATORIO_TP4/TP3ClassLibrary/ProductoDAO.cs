@@ -18,7 +18,7 @@ namespace TP3ClassLibrary
 
         //Delegado Eventos Cuando falla la conexion al servidor la app entra en modo local y solo se pueden usar las funciones de archivos
         public delegate void FalloDB();       
-        public static event FalloDB OnFalloConexionDataBase;
+        public static event FalloDB OnFalloConexionBaseDatos;
 
 
 
@@ -171,7 +171,7 @@ namespace TP3ClassLibrary
             catch (Exception)
             {
                
-                OnFalloConexionDataBase();
+                OnFalloConexionBaseDatos();
             }
             finally
             {

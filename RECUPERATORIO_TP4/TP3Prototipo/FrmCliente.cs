@@ -34,14 +34,14 @@ namespace TP3Prototipo
         protected bool VerificadorDNI()
         {
             bool isValid = true;
-            if (!Persona.DniIsValid(txtDNI.Text))
+            if (!Persona.DniValido(txtDNI.Text))
             {
                 errorProviderAlta.SetError(txtDNI, "Campo obligatorio. Solo se permiten numeros positivos en el DNI");
                 isValid = false;
                 
             }
 
-            else if (Persona.DniIsValid(txtDNI.Text) && Persona.EstaEnLista(txtDNI.Text, listaClientes))
+            else if (Persona.DniValido(txtDNI.Text) && Persona.EstaEnLista(txtDNI.Text, listaClientes))
             {
                 errorProviderAlta.SetError(txtDNI, "Ya se encuentra registrado este DNI");
                 isValid = false;

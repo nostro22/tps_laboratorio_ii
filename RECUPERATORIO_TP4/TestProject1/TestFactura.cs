@@ -12,14 +12,14 @@ namespace TestTP3
         
         [TestMethod]
 
-        public void GetFacturaNumber_CuandoListaEsVacia_Return0()
+        public void ObtenerFacturaNumber_CuandoListaEsVacia_Retorno0()
         {
             //Arrange
             List<Factura> facturas = new List<Factura>();
             int expected = 0;
 
             //Act
-            int actual = Factura.GetFacturaActualNumber(facturas);
+            int actual = Factura.ObtenerFacturaActualNumber(facturas);
 
             //Assert
 
@@ -28,7 +28,7 @@ namespace TestTP3
 
         [TestMethod]
 
-        public void GetFacturaNumber_CuandoElIdMasBajoEs0_Return1()
+        public void ObtenerFacturaNumber_CuandoElIdMasBajoEs0_Retorno1()
         {
             //Arrange
             List<Factura> facturas = new List<Factura>();
@@ -39,7 +39,7 @@ namespace TestTP3
             int expected = 1;
 
             //Act
-            int actual = Factura.GetFacturaActualNumber(facturas);
+            int actual = Factura.ObtenerFacturaActualNumber(facturas);
 
             //Assert
 
@@ -49,7 +49,7 @@ namespace TestTP3
 
         [TestMethod]
 
-        public void GetFacturaNumber_CuandoFacturaMayor99EstaIntercalada_Return100()
+        public void ObtenerFacturaNumber_CuandoFacturaMayor99EstaIntercalada_Retorno100()
         {
             //Arrange
             List<Factura> facturas = new List<Factura>();
@@ -66,7 +66,7 @@ namespace TestTP3
             int expected = 100;
 
             //Act
-            int actual = Factura.GetFacturaActualNumber(facturas);
+            int actual = Factura.ObtenerFacturaActualNumber(facturas);
 
             //Assert
 

@@ -4,16 +4,16 @@ using TP3ClassLibrary;
 namespace TestTP3
 {
     [TestClass]
-    public class TestPersonaDniIsValid
+    public class TestPersonaDni
     {
         [TestMethod]       
-        public void ValidarDni_CuandoDniEsMenorCero_ReturnFalse()
+        public void ValidarDni_CuandoDniEsMenorCero_RetornoFalse()
         {
             //Arrange
             string dni = "-12345";
             
             //Act
-            bool retorno = Persona.DniIsValid(dni);
+            bool retorno = Persona.DniValido(dni);
 
             //Assert
             Assert.IsFalse(retorno);
@@ -23,13 +23,13 @@ namespace TestTP3
 
         [TestMethod]
 
-        public void ValidarDni_CuandoContinerLetras_ReturnFalse()
+        public void ValidarDni_CuandoContinerLetras_RetornoFalse()
         {
             //Arrange
             string dni = "12345C78A";
 
             //Act
-            bool retorno = Persona.DniIsValid(dni);
+            bool retorno = Persona.DniValido(dni);
 
             //Assert
 
@@ -38,13 +38,13 @@ namespace TestTP3
 
         [TestMethod]
 
-        public void ValidarDni_CuandoSonLetras_ReturnFalse()
+        public void ValidarDni_CuandoSonLetras_RetornoFalse()
         {
             //Arrange
             string dni = "BfdA";
 
             //Act
-            bool retorno = Persona.DniIsValid(dni);
+            bool retorno = Persona.DniValido(dni);
 
             //Assert
 
@@ -53,13 +53,13 @@ namespace TestTP3
 
         [TestMethod]
 
-        public void ValidarDni_CuandoEsSoloCeros_ReturnFalse()
+        public void ValidarDni_CuandoEsSoloCeros_RetornoFalse()
         {
             //Arrange
             string dni = "000000";
 
             //Act
-            bool retorno = Persona.DniIsValid(dni);
+            bool retorno = Persona.DniValido(dni);
 
             //Assert
 
@@ -68,13 +68,13 @@ namespace TestTP3
 
         [TestMethod]
 
-        public void ValidarDni_CuandoEsCeroYNumero_ReturnTrue()
+        public void ValidarDni_CuandoEsCeroYNumero_RetornoTrue()
         {
             //Arrange
             string dni = "000022";
 
             //Act
-            bool retorno = Persona.DniIsValid(dni);
+            bool retorno = Persona.DniValido(dni);
 
             //Assert
 

@@ -85,13 +85,13 @@ namespace TP3Prototipo
         private bool VerificarDniErrorProvider(string mensajeError1, string mensajeError2)
         {
             bool isValid = true;
-            if (!Persona.DniIsValid(txtDniModificar.Text))
+            if (!Persona.DniValido(txtDniModificar.Text))
             {
                 errorProviderDni.SetError(txtDniModificar, mensajeError1);
                 isValid = false;
 
             }
-            else if (Persona.DniIsValid(txtDniModificar.Text) && !Persona.EstaEnLista(txtDniModificar.Text, Listpersonas))
+            else if (Persona.DniValido(txtDniModificar.Text) && !Persona.EstaEnLista(txtDniModificar.Text, Listpersonas))
             {
                 errorProviderDni.SetError(txtDniModificar, mensajeError2);
                 isValid = false;

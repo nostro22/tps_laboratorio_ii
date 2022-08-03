@@ -48,7 +48,7 @@ namespace TP3Prototipo
         /// <returns></returns>
         private string ImprimirFactura()
         {
-           int numeroFactura = Factura.GetFacturaActualNumber(facturas);
+           int numeroFactura = Factura.ObtenerFacturaActualNumber(facturas);
            Persona comprador = (Persona)cmbLCliente.SelectedItem;
            eTipoPago pago = eTipoPago.efectivo;
             if(cmbMedioPago.SelectedItem!=null)
@@ -66,7 +66,7 @@ namespace TP3Prototipo
         {
             try
             {
-                int numeroFactura = Factura.GetFacturaActualNumber(facturas);
+                int numeroFactura = Factura.ObtenerFacturaActualNumber(facturas);
                 Persona comprador = (Persona)cmbLCliente.SelectedItem;
                 eTipoPago medioPago = (eTipoPago)cmbMedioPago.SelectedItem;
                 Factura factura = new Factura(numeroFactura, comprador, productoVentas,medioPago);

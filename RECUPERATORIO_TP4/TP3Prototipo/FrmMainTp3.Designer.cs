@@ -153,7 +153,7 @@ namespace TP3Prototipo
             this.btnDownloadProductos.Name = "btnDownloadProductos";
             this.btnDownloadProductos.Size = new System.Drawing.Size(200, 48);
             this.btnDownloadProductos.TabIndex = 13;
-            this.btnDownloadProductos.Text = "DOWNLOAD DATABASE PRODUCTOS";
+            this.btnDownloadProductos.Text = "DESCARGAR BASE DE DATOS  PRODUCTOS";
             this.btnDownloadProductos.UseVisualStyleBackColor = true;
             this.btnDownloadProductos.Click += new System.EventHandler(this.BtnDownloadProductos_Click);
             // 
@@ -169,7 +169,7 @@ namespace TP3Prototipo
             this.btnUploadPersonas.Name = "btnUploadPersonas";
             this.btnUploadPersonas.Size = new System.Drawing.Size(200, 48);
             this.btnUploadPersonas.TabIndex = 8;
-            this.btnUploadPersonas.Text = "UPLOAD DATABASE  PERSONAS";
+            this.btnUploadPersonas.Text = "SUBIR BASE DE DATOS  PERSONAS";
             this.btnUploadPersonas.UseVisualStyleBackColor = true;
             this.btnUploadPersonas.Click += new System.EventHandler(this.BtnUploadPersonas_Click);
             // 
@@ -185,7 +185,7 @@ namespace TP3Prototipo
             this.btnDownloadPersonas.Name = "btnDownloadPersonas";
             this.btnDownloadPersonas.Size = new System.Drawing.Size(200, 48);
             this.btnDownloadPersonas.TabIndex = 11;
-            this.btnDownloadPersonas.Text = "DOWNLOAD DATABASE PERSONAS";
+            this.btnDownloadPersonas.Text = "DESCARGAR BASE DE DATOS PERSONAS";
             this.btnDownloadPersonas.UseVisualStyleBackColor = true;
             this.btnDownloadPersonas.Click += new System.EventHandler(this.BtnDownloadPersonas_Click);
             // 
@@ -265,7 +265,7 @@ namespace TP3Prototipo
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(200, 87);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "CLOSE APP";
+            this.btnClose.Text = "CERRAR APLICACION";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
@@ -854,7 +854,7 @@ namespace TP3Prototipo
             this.grbCart.Controls.Add(this.ptcCarrito);
             this.grbCart.Controls.Add(this.lblCar);
             this.grbCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.grbCart.Location = new System.Drawing.Point(261, 6);
+            this.grbCart.Location = new System.Drawing.Point(344, 9);
             this.grbCart.Name = "grbCart";
             this.grbCart.Size = new System.Drawing.Size(128, 81);
             this.grbCart.TabIndex = 18;
@@ -868,11 +868,11 @@ namespace TP3Prototipo
             this.btnClearCar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearCar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearCar.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.btnClearCar.Location = new System.Drawing.Point(225, 96);
+            this.btnClearCar.Location = new System.Drawing.Point(249, 96);
             this.btnClearCar.Name = "btnClearCar";
-            this.btnClearCar.Size = new System.Drawing.Size(84, 32);
+            this.btnClearCar.Size = new System.Drawing.Size(154, 32);
             this.btnClearCar.TabIndex = 19;
-            this.btnClearCar.Text = "CLEAR";
+            this.btnClearCar.Text = "VACIAR CARRITO";
             this.btnClearCar.UseVisualStyleBackColor = true;
             this.btnClearCar.Click += new System.EventHandler(this.BtnClearCar_Click);
             // 
@@ -883,11 +883,11 @@ namespace TP3Prototipo
             this.btnVentasCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentasCarrito.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVentasCarrito.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.btnVentasCarrito.Location = new System.Drawing.Point(326, 96);
+            this.btnVentasCarrito.Location = new System.Drawing.Point(409, 96);
             this.btnVentasCarrito.Name = "btnVentasCarrito";
-            this.btnVentasCarrito.Size = new System.Drawing.Size(84, 32);
+            this.btnVentasCarrito.Size = new System.Drawing.Size(154, 32);
             this.btnVentasCarrito.TabIndex = 20;
-            this.btnVentasCarrito.Text = "VENTAS";
+            this.btnVentasCarrito.Text = "FACTURAR CARRITO";
             this.btnVentasCarrito.UseVisualStyleBackColor = true;
             this.btnVentasCarrito.Click += new System.EventHandler(this.BtnFacturacion);
             // 
