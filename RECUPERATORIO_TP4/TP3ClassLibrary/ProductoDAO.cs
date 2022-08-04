@@ -50,7 +50,7 @@ namespace TP3ClassLibrary
             }
             catch (Exception)
             {
-                throw;
+                OnFalloConexionBaseDatos();
             }
             finally
             {
@@ -130,7 +130,7 @@ namespace TP3ClassLibrary
             }
             catch (Exception)
             {
-                throw;
+                OnFalloConexionBaseDatos();
             }
             finally
             {
@@ -196,7 +196,7 @@ namespace TP3ClassLibrary
             }
             catch (Exception)
             {
-                throw;
+                OnFalloConexionBaseDatos();
             }
             finally
             {
@@ -224,10 +224,10 @@ namespace TP3ClassLibrary
 
                 comando.ExecuteNonQuery();
 
-            }
+            }               
             catch (Exception)
             {
-                throw;
+                OnFalloConexionBaseDatos();
             }
             finally
             {
