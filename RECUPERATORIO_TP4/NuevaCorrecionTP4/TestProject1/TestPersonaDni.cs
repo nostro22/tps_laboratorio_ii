@@ -71,14 +71,14 @@ namespace TestTP3
         public void ValidarDni_CuandoEsCeroYNumero_RetornoTrue()
         {
             //Arrange
-            string dni = "000022";
+            string dni = "012345678";
 
             //Act
             bool retorno = Persona.DniValido(dni);
 
             //Assert
 
-            Assert.IsFalse(retorno);
+            Assert.IsTrue(retorno);
         }
     }
 
