@@ -46,3 +46,15 @@ C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPE
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\IO\obj\Debug\net5.0\IO.dll
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\IO\obj\Debug\net5.0\ref\IO.dll
 C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\IO\obj\Debug\net5.0\IO.pdb
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\bin\Debug\net5.0\IO.deps.json
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\bin\Debug\net5.0\IO.dll
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\bin\Debug\net5.0\ref\IO.dll
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\bin\Debug\net5.0\IO.pdb
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\obj\Debug\net5.0\IO.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\obj\Debug\net5.0\IO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\obj\Debug\net5.0\IO.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\obj\Debug\net5.0\IO.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\obj\Debug\net5.0\IO.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\obj\Debug\net5.0\IO.dll
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\obj\Debug\net5.0\ref\IO.dll
+C:\Users\Usuario\Desktop\utn\semestre 2\programacion 2\tps_laboratorio_ii\RECUPERATORIO_TP4\NuevaCorrecionTP4\IO\obj\Debug\net5.0\IO.pdb
